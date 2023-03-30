@@ -8,6 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface TirMethodBody extends PsiElement {
 
   @NotNull
+  List<TirMethodBodyCatch> getMethodBodyCatchList();
+
+  @NotNull
   List<TirMethodBodyLine> getMethodBodyLineList();
 
   @NotNull

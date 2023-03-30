@@ -34,14 +34,53 @@ method_def ::= method_sig LBRACE method_body RBRACE
 
 method_sig ::= MODIFIER* identifier_type identifier_method LPAREN (identifier_type IDENTIFIER (COMMA identifier_type IDENTIFIER)*)? RPAREN
 
-method_body ::= (method_body_var | method_body_line)+
+method_body ::= (method_body_var | method_body_line | method_body_catch)+
 
 method_body_var ::= identifier_type identifier_list SEMICOLON
 
 method_body_line ::= LINE_NUMBER method_body_stmt SEMICOLON
 
+method_body_catch ::= TRY LBRACKET INTEGER COMMA INTEGER RPAREN COMMA CATCH IDENTIFIER AT INTEGER
+
 // copy stmts and more
-method_body_stmt ::= IDENTIFIER EQUAL IDENTIFIER
+method_body_stmt ::= lvalue EQUAL rvalue
+                   | IDENTIFIER EQUAL NEW identifier_type
+                   | IDENTIFIER EQUAL NEW_ARRAY identifier_type LBRACKET IDENTIFIER RBRACKET
+                   | THROW identifier_type
+                   | CATCH IDENTIFIER
+                   | invoke_expr
+                   | IF LPAREN (unary_expr | binary_expr | IDENTIFIER) RPAREN GOTO INTEGER
+                   | GOTO INTEGER
+                   | RETURN IDENTIFIER?
+
+lvalue ::= IDENTIFIER DOT LANGLE field_ref RANGLE
+         | IDENTIFIER LBRACKET IDENTIFIER RBRACKET
+         | IDENTIFIER
+
+rvalue ::= IDENTIFIER DOT LANGLE field_ref RANGLE
+         | IDENTIFIER LBRACKET IDENTIFIER RBRACKET
+         | LPAREN identifier_type RPAREN IDENTIFIER
+         | invoke_expr
+         | unary_expr
+         | binary_expr
+         | IDENTIFIER INSTANCEOF identifier_type
+         | IDENTIFIER
+         | FLOAT
+         | INTEGER
+         | STRING_LITERAL
+
+field_ref ::= IDENTIFIER COLON identifier_type IDENTIFIER
+
+unary_expr ::= (ADD_OP | SUB_OP | NOT_OP) IDENTIFIER
+
+binary_expr ::= IDENTIFIER (LANGLE | RANGLE | CMP_OP | BIT_OP | ADD_OP | SUB_OP | MUL_OP | DIV_OP | MOD_OP) IDENTIFIER
+
+// invoke method
+invoke_expr ::= IDENTIFIER (IDENTIFIER DOT)? LANGLE invoke_method_ref RANGLE LPAREN invoke_argument_list? RPAREN
+
+invoke_method_ref ::= IDENTIFIER COLON identifier_type IDENTIFIER LPAREN (identifier_type (COMMA identifier_type)*)? RPAREN
+
+invoke_argument_list ::= IDENTIFIER (COMMA IDENTIFIER)*
 // ---
 
 // helpers

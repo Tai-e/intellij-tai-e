@@ -7,6 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public class TirVisitor extends PsiElementVisitor {
 
+  public void visitBinaryExpr(@NotNull TirBinaryExpr o) {
+    visitPsiElement(o);
+  }
+
   public void visitClassExtends(@NotNull TirClassExtends o) {
     visitPsiElement(o);
   }
@@ -31,6 +35,10 @@ public class TirVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitFieldRef(@NotNull TirFieldRef o) {
+    visitPsiElement(o);
+  }
+
   public void visitIdentifierList(@NotNull TirIdentifierList o) {
     visitPsiElement(o);
   }
@@ -43,7 +51,27 @@ public class TirVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitInvokeArgumentList(@NotNull TirInvokeArgumentList o) {
+    visitPsiElement(o);
+  }
+
+  public void visitInvokeExpr(@NotNull TirInvokeExpr o) {
+    visitPsiElement(o);
+  }
+
+  public void visitInvokeMethodRef(@NotNull TirInvokeMethodRef o) {
+    visitPsiElement(o);
+  }
+
+  public void visitLvalue(@NotNull TirLvalue o) {
+    visitPsiElement(o);
+  }
+
   public void visitMethodBody(@NotNull TirMethodBody o) {
+    visitPsiElement(o);
+  }
+
+  public void visitMethodBodyCatch(@NotNull TirMethodBodyCatch o) {
     visitPsiElement(o);
   }
 
@@ -64,6 +92,14 @@ public class TirVisitor extends PsiElementVisitor {
   }
 
   public void visitMethodSig(@NotNull TirMethodSig o) {
+    visitPsiElement(o);
+  }
+
+  public void visitRvalue(@NotNull TirRvalue o) {
+    visitPsiElement(o);
+  }
+
+  public void visitUnaryExpr(@NotNull TirUnaryExpr o) {
     visitPsiElement(o);
   }
 

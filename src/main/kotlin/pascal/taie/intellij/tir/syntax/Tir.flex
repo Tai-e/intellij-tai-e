@@ -36,11 +36,57 @@ extends                                                               { yybegin(
 
 implements                                                            { yybegin(YYINITIAL); return TirTypes.IMPLEMENTS; }
 
+if                                                                    { yybegin(YYINITIAL); return TirTypes.IF; }
+
+goto                                                                  { yybegin(YYINITIAL); return TirTypes.GOTO; }
+
+new                                                                   { yybegin(YYINITIAL); return TirTypes.NEW; }
+
+newarray                                                              { yybegin(YYINITIAL); return TirTypes.NEW_ARRAY; }
+
+try                                                                   { yybegin(YYINITIAL); return TirTypes.TRY; }
+
+throw                                                                 { yybegin(YYINITIAL); return TirTypes.THROW; }
+
+catch                                                                 { yybegin(YYINITIAL); return TirTypes.CATCH; }
+
+at                                                                   { yybegin(YYINITIAL); return TirTypes.AT; }
+
+return                                                                { yybegin(YYINITIAL); return TirTypes.RETURN; }
+
+instanceof                                                            { yybegin(YYINITIAL); return TirTypes.INSTANCEOF; }
+
 ,                                                                     { yybegin(YYINITIAL); return TirTypes.COMMA; }
+
+:                                                                     { yybegin(YYINITIAL); return TirTypes.COLON; }
 
 ;                                                                     { yybegin(YYINITIAL); return TirTypes.SEMICOLON; }
 
+(\+|-)?\d+\.\d*+F                                                     { yybegin(YYINITIAL); return TirTypes.FLOAT; }
+
+(\+|-)?\d+                                                            { yybegin(YYINITIAL); return TirTypes.INTEGER; }
+
+\"([^\"\\]|\\.)*\"                                                    { yybegin(YYINITIAL); return TirTypes.STRING_LITERAL; }
+
+\+                                                                    { yybegin(YYINITIAL); return TirTypes.ADD_OP; }
+
+\-                                                                    { yybegin(YYINITIAL); return TirTypes.SUB_OP; }
+
+\*                                                                    { yybegin(YYINITIAL); return TirTypes.MUL_OP; }
+
+\/                                                                    { yybegin(YYINITIAL); return TirTypes.DIV_OP; }
+
+\%                                                                    { yybegin(YYINITIAL); return TirTypes.MOD_OP; }
+
+==|\!=|<=|>=|cmpg                                                     { yybegin(YYINITIAL); return TirTypes.CMP_OP; }
+
+\<\<|\>\>|\>\>\>|\<\<\<|\||\&|\^|\~                                   { yybegin(YYINITIAL); return TirTypes.BIT_OP; }
+
+\!                                                                    { yybegin(YYINITIAL); return TirTypes.NOT_OP; }
+
 =                                                                     { yybegin(YYINITIAL); return TirTypes.EQUAL; }
+
+\.                                                                    { yybegin(YYINITIAL); return TirTypes.DOT; }
 
 \(                                                                    { yybegin(YYINITIAL); return TirTypes.LPAREN; }
 
@@ -49,6 +95,10 @@ implements                                                            { yybegin(
 \[                                                                    { yybegin(YYINITIAL); return TirTypes.LBRACKET; }
 
 \]                                                                    { yybegin(YYINITIAL); return TirTypes.RBRACKET; }
+
+\<                                                                    { yybegin(YYINITIAL); return TirTypes.LANGLE; }
+
+\>                                                                    { yybegin(YYINITIAL); return TirTypes.RANGLE; }
 
 \{                                                                    { yybegin(YYINITIAL); return TirTypes.LBRACE; }
 

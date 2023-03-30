@@ -35,7 +35,7 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
                 KEY_KEYS
             }
             TirTypes.FIELD_IDENTIFIER -> {
-                FIELD_KEYS;
+                FIELD_KEYS
             }
             TirTypes.LINE_NUMBER -> {
                 LINE_NUMBER_KEYS

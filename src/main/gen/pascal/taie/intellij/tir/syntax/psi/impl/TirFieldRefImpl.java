@@ -11,14 +11,14 @@ import static pascal.taie.intellij.tir.syntax.TirTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import pascal.taie.intellij.tir.syntax.psi.*;
 
-public class TirMethodBodyImpl extends ASTWrapperPsiElement implements TirMethodBody {
+public class TirFieldRefImpl extends ASTWrapperPsiElement implements TirFieldRef {
 
-  public TirMethodBodyImpl(@NotNull ASTNode node) {
+  public TirFieldRefImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull TirVisitor visitor) {
-    visitor.visitMethodBody(this);
+    visitor.visitFieldRef(this);
   }
 
   @Override
@@ -29,20 +29,8 @@ public class TirMethodBodyImpl extends ASTWrapperPsiElement implements TirMethod
 
   @Override
   @NotNull
-  public List<TirMethodBodyCatch> getMethodBodyCatchList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirMethodBodyCatch.class);
-  }
-
-  @Override
-  @NotNull
-  public List<TirMethodBodyLine> getMethodBodyLineList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirMethodBodyLine.class);
-  }
-
-  @Override
-  @NotNull
-  public List<TirMethodBodyVar> getMethodBodyVarList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirMethodBodyVar.class);
+  public TirIdentifierType getIdentifierType() {
+    return findNotNullChildByClass(TirIdentifierType.class);
   }
 
 }

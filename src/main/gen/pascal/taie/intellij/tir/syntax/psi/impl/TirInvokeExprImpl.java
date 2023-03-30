@@ -11,14 +11,14 @@ import static pascal.taie.intellij.tir.syntax.TirTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import pascal.taie.intellij.tir.syntax.psi.*;
 
-public class TirMethodBodyImpl extends ASTWrapperPsiElement implements TirMethodBody {
+public class TirInvokeExprImpl extends ASTWrapperPsiElement implements TirInvokeExpr {
 
-  public TirMethodBodyImpl(@NotNull ASTNode node) {
+  public TirInvokeExprImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull TirVisitor visitor) {
-    visitor.visitMethodBody(this);
+    visitor.visitInvokeExpr(this);
   }
 
   @Override
@@ -28,21 +28,15 @@ public class TirMethodBodyImpl extends ASTWrapperPsiElement implements TirMethod
   }
 
   @Override
-  @NotNull
-  public List<TirMethodBodyCatch> getMethodBodyCatchList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirMethodBodyCatch.class);
+  @Nullable
+  public TirInvokeArgumentList getInvokeArgumentList() {
+    return findChildByClass(TirInvokeArgumentList.class);
   }
 
   @Override
   @NotNull
-  public List<TirMethodBodyLine> getMethodBodyLineList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirMethodBodyLine.class);
-  }
-
-  @Override
-  @NotNull
-  public List<TirMethodBodyVar> getMethodBodyVarList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirMethodBodyVar.class);
+  public TirInvokeMethodRef getInvokeMethodRef() {
+    return findNotNullChildByClass(TirInvokeMethodRef.class);
   }
 
 }

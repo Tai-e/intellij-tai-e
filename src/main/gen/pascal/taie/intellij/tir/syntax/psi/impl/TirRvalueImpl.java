@@ -11,14 +11,14 @@ import static pascal.taie.intellij.tir.syntax.TirTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import pascal.taie.intellij.tir.syntax.psi.*;
 
-public class TirMethodBodyStmtImpl extends ASTWrapperPsiElement implements TirMethodBodyStmt {
+public class TirRvalueImpl extends ASTWrapperPsiElement implements TirRvalue {
 
-  public TirMethodBodyStmtImpl(@NotNull ASTNode node) {
+  public TirRvalueImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull TirVisitor visitor) {
-    visitor.visitMethodBodyStmt(this);
+    visitor.visitRvalue(this);
   }
 
   @Override
@@ -35,6 +35,12 @@ public class TirMethodBodyStmtImpl extends ASTWrapperPsiElement implements TirMe
 
   @Override
   @Nullable
+  public TirFieldRef getFieldRef() {
+    return findChildByClass(TirFieldRef.class);
+  }
+
+  @Override
+  @Nullable
   public TirIdentifierType getIdentifierType() {
     return findChildByClass(TirIdentifierType.class);
   }
@@ -43,18 +49,6 @@ public class TirMethodBodyStmtImpl extends ASTWrapperPsiElement implements TirMe
   @Nullable
   public TirInvokeExpr getInvokeExpr() {
     return findChildByClass(TirInvokeExpr.class);
-  }
-
-  @Override
-  @Nullable
-  public TirLvalue getLvalue() {
-    return findChildByClass(TirLvalue.class);
-  }
-
-  @Override
-  @Nullable
-  public TirRvalue getRvalue() {
-    return findChildByClass(TirRvalue.class);
   }
 
   @Override

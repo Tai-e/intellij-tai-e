@@ -5,22 +5,19 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface TirMethodBodyStmt extends PsiElement {
+public interface TirRvalue extends PsiElement {
 
   @Nullable
   TirBinaryExpr getBinaryExpr();
+
+  @Nullable
+  TirFieldRef getFieldRef();
 
   @Nullable
   TirIdentifierType getIdentifierType();
 
   @Nullable
   TirInvokeExpr getInvokeExpr();
-
-  @Nullable
-  TirLvalue getLvalue();
-
-  @Nullable
-  TirRvalue getRvalue();
 
   @Nullable
   TirUnaryExpr getUnaryExpr();
