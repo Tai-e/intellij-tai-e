@@ -1,4 +1,4 @@
-package pascal.taie.intellij.languages
+package pascal.taie.intellij.tir
 
 import com.intellij.lang.Language
 

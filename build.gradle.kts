@@ -17,6 +17,8 @@ plugins {
     id("org.jetbrains.qodana") version "0.1.13"
     // Gradle Kover Plugin
     id("org.jetbrains.kotlinx.kover") version "0.6.1"
+    // Plugin for generating lexers and parsers for IntelliJ plugins
+    id("org.jetbrains.grammarkit") version "2022.3.1"
 }
 
 group = properties("pluginGroup").get()
@@ -42,6 +44,14 @@ intellij {
     plugins.set(properties("platformPlugins").map { it.split(',').map(String::trim).filter(String::isNotEmpty) })
 }
 
+sourceSets["main"].java.srcDirs("src/main/gen")
+
+grammarKit {
+    jflexRelease.set("1.7.0-1")
+    grammarKitRelease.set("2021.1.2")
+    intellijRelease.set("203.7717.81")
+}
+
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
     groups.empty()
@@ -62,6 +72,19 @@ kover.xmlReport {
 }
 
 tasks {
+    generateLexer {
+        sourceFile.set(File("src/main/kotlin/pascal/taie/intellij/tir/syntax/Tir.flex"))
+        targetDir.set("src/main/gen/pascal/taie/intellij/tir/syntax/")
+        targetClass.set("TirLexer")
+    }
+
+    generateParser {
+        sourceFile.set(File("src/main/kotlin/pascal/taie/intellij/tir/syntax/Tir.bnf"))
+        targetRoot.set("src/main/gen/")
+        pathToParser.set("pascal/taie/intellij/tir/syntax/TirParser")
+        pathToPsiRoot.set("pascal/taie/intellij/tir/syntax/psi")
+    }
+
     wrapper {
         gradleVersion = properties("gradleVersion").get()
     }

@@ -1,0 +1,20 @@
+{
+  parserClass="pascal.taie.intellij.tir.syntax.TirParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Tir"
+  psiImplClassSuffix="Impl"
+  psiPackage="pascal.taie.intellij.tir.syntax.psi"
+  psiImplPackage="pascal.taie.intellij.tir.syntax.psi.impl"
+
+  elementTypeHolderClass="pascal.taie.intellij.tir.syntax.TirTypes"
+  elementTypeClass="pascal.taie.intellij.tir.syntax.TirElementType"
+  tokenTypeClass="pascal.taie.intellij.tir.syntax.TirTokenType"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
