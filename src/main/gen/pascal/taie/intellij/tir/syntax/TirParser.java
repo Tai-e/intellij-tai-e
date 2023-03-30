@@ -75,7 +75,7 @@ public class TirParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // MODIFIER* identifier_type identifier_list SEMICOLON
+  // MODIFIER* identifier_type field_identifier_list SEMICOLON
   public static boolean field_def(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "field_def")) return false;
     if (!nextTokenIs(builder_, "<field def>", IDENTIFIER, MODIFIER)) return false;
@@ -83,7 +83,7 @@ public class TirParser implements PsiParser, LightPsiParser {
     Marker marker_ = enter_section_(builder_, level_, _NONE_, FIELD_DEF, "<field def>");
     result_ = field_def_0(builder_, level_ + 1);
     result_ = result_ && identifier_type(builder_, level_ + 1);
-    result_ = result_ && identifier_list(builder_, level_ + 1);
+    result_ = result_ && field_identifier_list(builder_, level_ + 1);
     result_ = result_ && consumeToken(builder_, SEMICOLON);
     exit_section_(builder_, level_, marker_, result_, false, null);
     return result_;
@@ -98,6 +98,53 @@ public class TirParser implements PsiParser, LightPsiParser {
       if (!empty_element_parsed_guard_(builder_, "field_def_0", pos_)) break;
     }
     return true;
+  }
+
+  /* ********************************************************** */
+  // IDENTIFIER
+  public static boolean field_identifier(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "field_identifier")) return false;
+    if (!nextTokenIs(builder_, IDENTIFIER)) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = consumeToken(builder_, IDENTIFIER);
+    exit_section_(builder_, marker_, FIELD_IDENTIFIER, result_);
+    return result_;
+  }
+
+  /* ********************************************************** */
+  // field_identifier (COMMA field_identifier)*
+  public static boolean field_identifier_list(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "field_identifier_list")) return false;
+    if (!nextTokenIs(builder_, IDENTIFIER)) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = field_identifier(builder_, level_ + 1);
+    result_ = result_ && field_identifier_list_1(builder_, level_ + 1);
+    exit_section_(builder_, marker_, FIELD_IDENTIFIER_LIST, result_);
+    return result_;
+  }
+
+  // (COMMA field_identifier)*
+  private static boolean field_identifier_list_1(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "field_identifier_list_1")) return false;
+    while (true) {
+      int pos_ = current_position_(builder_);
+      if (!field_identifier_list_1_0(builder_, level_ + 1)) break;
+      if (!empty_element_parsed_guard_(builder_, "field_identifier_list_1", pos_)) break;
+    }
+    return true;
+  }
+
+  // COMMA field_identifier
+  private static boolean field_identifier_list_1_0(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "field_identifier_list_1_0")) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = consumeToken(builder_, COMMA);
+    result_ = result_ && field_identifier(builder_, level_ + 1);
+    exit_section_(builder_, marker_, null, result_);
+    return result_;
   }
 
   /* ********************************************************** */

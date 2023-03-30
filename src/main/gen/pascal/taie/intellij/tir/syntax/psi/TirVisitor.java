@@ -23,6 +23,14 @@ public class TirVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitFieldIdentifier(@NotNull TirFieldIdentifier o) {
+    visitPsiElement(o);
+  }
+
+  public void visitFieldIdentifierList(@NotNull TirFieldIdentifierList o) {
+    visitPsiElement(o);
+  }
+
   public void visitIdentifierList(@NotNull TirIdentifierList o) {
     visitPsiElement(o);
   }

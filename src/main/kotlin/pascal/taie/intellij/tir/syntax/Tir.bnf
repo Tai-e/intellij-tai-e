@@ -21,8 +21,15 @@ class_implements ::= IMPLEMENTS identifier_list
 
 class_member ::= field_def | method_def | COMMENT
 
-field_def ::= MODIFIER* identifier_type identifier_list SEMICOLON
+// Field def
+field_def ::= MODIFIER* identifier_type field_identifier_list SEMICOLON
 
+field_identifier_list ::= field_identifier (COMMA field_identifier)*
+
+field_identifier ::= IDENTIFIER
+// ---
+
+// Method def
 method_def ::= method_sig LBRACE method_body RBRACE
 
 method_sig ::= MODIFIER* identifier_type identifier_method LPAREN (identifier_type IDENTIFIER (COMMA identifier_type IDENTIFIER)*)? RPAREN
@@ -35,6 +42,7 @@ method_body_line ::= LINE_NUMBER method_body_stmt SEMICOLON
 
 // copy stmts and more
 method_body_stmt ::= IDENTIFIER EQUAL IDENTIFIER
+// ---
 
 // helpers
 identifier_type ::= IDENTIFIER (LBRACKET RBRACKET)?

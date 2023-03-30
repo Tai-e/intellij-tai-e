@@ -12,6 +12,8 @@ public interface TirTypes {
   IElementType CLASS_IMPLEMENTS = new TirElementType("CLASS_IMPLEMENTS");
   IElementType CLASS_MEMBER = new TirElementType("CLASS_MEMBER");
   IElementType FIELD_DEF = new TirElementType("FIELD_DEF");
+  IElementType FIELD_IDENTIFIER = new TirElementType("FIELD_IDENTIFIER");
+  IElementType FIELD_IDENTIFIER_LIST = new TirElementType("FIELD_IDENTIFIER_LIST");
   IElementType IDENTIFIER_LIST = new TirElementType("IDENTIFIER_LIST");
   IElementType IDENTIFIER_METHOD = new TirElementType("IDENTIFIER_METHOD");
   IElementType IDENTIFIER_TYPE = new TirElementType("IDENTIFIER_TYPE");
@@ -53,6 +55,12 @@ public interface TirTypes {
       }
       else if (type == FIELD_DEF) {
         return new TirFieldDefImpl(node);
+      }
+      else if (type == FIELD_IDENTIFIER) {
+        return new TirFieldIdentifierImpl(node);
+      }
+      else if (type == FIELD_IDENTIFIER_LIST) {
+        return new TirFieldIdentifierListImpl(node);
       }
       else if (type == IDENTIFIER_LIST) {
         return new TirIdentifierListImpl(node);

@@ -15,8 +15,12 @@
                   fieldName="INSTANCE"
                   language="tir"
                   extensions="tir"/>
-        <lang.parserDefinition language="tir"
-                               implementationClass="pascal.taie.intellij.tir.TirParserDefinition"/>
+        <lang.parserDefinition
+                language="tir"
+                implementationClass="pascal.taie.intellij.tir.TirParserDefinition"/>
+        <lang.syntaxHighlighterFactory
+                language="tir"
+                implementationClass="pascal.taie.intellij.tir.syntax.TirSyntaxHighlighterFactory"/>
     </extensions>
 
     <applicationListeners>
