@@ -1,4 +1,4 @@
-package com.github.yjl9903.intellijtaie.toolWindow
+package pascal.taie.intellij.toolWindow
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.diagnostic.thisLogger
@@ -8,8 +8,8 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.yjl9903.intellijtaie.MyBundle
-import com.github.yjl9903.intellijtaie.services.MyProjectService
+import pascal.taie.intellij.MyBundle
+import pascal.taie.intellij.services.MyProjectService
 import javax.swing.JButton
 
 

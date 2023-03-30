@@ -1,9 +1,9 @@
-package com.github.yjl9903.intellijtaie.services
+package pascal.taie.intellij.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import com.github.yjl9903.intellijtaie.MyBundle
+import pascal.taie.intellij.MyBundle
 
 @Service(Service.Level.PROJECT)
 class MyProjectService(project: Project) {

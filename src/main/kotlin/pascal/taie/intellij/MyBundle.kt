@@ -1,4 +1,4 @@
-package com.github.yjl9903.intellijtaie
+package pascal.taie.intellij
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

@@ -1,4 +1,4 @@
-package com.github.yjl9903.intellijtaie.listeners
+package pascal.taie.intellij.listeners
 
 import com.intellij.ide.FrameStateListener
 import com.intellij.openapi.diagnostic.thisLogger
