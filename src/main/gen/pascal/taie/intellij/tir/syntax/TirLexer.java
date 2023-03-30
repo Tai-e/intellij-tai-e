@@ -490,7 +490,7 @@ class TirLexer implements FlexLexer {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { yybegin(YYINITIAL); return SimpleTypes.KEY;
+            { yybegin(YYINITIAL); return TirTypes.KEY;
             } 
             // fall through
           case 8: break;
@@ -505,17 +505,17 @@ class TirLexer implements FlexLexer {
             // fall through
           case 10: break;
           case 4: 
-            { yybegin(YYINITIAL); return SimpleTypes.COMMENT;
+            { yybegin(YYINITIAL); return TirTypes.COMMENT;
             } 
             // fall through
           case 11: break;
           case 5: 
-            { yybegin(WAITING_VALUE); return SimpleTypes.SEPARATOR;
+            { yybegin(WAITING_VALUE); return TirTypes.SEPARATOR;
             } 
             // fall through
           case 12: break;
           case 6: 
-            { yybegin(YYINITIAL); return SimpleTypes.VALUE;
+            { yybegin(YYINITIAL); return TirTypes.VALUE;
             } 
             // fall through
           case 13: break;
