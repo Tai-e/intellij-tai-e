@@ -14,11 +14,19 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
 
         private val FIELD = createTextAttributesKey("TIR_FIELD", DefaultLanguageHighlighterColors.INSTANCE_FIELD)
 
-        private val LINE_NUMBER = createTextAttributesKey("TIR_LINE_NUMBER", DefaultLanguageHighlighterColors.INLAY_TEXT_WITHOUT_BACKGROUND);
+        private val NUMBER = createTextAttributesKey("TIR_NUMBER", DefaultLanguageHighlighterColors.NUMBER)
+
+        private val LINE_NUMBER =
+            createTextAttributesKey("TIR_LINE_NUMBER", DefaultLanguageHighlighterColors.INLAY_TEXT_WITHOUT_BACKGROUND);
 
         private val KEY_KEYS = arrayOf(KEY)
 
         private val FIELD_KEYS = arrayOf(FIELD)
+
+        private val STRING_KEYS =
+            arrayOf(createTextAttributesKey("TIR_STRING", DefaultLanguageHighlighterColors.STRING))
+
+        private val NUMBER_KEYS = arrayOf(NUMBER)
 
         private val LINE_NUMBER_KEYS = arrayOf(LINE_NUMBER)
 
@@ -31,15 +39,38 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
 
     override fun getTokenHighlights(tokenType: IElementType): Array<out TextAttributesKey?> {
         return when (tokenType) {
-            TirTypes.CLASS, TirTypes.MODIFIER, TirTypes.EXTENDS, TirTypes.IMPLEMENTS -> {
+            TirTypes.CLASS,
+            TirTypes.MODIFIER,
+            TirTypes.EXTENDS,
+            TirTypes.IMPLEMENTS,
+            TirTypes.RETURN,
+            TirTypes.TRY,
+            TirTypes.THROW,
+            TirTypes.CATCH,
+            TirTypes.NEW,
+            TirTypes.NEW_ARRAY,
+            TirTypes.INSTANCEOF,
+            TirTypes.IF,
+            TirTypes.GOTO -> {
                 KEY_KEYS
             }
+
             TirTypes.FIELD_IDENTIFIER -> {
                 FIELD_KEYS
             }
+
+            TirTypes.INTEGER, TirTypes.FLOAT -> {
+                NUMBER_KEYS
+            }
+
+            TirTypes.STRING_LITERAL -> {
+                STRING_KEYS
+            }
+
             TirTypes.LINE_NUMBER -> {
                 LINE_NUMBER_KEYS
             }
+
             else -> EMPTY_KEYS
         }
     }
