@@ -14,9 +14,13 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
 
         private val FIELD = createTextAttributesKey("TIR_FIELD", DefaultLanguageHighlighterColors.INSTANCE_FIELD)
 
+        private val LINE_NUMBER = createTextAttributesKey("TIR_LINE_NUMBER", DefaultLanguageHighlighterColors.LINE_COMMENT);
+
         private val KEY_KEYS = arrayOf(KEY)
 
         private val FIELD_KEYS = arrayOf(FIELD)
+
+        private val LINE_NUMBER_KEYS = arrayOf(LINE_NUMBER)
 
         private val EMPTY_KEYS = arrayOfNulls<TextAttributesKey>(0)
     }
@@ -26,11 +30,17 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
     }
 
     override fun getTokenHighlights(tokenType: IElementType): Array<out TextAttributesKey?> {
-        if (tokenType == TirTypes.CLASS || tokenType == TirTypes.MODIFIER || tokenType == TirTypes.EXTENDS || tokenType == TirTypes.IMPLEMENTS) {
-            return KEY_KEYS
-        } else if (tokenType == TirTypes.FIELD_IDENTIFIER) {
-            return FIELD_KEYS;
+        return when (tokenType) {
+            TirTypes.CLASS, TirTypes.MODIFIER, TirTypes.EXTENDS, TirTypes.IMPLEMENTS -> {
+                KEY_KEYS
+            }
+            TirTypes.FIELD_IDENTIFIER -> {
+                FIELD_KEYS;
+            }
+            TirTypes.LINE_NUMBER -> {
+                LINE_NUMBER_KEYS
+            }
+            else -> EMPTY_KEYS
         }
-        return EMPTY_KEYS;
     }
 }
