@@ -14,7 +14,7 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
 
         private val FIELD = createTextAttributesKey("TIR_FIELD", DefaultLanguageHighlighterColors.INSTANCE_FIELD)
 
-        private val LINE_NUMBER = createTextAttributesKey("TIR_LINE_NUMBER", DefaultLanguageHighlighterColors.LINE_COMMENT);
+        private val LINE_NUMBER = createTextAttributesKey("TIR_LINE_NUMBER", DefaultLanguageHighlighterColors.INLAY_TEXT_WITHOUT_BACKGROUND);
 
         private val KEY_KEYS = arrayOf(KEY)
 
