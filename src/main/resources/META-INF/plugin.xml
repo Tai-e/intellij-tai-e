@@ -9,10 +9,16 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="pascal.taie.intellij.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+<!--        <toolWindow factoryClass="pascal.taie.intellij.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>-->
+        <fileType name="Tai-e IR File"
+                  implementationClass="pascal.taie.intellij.languages.TirFileType"
+                  fieldName="INSTANCE"
+                  language="tir"
+                  extensions="tir"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="pascal.taie.intellij.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
+        <listener class="pascal.taie.intellij.listeners.MyFrameStateListener"
+                  topic="com.intellij.ide.FrameStateListener"/>
     </applicationListeners>
 </idea-plugin>
