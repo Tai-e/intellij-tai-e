@@ -1,4 +1,6 @@
 package pascal.taie.intellij.tir.syntax
 
-class TirLexerAdapter {
+import com.intellij.lexer.FlexAdapter
+
+class TirLexerAdapter : FlexAdapter(TirLexer(null)) {
 }

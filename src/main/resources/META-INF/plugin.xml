@@ -9,12 +9,14 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-<!--        <toolWindow factoryClass="pascal.taie.intellij.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>-->
+        <!-- <toolWindow factoryClass="pascal.taie.intellij.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>-->
         <fileType name="Tai-e IR File"
                   implementationClass="pascal.taie.intellij.tir.TirFileType"
                   fieldName="INSTANCE"
                   language="tir"
                   extensions="tir"/>
+        <lang.parserDefinition language="tir"
+                               implementationClass="pascal.taie.intellij.tir.TirParserDefinition"/>
     </extensions>
 
     <applicationListeners>
