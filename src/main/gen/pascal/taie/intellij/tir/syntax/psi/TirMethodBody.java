@@ -5,6 +5,12 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface TirProperty extends PsiElement {
+public interface TirMethodBody extends PsiElement {
+
+  @NotNull
+  List<TirMethodBodyLine> getMethodBodyLineList();
+
+  @NotNull
+  List<TirMethodBodyVar> getMethodBodyVarList();
 
 }

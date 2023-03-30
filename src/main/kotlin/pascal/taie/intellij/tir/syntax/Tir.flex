@@ -17,28 +17,55 @@ import pascal.taie.intellij.tir.syntax.TirTypes;
 
 CRLF=\R
 WHITE_SPACE=[\ \n\t\f]
-FIRST_VALUE_CHARACTER=[^ \n\f\\] | "\\"{CRLF} | "\\".
-VALUE_CHARACTER=[^\n\f\\] | "\\"{CRLF} | "\\".
-END_OF_LINE_COMMENT=("#"|"!")[^\r\n]*
-SEPARATOR=[:=]
-KEY_CHARACTER=[^:=\ \n\t\f\\] | "\\ "
+END_OF_LINE_COMMENT=("//")[^\r\n]*
+
+//KEY_CHARACTER=[^:=\ \n\t\f\\] | "\\ "
+//FIRST_VALUE_CHARACTER=[^ \n\f\\] | "\\"{CRLF} | "\\".
+//VALUE_CHARACTER=[^\n\f\\] | "\\"{CRLF} | "\\".
+IDENTIFIER_CHARACTER=[a-zA-Z$_%][a-zA-Z0-9$_\-]*
 
 %state WAITING_VALUE
 
 %%
 
-<YYINITIAL> {END_OF_LINE_COMMENT}                           { yybegin(YYINITIAL); return TirTypes.COMMENT; }
+final|static|public|private|protected|transient|volatile              { yybegin(YYINITIAL); return TirTypes.MODIFIER; }
 
-<YYINITIAL> {KEY_CHARACTER}+                                { yybegin(YYINITIAL); return TirTypes.KEY; }
+class                                                                 { yybegin(YYINITIAL); return TirTypes.CLASS; }
 
-<YYINITIAL> {SEPARATOR}                                     { yybegin(WAITING_VALUE); return TirTypes.SEPARATOR; }
+extends                                                               { yybegin(YYINITIAL); return TirTypes.EXTENDS; }
 
-<WAITING_VALUE> {CRLF}({CRLF}|{WHITE_SPACE})+               { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+implements                                                            { yybegin(YYINITIAL); return TirTypes.IMPLEMENTS; }
 
-<WAITING_VALUE> {WHITE_SPACE}+                              { yybegin(WAITING_VALUE); return TokenType.WHITE_SPACE; }
+,                                                                     { yybegin(YYINITIAL); return TirTypes.COMMA; }
 
-<WAITING_VALUE> {FIRST_VALUE_CHARACTER}{VALUE_CHARACTER}*   { yybegin(YYINITIAL); return TirTypes.VALUE; }
+;                                                                     { yybegin(YYINITIAL); return TirTypes.SEMICOLON; }
 
-({CRLF}|{WHITE_SPACE})+                                     { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+=                                                                     { yybegin(YYINITIAL); return TirTypes.EQUAL; }
 
-[^]                                                         { return TokenType.BAD_CHARACTER; }
+\(                                                                    { yybegin(YYINITIAL); return TirTypes.LPAREN; }
+
+\)                                                                    { yybegin(YYINITIAL); return TirTypes.RPAREN; }
+
+\[                                                                    { yybegin(YYINITIAL); return TirTypes.LBRACKET; }
+
+\]                                                                    { yybegin(YYINITIAL); return TirTypes.RBRACKET; }
+
+\{                                                                    { yybegin(YYINITIAL); return TirTypes.LBRACE; }
+
+\}                                                                    { yybegin(YYINITIAL); return TirTypes.RBRACE; }
+
+\[\d+@L\d*-?\d+\]                                                     { yybegin(YYINITIAL); return TirTypes.LINE_NUMBER; }
+
+<YYINITIAL> {END_OF_LINE_COMMENT}                                     { yybegin(YYINITIAL); return TirTypes.COMMENT; }
+
+<YYINITIAL> {IDENTIFIER_CHARACTER}(\.{IDENTIFIER_CHARACTER})*         { yybegin(YYINITIAL); return TirTypes.IDENTIFIER; }
+
+<YYINITIAL> \<{IDENTIFIER_CHARACTER}\>                                { yybegin(YYINITIAL); return TirTypes.IDENTIFIER; }
+
+<WAITING_VALUE> {CRLF}({CRLF}|{WHITE_SPACE})+                         { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+
+<WAITING_VALUE> {WHITE_SPACE}+                                        { yybegin(WAITING_VALUE); return TokenType.WHITE_SPACE; }
+
+({CRLF}|{WHITE_SPACE})+                                               { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+
+[^]                                                                   { return TokenType.BAD_CHARACTER; }

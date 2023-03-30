@@ -13,8 +13,32 @@
   tokenTypeClass="pascal.taie.intellij.tir.syntax.TirTokenType"
 }
 
-simpleFile ::= item_*
+tir_file ::= MODIFIER* CLASS IDENTIFIER class_extends? class_implements? LBRACE class_member* RBRACE
 
-private item_ ::= (property|COMMENT|CRLF)
+class_extends ::= EXTENDS identifier_list
 
-property ::= (KEY? SEPARATOR VALUE?) | KEY
+class_implements ::= IMPLEMENTS identifier_list
+
+class_member ::= field_def | method_def | COMMENT
+
+field_def ::= MODIFIER* identifier_type identifier_list SEMICOLON
+
+method_def ::= method_sig LBRACE method_body RBRACE
+
+method_sig ::= MODIFIER* identifier_type identifier_method LPAREN (identifier_type IDENTIFIER (COMMA identifier_type IDENTIFIER)*)? RPAREN
+
+method_body ::= (method_body_var | method_body_line)+
+
+method_body_var ::= identifier_type identifier_list SEMICOLON
+
+method_body_line ::= LINE_NUMBER method_body_stmt SEMICOLON
+
+// copy stmts and more
+method_body_stmt ::= IDENTIFIER EQUAL IDENTIFIER
+
+// helpers
+identifier_type ::= IDENTIFIER (LBRACKET RBRACKET)?
+
+identifier_method ::= IDENTIFIER
+
+identifier_list ::= IDENTIFIER (COMMA IDENTIFIER)*

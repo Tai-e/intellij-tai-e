@@ -11,14 +11,14 @@ import static pascal.taie.intellij.tir.syntax.TirTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import pascal.taie.intellij.tir.syntax.psi.*;
 
-public class TirPropertyImpl extends ASTWrapperPsiElement implements TirProperty {
+public class TirIdentifierListImpl extends ASTWrapperPsiElement implements TirIdentifierList {
 
-  public TirPropertyImpl(@NotNull ASTNode node) {
+  public TirIdentifierListImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull TirVisitor visitor) {
-    visitor.visitProperty(this);
+    visitor.visitIdentifierList(this);
   }
 
   @Override
