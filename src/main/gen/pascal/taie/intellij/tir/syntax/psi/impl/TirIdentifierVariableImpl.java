@@ -19,9 +19,9 @@ public class TirIdentifierVariableImpl extends TirNamedElementMixin implements T
     }
 
     @Override
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof TirVisitor) accept((TirVisitor)visitor);
-    else super.accept(visitor);
-  }
+    public void accept(@NotNull PsiElementVisitor visitor) {
+        if (visitor instanceof TirVisitor) accept((TirVisitor) visitor);
+        else super.accept(visitor);
+    }
 
 }

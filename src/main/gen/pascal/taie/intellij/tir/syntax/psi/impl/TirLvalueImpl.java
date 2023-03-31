@@ -26,20 +26,20 @@ public class TirLvalueImpl extends ASTWrapperPsiElement implements TirLvalue {
 
   @Override
   public void accept(@NotNull PsiElementVisitor visitor) {
-      if (visitor instanceof TirVisitor) accept((TirVisitor) visitor);
-      else super.accept(visitor);
+    if (visitor instanceof TirVisitor) accept((TirVisitor) visitor);
+    else super.accept(visitor);
   }
 
-    @Override
-    @Nullable
-    public TirFieldSig getFieldSig() {
-        return findChildByClass(TirFieldSig.class);
-    }
+  @Override
+  @Nullable
+  public TirFieldSig getFieldSig() {
+    return findChildByClass(TirFieldSig.class);
+  }
 
-    @Override
-    @NotNull
-    public List<TirIdentifierVariable> getIdentifierVariableList() {
-        return PsiTreeUtil.getChildrenOfTypeAsList(this, TirIdentifierVariable.class);
-    }
+  @Override
+  @NotNull
+  public List<TirIdentifierVariable> getIdentifierVariableList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirIdentifierVariable.class);
+  }
 
 }

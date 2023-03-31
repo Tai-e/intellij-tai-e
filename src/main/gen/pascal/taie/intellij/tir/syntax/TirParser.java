@@ -222,16 +222,16 @@ public class TirParser implements PsiParser, LightPsiParser {
         if (!nextTokenIs(builder_, IDENTIFIER)) return false;
         boolean result_;
         Marker marker_ = enter_section_(builder_);
-    result_ = consumeToken(builder_, IDENTIFIER);
-    exit_section_(builder_, marker_, IDENTIFIER_FIELD, result_);
-    return result_;
-  }
+        result_ = consumeToken(builder_, IDENTIFIER);
+        exit_section_(builder_, marker_, IDENTIFIER_FIELD, result_);
+        return result_;
+    }
 
-  /* ********************************************************** */
-  // identifier_field (COMMA identifier_field)*
-  public static boolean identifier_field_list(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "identifier_field_list")) return false;
-    if (!nextTokenIs(builder_, IDENTIFIER)) return false;
+    /* ********************************************************** */
+    // identifier_field (COMMA identifier_field)*
+    public static boolean identifier_field_list(PsiBuilder builder_, int level_) {
+        if (!recursion_guard_(builder_, level_, "identifier_field_list")) return false;
+        if (!nextTokenIs(builder_, IDENTIFIER)) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_);
     result_ = identifier_field(builder_, level_ + 1);
@@ -494,17 +494,17 @@ public class TirParser implements PsiParser, LightPsiParser {
     }
 
     // identifier_variable LBRACKET identifier_variable RBRACKET
-  private static boolean lvalue_1(PsiBuilder builder_, int level_) {
-      if (!recursion_guard_(builder_, level_, "lvalue_1")) return false;
-      boolean result_;
-      Marker marker_ = enter_section_(builder_);
-      result_ = identifier_variable(builder_, level_ + 1);
-      result_ = result_ && consumeToken(builder_, LBRACKET);
-      result_ = result_ && identifier_variable(builder_, level_ + 1);
-      result_ = result_ && consumeToken(builder_, RBRACKET);
-      exit_section_(builder_, marker_, null, result_);
-      return result_;
-  }
+    private static boolean lvalue_1(PsiBuilder builder_, int level_) {
+        if (!recursion_guard_(builder_, level_, "lvalue_1")) return false;
+        boolean result_;
+        Marker marker_ = enter_section_(builder_);
+        result_ = identifier_variable(builder_, level_ + 1);
+        result_ = result_ && consumeToken(builder_, LBRACKET);
+        result_ = result_ && identifier_variable(builder_, level_ + 1);
+        result_ = result_ && consumeToken(builder_, RBRACKET);
+        exit_section_(builder_, marker_, null, result_);
+        return result_;
+    }
 
   /* ********************************************************** */
   // (method_body_var | method_body_line | method_body_catch)+
@@ -854,25 +854,25 @@ public class TirParser implements PsiParser, LightPsiParser {
         if (!result_) result_ = unary_expr(builder_, level_ + 1);
         if (!result_) result_ = binary_expr(builder_, level_ + 1);
         if (!result_) result_ = rvalue_6(builder_, level_ + 1);
-    if (!result_) result_ = identifier_variable(builder_, level_ + 1);
-    if (!result_) result_ = consumeToken(builder_, FLOAT);
-    if (!result_) result_ = consumeToken(builder_, INTEGER);
-    if (!result_) result_ = consumeToken(builder_, STRING_LITERAL);
-    exit_section_(builder_, level_, marker_, result_, false, null);
-    return result_;
-  }
+        if (!result_) result_ = identifier_variable(builder_, level_ + 1);
+        if (!result_) result_ = consumeToken(builder_, FLOAT);
+        if (!result_) result_ = consumeToken(builder_, INTEGER);
+        if (!result_) result_ = consumeToken(builder_, STRING_LITERAL);
+        exit_section_(builder_, level_, marker_, result_, false, null);
+        return result_;
+    }
 
     // identifier_variable DOT field_sig
-  private static boolean rvalue_0(PsiBuilder builder_, int level_) {
-      if (!recursion_guard_(builder_, level_, "rvalue_0")) return false;
-      boolean result_;
-      Marker marker_ = enter_section_(builder_);
-      result_ = identifier_variable(builder_, level_ + 1);
-      result_ = result_ && consumeToken(builder_, DOT);
-      result_ = result_ && field_sig(builder_, level_ + 1);
-      exit_section_(builder_, marker_, null, result_);
-      return result_;
-  }
+    private static boolean rvalue_0(PsiBuilder builder_, int level_) {
+        if (!recursion_guard_(builder_, level_, "rvalue_0")) return false;
+        boolean result_;
+        Marker marker_ = enter_section_(builder_);
+        result_ = identifier_variable(builder_, level_ + 1);
+        result_ = result_ && consumeToken(builder_, DOT);
+        result_ = result_ && field_sig(builder_, level_ + 1);
+        exit_section_(builder_, marker_, null, result_);
+        return result_;
+    }
 
     // identifier_variable LBRACKET identifier_variable RBRACKET
   private static boolean rvalue_1(PsiBuilder builder_, int level_) {

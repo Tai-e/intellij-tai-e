@@ -26,16 +26,16 @@ public interface TirTypes {
     IElementType INVOKE_METHOD_REF = new TirElementType("INVOKE_METHOD_REF");
     IElementType LVALUE = new TirElementType("LVALUE");
     IElementType METHOD_BODY = new TirElementType("METHOD_BODY");
-  IElementType METHOD_BODY_CATCH = new TirElementType("METHOD_BODY_CATCH");
-  IElementType METHOD_BODY_LINE = new TirElementType("METHOD_BODY_LINE");
-  IElementType METHOD_BODY_STMT = new TirElementType("METHOD_BODY_STMT");
-  IElementType METHOD_BODY_VAR = new TirElementType("METHOD_BODY_VAR");
-  IElementType METHOD_DEF = new TirElementType("METHOD_DEF");
-  IElementType METHOD_SIG = new TirElementType("METHOD_SIG");
-  IElementType RVALUE = new TirElementType("RVALUE");
-  IElementType UNARY_EXPR = new TirElementType("UNARY_EXPR");
+    IElementType METHOD_BODY_CATCH = new TirElementType("METHOD_BODY_CATCH");
+    IElementType METHOD_BODY_LINE = new TirElementType("METHOD_BODY_LINE");
+    IElementType METHOD_BODY_STMT = new TirElementType("METHOD_BODY_STMT");
+    IElementType METHOD_BODY_VAR = new TirElementType("METHOD_BODY_VAR");
+    IElementType METHOD_DEF = new TirElementType("METHOD_DEF");
+    IElementType METHOD_SIG = new TirElementType("METHOD_SIG");
+    IElementType RVALUE = new TirElementType("RVALUE");
+    IElementType UNARY_EXPR = new TirElementType("UNARY_EXPR");
 
-  IElementType ADD_OP = new TirTokenType("ADD_OP");
+    IElementType ADD_OP = new TirTokenType("ADD_OP");
   IElementType AT = new TirTokenType("AT");
   IElementType BIT_OP = new TirTokenType("BIT_OP");
   IElementType CATCH = new TirTokenType("CATCH");

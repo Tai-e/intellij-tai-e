@@ -33,7 +33,7 @@ public class TirRvalueImpl extends ASTWrapperPsiElement implements TirRvalue {
   @Override
   @Nullable
   public TirFieldSig getFieldSig() {
-      return findChildByClass(TirFieldSig.class);
+    return findChildByClass(TirFieldSig.class);
   }
 
   @Override

@@ -16,48 +16,48 @@ public class TirVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-    public void visitClassImplements(@NotNull TirClassImplements o) {
-        visitPsiElement(o);
-    }
+  public void visitClassImplements(@NotNull TirClassImplements o) {
+    visitPsiElement(o);
+  }
 
-    public void visitClassMember(@NotNull TirClassMember o) {
-        visitPsiElement(o);
-    }
+  public void visitClassMember(@NotNull TirClassMember o) {
+    visitPsiElement(o);
+  }
 
-    public void visitFieldDef(@NotNull TirFieldDef o) {
-        visitPsiElement(o);
-    }
+  public void visitFieldDef(@NotNull TirFieldDef o) {
+    visitPsiElement(o);
+  }
 
-    public void visitFieldRef(@NotNull TirFieldRef o) {
-        visitPsiElement(o);
-    }
+  public void visitFieldRef(@NotNull TirFieldRef o) {
+    visitPsiElement(o);
+  }
 
-    public void visitFieldSig(@NotNull TirFieldSig o) {
-        visitPsiElement(o);
-    }
+  public void visitFieldSig(@NotNull TirFieldSig o) {
+    visitPsiElement(o);
+  }
 
-    public void visitIdentifierClass(@NotNull TirIdentifierClass o) {
-        visitPsiElement(o);
-    }
+  public void visitIdentifierClass(@NotNull TirIdentifierClass o) {
+    visitPsiElement(o);
+  }
 
-    public void visitIdentifierField(@NotNull TirIdentifierField o) {
-        visitPsiElement(o);
-    }
+  public void visitIdentifierField(@NotNull TirIdentifierField o) {
+    visitPsiElement(o);
+  }
 
-    public void visitIdentifierFieldList(@NotNull TirIdentifierFieldList o) {
-        visitPsiElement(o);
-    }
+  public void visitIdentifierFieldList(@NotNull TirIdentifierFieldList o) {
+    visitPsiElement(o);
+  }
 
-    public void visitIdentifierMethod(@NotNull TirIdentifierMethod o) {
-        visitPsiElement(o);
-    }
+  public void visitIdentifierMethod(@NotNull TirIdentifierMethod o) {
+    visitPsiElement(o);
+  }
 
-    public void visitIdentifierType(@NotNull TirIdentifierType o) {
+  public void visitIdentifierType(@NotNull TirIdentifierType o) {
     visitPsiElement(o);
   }
 
   public void visitIdentifierVariable(@NotNull TirIdentifierVariable o) {
-      visitNamedElement(o);
+    visitNamedElement(o);
   }
 
   public void visitInvokeArgumentList(@NotNull TirInvokeArgumentList o) {
@@ -101,23 +101,23 @@ public class TirVisitor extends PsiElementVisitor {
   }
 
   public void visitMethodSig(@NotNull TirMethodSig o) {
-      visitPsiElement(o);
+    visitPsiElement(o);
   }
 
-    public void visitRvalue(@NotNull TirRvalue o) {
-        visitPsiElement(o);
-    }
+  public void visitRvalue(@NotNull TirRvalue o) {
+    visitPsiElement(o);
+  }
 
-    public void visitUnaryExpr(@NotNull TirUnaryExpr o) {
-        visitPsiElement(o);
-    }
+  public void visitUnaryExpr(@NotNull TirUnaryExpr o) {
+    visitPsiElement(o);
+  }
 
-    public void visitNamedElement(@NotNull TirNamedElement o) {
-        visitPsiElement(o);
-    }
+  public void visitNamedElement(@NotNull TirNamedElement o) {
+    visitPsiElement(o);
+  }
 
-    public void visitPsiElement(@NotNull PsiElement o) {
-        visitElement(o);
-    }
+  public void visitPsiElement(@NotNull PsiElement o) {
+    visitElement(o);
+  }
 
 }
