@@ -27,4 +27,10 @@ public class TirMethodBodyCatchImpl extends ASTWrapperPsiElement implements TirM
     else super.accept(visitor);
   }
 
+  @Override
+  @NotNull
+  public TirIdentifierVariable getIdentifierVariable() {
+    return findNotNullChildByClass(TirIdentifierVariable.class);
+  }
+
 }

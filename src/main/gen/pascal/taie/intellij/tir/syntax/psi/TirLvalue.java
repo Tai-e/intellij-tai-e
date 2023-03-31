@@ -10,4 +10,7 @@ public interface TirLvalue extends PsiElement {
   @Nullable
   TirFieldRef getFieldRef();
 
+  @NotNull
+  TirIdentifierVariable getIdentifierVariable();
+
 }

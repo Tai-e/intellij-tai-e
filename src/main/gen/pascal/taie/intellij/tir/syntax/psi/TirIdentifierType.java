@@ -7,4 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public interface TirIdentifierType extends PsiElement {
 
+  @Nullable
+  TirIdentifierClass getIdentifierClass();
+
 }

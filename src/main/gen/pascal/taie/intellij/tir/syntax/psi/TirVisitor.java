@@ -27,19 +27,19 @@ public class TirVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitFieldIdentifier(@NotNull TirFieldIdentifier o) {
-    visitPsiElement(o);
-  }
-
-  public void visitFieldIdentifierList(@NotNull TirFieldIdentifierList o) {
-    visitPsiElement(o);
-  }
-
   public void visitFieldRef(@NotNull TirFieldRef o) {
     visitPsiElement(o);
   }
 
-  public void visitIdentifierList(@NotNull TirIdentifierList o) {
+  public void visitIdentifierClass(@NotNull TirIdentifierClass o) {
+    visitPsiElement(o);
+  }
+
+  public void visitIdentifierField(@NotNull TirIdentifierField o) {
+    visitPsiElement(o);
+  }
+
+  public void visitIdentifierFieldList(@NotNull TirIdentifierFieldList o) {
     visitPsiElement(o);
   }
 
@@ -48,6 +48,10 @@ public class TirVisitor extends PsiElementVisitor {
   }
 
   public void visitIdentifierType(@NotNull TirIdentifierType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitIdentifierVariable(@NotNull TirIdentifierVariable o) {
     visitPsiElement(o);
   }
 

@@ -22,13 +22,17 @@ END_OF_LINE_COMMENT=("//")[^\r\n]*
 //KEY_CHARACTER=[^:=\ \n\t\f\\] | "\\ "
 //FIRST_VALUE_CHARACTER=[^ \n\f\\] | "\\"{CRLF} | "\\".
 //VALUE_CHARACTER=[^\n\f\\] | "\\"{CRLF} | "\\".
-IDENTIFIER_CHARACTER=[a-zA-Z$_%][a-zA-Z0-9$_\-]*
+IDENTIFIER_CHARACTER=[a-zA-Z$_%][a-zA-Z0-9$_]*
 
 %state WAITING_VALUE
 
 %%
 
-final|static|public|private|protected|transient|volatile              { yybegin(YYINITIAL); return TirTypes.MODIFIER; }
+final|abstract|static|public|private|protected|transient|volatile     { yybegin(YYINITIAL); return TirTypes.MODIFIER; }
+
+invokespecial|invokestatic|invokedynamic|invokevirtual                { yybegin(YYINITIAL); return TirTypes.INVOKE_KEY; }
+
+interface                                                             { yybegin(YYINITIAL); return TirTypes.INTERFACE; }
 
 class                                                                 { yybegin(YYINITIAL); return TirTypes.CLASS; }
 
@@ -50,11 +54,13 @@ throw                                                                 { yybegin(
 
 catch                                                                 { yybegin(YYINITIAL); return TirTypes.CATCH; }
 
-at                                                                   { yybegin(YYINITIAL); return TirTypes.AT; }
+at                                                                    { yybegin(YYINITIAL); return TirTypes.AT; }
 
 return                                                                { yybegin(YYINITIAL); return TirTypes.RETURN; }
 
 instanceof                                                            { yybegin(YYINITIAL); return TirTypes.INSTANCEOF; }
+
+null-type                                                             { yybegin(YYINITIAL); return TirTypes.NULL_TYPE; }
 
 ,                                                                     { yybegin(YYINITIAL); return TirTypes.COMMA; }
 
@@ -108,9 +114,9 @@ instanceof                                                            { yybegin(
 
 <YYINITIAL> {END_OF_LINE_COMMENT}                                     { yybegin(YYINITIAL); return TirTypes.COMMENT; }
 
-<YYINITIAL> {IDENTIFIER_CHARACTER}(\.{IDENTIFIER_CHARACTER})*         { yybegin(YYINITIAL); return TirTypes.IDENTIFIER; }
+<YYINITIAL> \%{IDENTIFIER_CHARACTER}                                  { yybegin(YYINITIAL); return TirTypes.CONSTANT_IDENTIFIER; }
 
-<YYINITIAL> \<{IDENTIFIER_CHARACTER}\>                                { yybegin(YYINITIAL); return TirTypes.IDENTIFIER; }
+<YYINITIAL> {IDENTIFIER_CHARACTER}(\.{IDENTIFIER_CHARACTER})*         { yybegin(YYINITIAL); return TirTypes.IDENTIFIER; }
 
 <WAITING_VALUE> {CRLF}({CRLF}|{WHITE_SPACE})+                         { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
 

@@ -8,7 +8,7 @@ import com.intellij.psi.PsiElement;
 public interface TirFieldDef extends PsiElement {
 
   @NotNull
-  TirFieldIdentifierList getFieldIdentifierList();
+  TirIdentifierFieldList getIdentifierFieldList();
 
   @NotNull
   TirIdentifierType getIdentifierType();

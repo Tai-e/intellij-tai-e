@@ -29,6 +29,12 @@ public class TirInvokeExprImpl extends ASTWrapperPsiElement implements TirInvoke
 
   @Override
   @Nullable
+  public TirIdentifierVariable getIdentifierVariable() {
+    return findChildByClass(TirIdentifierVariable.class);
+  }
+
+  @Override
+  @Nullable
   public TirInvokeArgumentList getInvokeArgumentList() {
     return findChildByClass(TirInvokeArgumentList.class);
   }

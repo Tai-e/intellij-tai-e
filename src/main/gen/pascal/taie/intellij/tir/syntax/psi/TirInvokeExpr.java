@@ -8,6 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface TirInvokeExpr extends PsiElement {
 
   @Nullable
+  TirIdentifierVariable getIdentifierVariable();
+
+  @Nullable
   TirInvokeArgumentList getInvokeArgumentList();
 
   @NotNull

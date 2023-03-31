@@ -47,6 +47,12 @@ public class TirRvalueImpl extends ASTWrapperPsiElement implements TirRvalue {
 
   @Override
   @Nullable
+  public TirIdentifierVariable getIdentifierVariable() {
+    return findChildByClass(TirIdentifierVariable.class);
+  }
+
+  @Override
+  @Nullable
   public TirInvokeExpr getInvokeExpr() {
     return findChildByClass(TirInvokeExpr.class);
   }

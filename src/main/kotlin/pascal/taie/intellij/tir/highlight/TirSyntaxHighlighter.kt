@@ -1,11 +1,14 @@
-package pascal.taie.intellij.tir.syntax
+package pascal.taie.intellij.tir.highlight
 
 import com.intellij.lexer.Lexer
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
+import com.intellij.openapi.editor.HighlighterColors
 import com.intellij.openapi.editor.colors.TextAttributesKey
 import com.intellij.openapi.editor.colors.TextAttributesKey.createTextAttributesKey
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase
 import com.intellij.psi.tree.IElementType
+import pascal.taie.intellij.tir.syntax.TirLexerAdapter
+import pascal.taie.intellij.tir.syntax.TirTypes
 
 
 class TirSyntaxHighlighter : SyntaxHighlighterBase() {
@@ -23,12 +26,17 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
 
         private val FIELD_KEYS = arrayOf(FIELD)
 
+        private val INVOKE_KEYS =
+            arrayOf(createTextAttributesKey("TIR_INVOKE", DefaultLanguageHighlighterColors.FUNCTION_CALL))
+
         private val STRING_KEYS =
             arrayOf(createTextAttributesKey("TIR_STRING", DefaultLanguageHighlighterColors.STRING))
 
         private val NUMBER_KEYS = arrayOf(NUMBER)
 
         private val LINE_NUMBER_KEYS = arrayOf(LINE_NUMBER)
+
+        private val BAD_KEYS = arrayOf(createTextAttributesKey("TIR_BAD", HighlighterColors.BAD_CHARACTER))
 
         private val EMPTY_KEYS = arrayOfNulls<TextAttributesKey>(0)
     }
@@ -40,6 +48,7 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
     override fun getTokenHighlights(tokenType: IElementType): Array<out TextAttributesKey?> {
         return when (tokenType) {
             TirTypes.CLASS,
+            TirTypes.INTERFACE,
             TirTypes.MODIFIER,
             TirTypes.EXTENDS,
             TirTypes.IMPLEMENTS,
@@ -49,14 +58,15 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
             TirTypes.CATCH,
             TirTypes.NEW,
             TirTypes.NEW_ARRAY,
+            TirTypes.NULL_TYPE,
             TirTypes.INSTANCEOF,
             TirTypes.IF,
             TirTypes.GOTO -> {
                 KEY_KEYS
             }
 
-            TirTypes.FIELD_IDENTIFIER -> {
-                FIELD_KEYS
+            TirTypes.INVOKE_KEY -> {
+                INVOKE_KEYS
             }
 
             TirTypes.INTEGER, TirTypes.FLOAT -> {

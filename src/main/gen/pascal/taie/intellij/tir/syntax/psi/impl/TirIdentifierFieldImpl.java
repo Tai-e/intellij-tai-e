@@ -11,26 +11,20 @@ import static pascal.taie.intellij.tir.syntax.TirTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import pascal.taie.intellij.tir.syntax.psi.*;
 
-public class TirFieldIdentifierListImpl extends ASTWrapperPsiElement implements TirFieldIdentifierList {
+public class TirIdentifierFieldImpl extends ASTWrapperPsiElement implements TirIdentifierField {
 
-  public TirFieldIdentifierListImpl(@NotNull ASTNode node) {
+  public TirIdentifierFieldImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull TirVisitor visitor) {
-    visitor.visitFieldIdentifierList(this);
+    visitor.visitIdentifierField(this);
   }
 
   @Override
   public void accept(@NotNull PsiElementVisitor visitor) {
     if (visitor instanceof TirVisitor) accept((TirVisitor)visitor);
     else super.accept(visitor);
-  }
-
-  @Override
-  @NotNull
-  public List<TirFieldIdentifier> getFieldIdentifierList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirFieldIdentifier.class);
   }
 
 }

@@ -13,12 +13,13 @@ public interface TirTypes {
   IElementType CLASS_IMPLEMENTS = new TirElementType("CLASS_IMPLEMENTS");
   IElementType CLASS_MEMBER = new TirElementType("CLASS_MEMBER");
   IElementType FIELD_DEF = new TirElementType("FIELD_DEF");
-  IElementType FIELD_IDENTIFIER = new TirElementType("FIELD_IDENTIFIER");
-  IElementType FIELD_IDENTIFIER_LIST = new TirElementType("FIELD_IDENTIFIER_LIST");
   IElementType FIELD_REF = new TirElementType("FIELD_REF");
-  IElementType IDENTIFIER_LIST = new TirElementType("IDENTIFIER_LIST");
+  IElementType IDENTIFIER_CLASS = new TirElementType("IDENTIFIER_CLASS");
+  IElementType IDENTIFIER_FIELD = new TirElementType("IDENTIFIER_FIELD");
+  IElementType IDENTIFIER_FIELD_LIST = new TirElementType("IDENTIFIER_FIELD_LIST");
   IElementType IDENTIFIER_METHOD = new TirElementType("IDENTIFIER_METHOD");
   IElementType IDENTIFIER_TYPE = new TirElementType("IDENTIFIER_TYPE");
+  IElementType IDENTIFIER_VARIABLE = new TirElementType("IDENTIFIER_VARIABLE");
   IElementType INVOKE_ARGUMENT_LIST = new TirElementType("INVOKE_ARGUMENT_LIST");
   IElementType INVOKE_EXPR = new TirElementType("INVOKE_EXPR");
   IElementType INVOKE_METHOD_REF = new TirElementType("INVOKE_METHOD_REF");
@@ -42,6 +43,7 @@ public interface TirTypes {
   IElementType COLON = new TirTokenType("COLON");
   IElementType COMMA = new TirTokenType("COMMA");
   IElementType COMMENT = new TirTokenType("COMMENT");
+  IElementType CONSTANT_IDENTIFIER = new TirTokenType("CONSTANT_IDENTIFIER");
   IElementType DIV_OP = new TirTokenType("DIV_OP");
   IElementType DOT = new TirTokenType("DOT");
   IElementType EQUAL = new TirTokenType("EQUAL");
@@ -53,6 +55,8 @@ public interface TirTypes {
   IElementType IMPLEMENTS = new TirTokenType("IMPLEMENTS");
   IElementType INSTANCEOF = new TirTokenType("INSTANCEOF");
   IElementType INTEGER = new TirTokenType("INTEGER");
+  IElementType INTERFACE = new TirTokenType("INTERFACE");
+  IElementType INVOKE_KEY = new TirTokenType("INVOKE_KEY");
   IElementType LANGLE = new TirTokenType("LANGLE");
   IElementType LBRACE = new TirTokenType("LBRACE");
   IElementType LBRACKET = new TirTokenType("LBRACKET");
@@ -64,6 +68,7 @@ public interface TirTypes {
   IElementType NEW = new TirTokenType("NEW");
   IElementType NEW_ARRAY = new TirTokenType("NEW_ARRAY");
   IElementType NOT_OP = new TirTokenType("NOT_OP");
+  IElementType NULL_TYPE = new TirTokenType("NULL_TYPE");
   IElementType RANGLE = new TirTokenType("RANGLE");
   IElementType RBRACE = new TirTokenType("RBRACE");
   IElementType RBRACKET = new TirTokenType("RBRACKET");
@@ -93,23 +98,26 @@ public interface TirTypes {
       else if (type == FIELD_DEF) {
         return new TirFieldDefImpl(node);
       }
-      else if (type == FIELD_IDENTIFIER) {
-        return new TirFieldIdentifierImpl(node);
-      }
-      else if (type == FIELD_IDENTIFIER_LIST) {
-        return new TirFieldIdentifierListImpl(node);
-      }
       else if (type == FIELD_REF) {
         return new TirFieldRefImpl(node);
       }
-      else if (type == IDENTIFIER_LIST) {
-        return new TirIdentifierListImpl(node);
+      else if (type == IDENTIFIER_CLASS) {
+        return new TirIdentifierClassImpl(node);
+      }
+      else if (type == IDENTIFIER_FIELD) {
+        return new TirIdentifierFieldImpl(node);
+      }
+      else if (type == IDENTIFIER_FIELD_LIST) {
+        return new TirIdentifierFieldListImpl(node);
       }
       else if (type == IDENTIFIER_METHOD) {
         return new TirIdentifierMethodImpl(node);
       }
       else if (type == IDENTIFIER_TYPE) {
         return new TirIdentifierTypeImpl(node);
+      }
+      else if (type == IDENTIFIER_VARIABLE) {
+        return new TirIdentifierVariableImpl(node);
       }
       else if (type == INVOKE_ARGUMENT_LIST) {
         return new TirInvokeArgumentListImpl(node);

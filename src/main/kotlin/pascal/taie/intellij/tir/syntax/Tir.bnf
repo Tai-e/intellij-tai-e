@@ -13,20 +13,16 @@
   tokenTypeClass="pascal.taie.intellij.tir.syntax.TirTokenType"
 }
 
-tir_file ::= MODIFIER* CLASS IDENTIFIER class_extends? class_implements? LBRACE class_member* RBRACE
+tir_file ::= MODIFIER* (CLASS | INTERFACE) identifier_class class_extends? class_implements? LBRACE class_member* RBRACE
 
-class_extends ::= EXTENDS identifier_list
+class_extends ::= EXTENDS identifier_class (COMMA identifier_class)*
 
-class_implements ::= IMPLEMENTS identifier_list
+class_implements ::= IMPLEMENTS identifier_class (COMMA identifier_class)*
 
 class_member ::= field_def | method_def | COMMENT
 
 // Field def
-field_def ::= MODIFIER* identifier_type field_identifier_list SEMICOLON
-
-field_identifier_list ::= field_identifier (COMMA field_identifier)*
-
-field_identifier ::= IDENTIFIER
+field_def ::= MODIFIER* identifier_type identifier_field_list SEMICOLON
 // ---
 
 // Method def
@@ -36,56 +32,62 @@ method_sig ::= MODIFIER* identifier_type identifier_method LPAREN (identifier_ty
 
 method_body ::= (method_body_var | method_body_line | method_body_catch)+
 
-method_body_var ::= identifier_type identifier_list SEMICOLON
+method_body_var ::= identifier_type identifier_variable (COMMA identifier_variable)* SEMICOLON
 
 method_body_line ::= LINE_NUMBER method_body_stmt SEMICOLON
 
-method_body_catch ::= TRY LBRACKET INTEGER COMMA INTEGER RPAREN COMMA CATCH IDENTIFIER AT INTEGER
+method_body_catch ::= TRY LBRACKET INTEGER COMMA INTEGER RPAREN COMMA CATCH identifier_variable AT INTEGER
 
 // copy stmts and more
 method_body_stmt ::= lvalue EQUAL rvalue
-                   | IDENTIFIER EQUAL NEW identifier_type
-                   | IDENTIFIER EQUAL NEW_ARRAY identifier_type LBRACKET IDENTIFIER RBRACKET
+                   | identifier_variable EQUAL NEW identifier_type
+                   | identifier_variable EQUAL NEW_ARRAY identifier_type LBRACKET identifier_variable RBRACKET
                    | THROW identifier_type
-                   | CATCH IDENTIFIER
+                   | CATCH identifier_variable
                    | invoke_expr
                    | IF LPAREN (unary_expr | binary_expr | IDENTIFIER) RPAREN GOTO INTEGER
                    | GOTO INTEGER
-                   | RETURN IDENTIFIER?
+                   | RETURN identifier_variable?
 
-lvalue ::= IDENTIFIER DOT LANGLE field_ref RANGLE
-         | IDENTIFIER LBRACKET IDENTIFIER RBRACKET
-         | IDENTIFIER
+lvalue ::= identifier_variable DOT LANGLE field_ref RANGLE
+         | identifier_variable LBRACKET IDENTIFIER RBRACKET
+         | identifier_variable
 
-rvalue ::= IDENTIFIER DOT LANGLE field_ref RANGLE
-         | IDENTIFIER LBRACKET IDENTIFIER RBRACKET
+rvalue ::= identifier_variable DOT LANGLE field_ref RANGLE
+         | identifier_variable LBRACKET IDENTIFIER RBRACKET
          | LPAREN identifier_type RPAREN IDENTIFIER
          | invoke_expr
          | unary_expr
          | binary_expr
-         | IDENTIFIER INSTANCEOF identifier_type
-         | IDENTIFIER
+         | identifier_variable INSTANCEOF identifier_type
+         | identifier_variable
          | FLOAT
          | INTEGER
          | STRING_LITERAL
 
 field_ref ::= IDENTIFIER COLON identifier_type IDENTIFIER
 
-unary_expr ::= (ADD_OP | SUB_OP | NOT_OP) IDENTIFIER
+unary_expr ::= (ADD_OP | SUB_OP | NOT_OP) identifier_variable
 
-binary_expr ::= IDENTIFIER (LANGLE | RANGLE | CMP_OP | BIT_OP | ADD_OP | SUB_OP | MUL_OP | DIV_OP | MOD_OP) IDENTIFIER
+binary_expr ::= identifier_variable (LANGLE | RANGLE | CMP_OP | BIT_OP | ADD_OP | SUB_OP | MUL_OP | DIV_OP | MOD_OP) identifier_variable
 
 // invoke method
-invoke_expr ::= IDENTIFIER (IDENTIFIER DOT)? LANGLE invoke_method_ref RANGLE LPAREN invoke_argument_list? RPAREN
+invoke_expr ::= INVOKE_KEY (identifier_variable DOT)? LANGLE invoke_method_ref RANGLE LPAREN invoke_argument_list? RPAREN
 
-invoke_method_ref ::= IDENTIFIER COLON identifier_type IDENTIFIER LPAREN (identifier_type (COMMA identifier_type)*)? RPAREN
+invoke_method_ref ::= identifier_class COLON identifier_type identifier_method LPAREN (identifier_type (COMMA identifier_type)*)? RPAREN
 
-invoke_argument_list ::= IDENTIFIER (COMMA IDENTIFIER)*
+invoke_argument_list ::= identifier_variable (COMMA identifier_variable)*
 // ---
 
 // helpers
-identifier_type ::= IDENTIFIER (LBRACKET RBRACKET)?
+identifier_class ::= IDENTIFIER
 
-identifier_method ::= IDENTIFIER
+identifier_field ::= IDENTIFIER
 
-identifier_list ::= IDENTIFIER (COMMA IDENTIFIER)*
+identifier_method ::= IDENTIFIER | LANGLE IDENTIFIER RANGLE
+
+identifier_variable ::= IDENTIFIER | CONSTANT_IDENTIFIER
+
+identifier_type ::= identifier_class (LBRACKET RBRACKET)? | NULL_TYPE
+
+identifier_field_list ::= identifier_field (COMMA identifier_field)*

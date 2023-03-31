@@ -41,6 +41,12 @@ public class TirMethodBodyStmtImpl extends ASTWrapperPsiElement implements TirMe
 
   @Override
   @Nullable
+  public TirIdentifierVariable getIdentifierVariable() {
+    return findChildByClass(TirIdentifierVariable.class);
+  }
+
+  @Override
+  @Nullable
   public TirInvokeExpr getInvokeExpr() {
     return findChildByClass(TirInvokeExpr.class);
   }

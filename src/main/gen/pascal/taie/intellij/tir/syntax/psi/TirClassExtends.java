@@ -8,6 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface TirClassExtends extends PsiElement {
 
   @NotNull
-  TirIdentifierList getIdentifierList();
+  List<TirIdentifierClass> getIdentifierClassList();
 
 }

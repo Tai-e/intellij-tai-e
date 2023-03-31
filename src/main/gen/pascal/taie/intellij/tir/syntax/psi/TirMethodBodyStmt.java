@@ -14,6 +14,9 @@ public interface TirMethodBodyStmt extends PsiElement {
   TirIdentifierType getIdentifierType();
 
   @Nullable
+  TirIdentifierVariable getIdentifierVariable();
+
+  @Nullable
   TirInvokeExpr getInvokeExpr();
 
   @Nullable

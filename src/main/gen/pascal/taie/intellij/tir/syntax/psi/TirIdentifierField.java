@@ -5,9 +5,6 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface TirUnaryExpr extends PsiElement {
-
-  @NotNull
-  TirIdentifierVariable getIdentifierVariable();
+public interface TirIdentifierField extends PsiElement {
 
 }

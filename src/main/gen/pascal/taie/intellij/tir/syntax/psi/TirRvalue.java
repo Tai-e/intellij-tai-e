@@ -17,6 +17,9 @@ public interface TirRvalue extends PsiElement {
   TirIdentifierType getIdentifierType();
 
   @Nullable
+  TirIdentifierVariable getIdentifierVariable();
+
+  @Nullable
   TirInvokeExpr getInvokeExpr();
 
   @Nullable

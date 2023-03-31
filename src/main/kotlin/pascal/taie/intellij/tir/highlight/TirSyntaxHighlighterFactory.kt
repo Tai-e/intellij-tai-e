@@ -1,4 +1,4 @@
-package pascal.taie.intellij.tir.syntax
+package pascal.taie.intellij.tir.highlight
 
 import com.intellij.openapi.fileTypes.SyntaxHighlighter
 import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory

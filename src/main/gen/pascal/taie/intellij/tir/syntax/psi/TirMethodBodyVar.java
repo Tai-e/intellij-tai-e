@@ -8,9 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface TirMethodBodyVar extends PsiElement {
 
   @NotNull
-  TirIdentifierList getIdentifierList();
+  TirIdentifierType getIdentifierType();
 
   @NotNull
-  TirIdentifierType getIdentifierType();
+  List<TirIdentifierVariable> getIdentifierVariableList();
 
 }

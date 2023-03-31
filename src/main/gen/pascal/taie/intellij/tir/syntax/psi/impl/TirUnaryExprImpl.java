@@ -27,4 +27,10 @@ public class TirUnaryExprImpl extends ASTWrapperPsiElement implements TirUnaryEx
     else super.accept(visitor);
   }
 
+  @Override
+  @NotNull
+  public TirIdentifierVariable getIdentifierVariable() {
+    return findNotNullChildByClass(TirIdentifierVariable.class);
+  }
+
 }

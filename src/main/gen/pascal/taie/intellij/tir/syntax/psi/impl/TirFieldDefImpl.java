@@ -29,8 +29,8 @@ public class TirFieldDefImpl extends ASTWrapperPsiElement implements TirFieldDef
 
   @Override
   @NotNull
-  public TirFieldIdentifierList getFieldIdentifierList() {
-    return findNotNullChildByClass(TirFieldIdentifierList.class);
+  public TirIdentifierFieldList getIdentifierFieldList() {
+    return findNotNullChildByClass(TirIdentifierFieldList.class);
   }
 
   @Override

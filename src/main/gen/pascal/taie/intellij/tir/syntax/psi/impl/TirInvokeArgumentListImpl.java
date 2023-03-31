@@ -27,4 +27,10 @@ public class TirInvokeArgumentListImpl extends ASTWrapperPsiElement implements T
     else super.accept(visitor);
   }
 
+  @Override
+  @NotNull
+  public List<TirIdentifierVariable> getIdentifierVariableList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirIdentifierVariable.class);
+  }
+
 }

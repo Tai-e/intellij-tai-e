@@ -29,6 +29,18 @@ public class TirInvokeMethodRefImpl extends ASTWrapperPsiElement implements TirI
 
   @Override
   @NotNull
+  public TirIdentifierClass getIdentifierClass() {
+    return findNotNullChildByClass(TirIdentifierClass.class);
+  }
+
+  @Override
+  @NotNull
+  public TirIdentifierMethod getIdentifierMethod() {
+    return findNotNullChildByClass(TirIdentifierMethod.class);
+  }
+
+  @Override
+  @NotNull
   public List<TirIdentifierType> getIdentifierTypeList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, TirIdentifierType.class);
   }

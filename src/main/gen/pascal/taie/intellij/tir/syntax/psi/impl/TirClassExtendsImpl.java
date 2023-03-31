@@ -29,8 +29,8 @@ public class TirClassExtendsImpl extends ASTWrapperPsiElement implements TirClas
 
   @Override
   @NotNull
-  public TirIdentifierList getIdentifierList() {
-    return findNotNullChildByClass(TirIdentifierList.class);
+  public List<TirIdentifierClass> getIdentifierClassList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirIdentifierClass.class);
   }
 
 }

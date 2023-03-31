@@ -8,6 +8,12 @@ import com.intellij.psi.PsiElement;
 public interface TirInvokeMethodRef extends PsiElement {
 
   @NotNull
+  TirIdentifierClass getIdentifierClass();
+
+  @NotNull
+  TirIdentifierMethod getIdentifierMethod();
+
+  @NotNull
   List<TirIdentifierType> getIdentifierTypeList();
 
 }

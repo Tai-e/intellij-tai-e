@@ -29,14 +29,14 @@ public class TirMethodBodyVarImpl extends ASTWrapperPsiElement implements TirMet
 
   @Override
   @NotNull
-  public TirIdentifierList getIdentifierList() {
-    return findNotNullChildByClass(TirIdentifierList.class);
+  public TirIdentifierType getIdentifierType() {
+    return findNotNullChildByClass(TirIdentifierType.class);
   }
 
   @Override
   @NotNull
-  public TirIdentifierType getIdentifierType() {
-    return findNotNullChildByClass(TirIdentifierType.class);
+  public List<TirIdentifierVariable> getIdentifierVariableList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, TirIdentifierVariable.class);
   }
 
 }

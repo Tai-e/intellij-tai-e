@@ -7,4 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public interface TirBinaryExpr extends PsiElement {
 
+  @NotNull
+  List<TirIdentifierVariable> getIdentifierVariableList();
+
 }

@@ -5,6 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface TirFieldIdentifier extends PsiElement {
+public interface TirIdentifierFieldList extends PsiElement {
+
+  @NotNull
+  List<TirIdentifierField> getIdentifierFieldList();
 
 }

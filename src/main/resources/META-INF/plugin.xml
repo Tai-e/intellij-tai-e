@@ -19,6 +19,6 @@
                 implementationClass="pascal.taie.intellij.tir.TirParserDefinition"/>
         <lang.syntaxHighlighterFactory
                 language="tir"
-                implementationClass="pascal.taie.intellij.tir.syntax.TirSyntaxHighlighterFactory"/>
+                implementationClass="pascal.taie.intellij.tir.highlight.TirSyntaxHighlighterFactory"/>
     </extensions>
 </idea-plugin>

@@ -27,4 +27,10 @@ public class TirIdentifierTypeImpl extends ASTWrapperPsiElement implements TirId
     else super.accept(visitor);
   }
 
+  @Override
+  @Nullable
+  public TirIdentifierClass getIdentifierClass() {
+    return findChildByClass(TirIdentifierClass.class);
+  }
+
 }
