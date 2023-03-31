@@ -1,9 +1,8 @@
 // This is a generated file. Not intended for manual editing.
 package pascal.taie.intellij.tir.syntax.psi;
 
-import java.util.List;
-import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
+import org.jetbrains.annotations.Nullable;
 
 public interface TirRvalue extends PsiElement {
 
@@ -11,7 +10,7 @@ public interface TirRvalue extends PsiElement {
   TirBinaryExpr getBinaryExpr();
 
   @Nullable
-  TirFieldRef getFieldRef();
+  TirFieldSig getFieldSig();
 
   @Nullable
   TirIdentifierType getIdentifierType();

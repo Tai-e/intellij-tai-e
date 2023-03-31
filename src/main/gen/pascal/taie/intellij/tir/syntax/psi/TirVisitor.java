@@ -1,9 +1,9 @@
 // This is a generated file. Not intended for manual editing.
 package pascal.taie.intellij.tir.syntax.psi;
 
-import org.jetbrains.annotations.*;
-import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiElementVisitor;
+import org.jetbrains.annotations.NotNull;
 
 public class TirVisitor extends PsiElementVisitor {
 
@@ -23,23 +23,27 @@ public class TirVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitFieldDef(@NotNull TirFieldDef o) {
-    visitPsiElement(o);
-  }
+    public void visitFieldDef(@NotNull TirFieldDef o) {
+        visitPsiElement(o);
+    }
 
-  public void visitFieldRef(@NotNull TirFieldRef o) {
-    visitPsiElement(o);
-  }
+    public void visitFieldRef(@NotNull TirFieldRef o) {
+        visitPsiElement(o);
+    }
 
-  public void visitIdentifierClass(@NotNull TirIdentifierClass o) {
-    visitPsiElement(o);
-  }
+    public void visitFieldSig(@NotNull TirFieldSig o) {
+        visitPsiElement(o);
+    }
 
-  public void visitIdentifierField(@NotNull TirIdentifierField o) {
-    visitPsiElement(o);
-  }
+    public void visitIdentifierClass(@NotNull TirIdentifierClass o) {
+        visitPsiElement(o);
+    }
 
-  public void visitIdentifierFieldList(@NotNull TirIdentifierFieldList o) {
+    public void visitIdentifierField(@NotNull TirIdentifierField o) {
+        visitPsiElement(o);
+    }
+
+    public void visitIdentifierFieldList(@NotNull TirIdentifierFieldList o) {
     visitPsiElement(o);
   }
 

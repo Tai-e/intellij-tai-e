@@ -1,16 +1,18 @@
 // This is a generated file. Not intended for manual editing.
 package pascal.taie.intellij.tir.syntax.psi;
 
-import java.util.List;
-import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public interface TirLvalue extends PsiElement {
 
   @Nullable
-  TirFieldRef getFieldRef();
+  TirFieldSig getFieldSig();
 
-  @NotNull
-  TirIdentifierVariable getIdentifierVariable();
+    @NotNull
+    List<TirIdentifierVariable> getIdentifierVariableList();
 
 }

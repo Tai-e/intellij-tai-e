@@ -1,9 +1,9 @@
 // This is a generated file. Not intended for manual editing.
 package pascal.taie.intellij.tir.syntax;
 
-import com.intellij.psi.tree.IElementType;
-import com.intellij.psi.PsiElement;
 import com.intellij.lang.ASTNode;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.tree.IElementType;
 import pascal.taie.intellij.tir.syntax.psi.impl.*;
 
 public interface TirTypes {
@@ -14,7 +14,8 @@ public interface TirTypes {
   IElementType CLASS_MEMBER = new TirElementType("CLASS_MEMBER");
   IElementType FIELD_DEF = new TirElementType("FIELD_DEF");
   IElementType FIELD_REF = new TirElementType("FIELD_REF");
-  IElementType IDENTIFIER_CLASS = new TirElementType("IDENTIFIER_CLASS");
+    IElementType FIELD_SIG = new TirElementType("FIELD_SIG");
+    IElementType IDENTIFIER_CLASS = new TirElementType("IDENTIFIER_CLASS");
   IElementType IDENTIFIER_FIELD = new TirElementType("IDENTIFIER_FIELD");
   IElementType IDENTIFIER_FIELD_LIST = new TirElementType("IDENTIFIER_FIELD_LIST");
   IElementType IDENTIFIER_METHOD = new TirElementType("IDENTIFIER_METHOD");
@@ -100,64 +101,47 @@ public interface TirTypes {
         return new TirFieldDefImpl(node);
       }
       else if (type == FIELD_REF) {
-        return new TirFieldRefImpl(node);
-      }
-      else if (type == IDENTIFIER_CLASS) {
-        return new TirIdentifierClassImpl(node);
-      }
-      else if (type == IDENTIFIER_FIELD) {
-        return new TirIdentifierFieldImpl(node);
-      }
-      else if (type == IDENTIFIER_FIELD_LIST) {
-        return new TirIdentifierFieldListImpl(node);
-      }
-      else if (type == IDENTIFIER_METHOD) {
-        return new TirIdentifierMethodImpl(node);
-      }
-      else if (type == IDENTIFIER_TYPE) {
-        return new TirIdentifierTypeImpl(node);
-      }
-      else if (type == IDENTIFIER_VARIABLE) {
-        return new TirIdentifierVariableImpl(node);
-      }
-      else if (type == INVOKE_ARGUMENT_LIST) {
-        return new TirInvokeArgumentListImpl(node);
-      }
-      else if (type == INVOKE_EXPR) {
-        return new TirInvokeExprImpl(node);
-      }
-      else if (type == INVOKE_METHOD_REF) {
-        return new TirInvokeMethodRefImpl(node);
-      }
-      else if (type == LVALUE) {
-        return new TirLvalueImpl(node);
-      }
-      else if (type == METHOD_BODY) {
-        return new TirMethodBodyImpl(node);
-      }
-      else if (type == METHOD_BODY_CATCH) {
-        return new TirMethodBodyCatchImpl(node);
-      }
-      else if (type == METHOD_BODY_LINE) {
-        return new TirMethodBodyLineImpl(node);
-      }
-      else if (type == METHOD_BODY_STMT) {
-        return new TirMethodBodyStmtImpl(node);
-      }
-      else if (type == METHOD_BODY_VAR) {
-        return new TirMethodBodyVarImpl(node);
-      }
-      else if (type == METHOD_DEF) {
-        return new TirMethodDefImpl(node);
-      }
-      else if (type == METHOD_SIG) {
-        return new TirMethodSigImpl(node);
-      }
-      else if (type == RVALUE) {
-        return new TirRvalueImpl(node);
-      }
-      else if (type == UNARY_EXPR) {
-        return new TirUnaryExprImpl(node);
+          return new TirFieldRefImpl(node);
+      } else if (type == FIELD_SIG) {
+          return new TirFieldSigImpl(node);
+      } else if (type == IDENTIFIER_CLASS) {
+          return new TirIdentifierClassImpl(node);
+      } else if (type == IDENTIFIER_FIELD) {
+          return new TirIdentifierFieldImpl(node);
+      } else if (type == IDENTIFIER_FIELD_LIST) {
+          return new TirIdentifierFieldListImpl(node);
+      } else if (type == IDENTIFIER_METHOD) {
+          return new TirIdentifierMethodImpl(node);
+      } else if (type == IDENTIFIER_TYPE) {
+          return new TirIdentifierTypeImpl(node);
+      } else if (type == IDENTIFIER_VARIABLE) {
+          return new TirIdentifierVariableImpl(node);
+      } else if (type == INVOKE_ARGUMENT_LIST) {
+          return new TirInvokeArgumentListImpl(node);
+      } else if (type == INVOKE_EXPR) {
+          return new TirInvokeExprImpl(node);
+      } else if (type == INVOKE_METHOD_REF) {
+          return new TirInvokeMethodRefImpl(node);
+      } else if (type == LVALUE) {
+          return new TirLvalueImpl(node);
+      } else if (type == METHOD_BODY) {
+          return new TirMethodBodyImpl(node);
+      } else if (type == METHOD_BODY_CATCH) {
+          return new TirMethodBodyCatchImpl(node);
+      } else if (type == METHOD_BODY_LINE) {
+          return new TirMethodBodyLineImpl(node);
+      } else if (type == METHOD_BODY_STMT) {
+          return new TirMethodBodyStmtImpl(node);
+      } else if (type == METHOD_BODY_VAR) {
+          return new TirMethodBodyVarImpl(node);
+      } else if (type == METHOD_DEF) {
+          return new TirMethodDefImpl(node);
+      } else if (type == METHOD_SIG) {
+          return new TirMethodSigImpl(node);
+      } else if (type == RVALUE) {
+          return new TirRvalueImpl(node);
+      } else if (type == UNARY_EXPR) {
+          return new TirUnaryExprImpl(node);
       }
       throw new AssertionError("Unknown element type: " + type);
     }

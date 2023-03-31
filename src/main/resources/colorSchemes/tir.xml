@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <!--    <option name="TIR_INVOKE_KEY">-->
+    <!--        <value>-->
+    <!--            <option name="FOREGROUND" value="FF6972" />-->
+    <!--        </value>-->
+    <!--    </option>-->
+    <option name="TIR_INVOKE_KEY">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+    <option name="TIR_TYPE">
+        <value>
+            <option name="FONT_TYPE" value="1"/>
+        </value>
+    </option>
+</list>

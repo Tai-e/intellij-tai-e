@@ -15,7 +15,9 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
     companion object {
         val KEY = createTextAttributesKey("TIR_KEY", DefaultLanguageHighlighterColors.KEYWORD)
 
-        val INVOKE_KEY = createTextAttributesKey("TIR_INVOKE", DefaultLanguageHighlighterColors.FUNCTION_CALL)
+        val TYPE = createTextAttributesKey("TIR_TYPE", DefaultLanguageHighlighterColors.CLASS_NAME)
+
+        val INVOKE_KEY = createTextAttributesKey("TIR_INVOKE_KEY", DefaultLanguageHighlighterColors.FUNCTION_CALL)
 
         val STATIC_METHOD = createTextAttributesKey("TIR_STATIC_METHOD", DefaultLanguageHighlighterColors.STATIC_METHOD)
 
@@ -37,6 +39,8 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
             createTextAttributesKey("TIR_LINE_NUMBER", DefaultLanguageHighlighterColors.INLAY_TEXT_WITHOUT_BACKGROUND)
 
         private val KEY_KEYS = arrayOf(KEY)
+
+        private val TYPE_KEYS = arrayOf(TYPE)
 
         private val FIELD_KEYS = arrayOf(STATIC_FIELD, INSTANCE_FIELD)
 

@@ -50,12 +50,12 @@ method_body_stmt ::= lvalue EQUAL rvalue
                    | RETURN identifier_variable?
                    | NOP
 
-lvalue ::= identifier_variable DOT LANGLE field_ref RANGLE
-         | identifier_variable LBRACKET IDENTIFIER RBRACKET
+lvalue ::= identifier_variable DOT field_sig
+         | identifier_variable LBRACKET identifier_variable RBRACKET
          | identifier_variable
 
-rvalue ::= identifier_variable DOT LANGLE field_ref RANGLE
-         | identifier_variable LBRACKET IDENTIFIER RBRACKET
+rvalue ::= identifier_variable DOT field_sig
+         | identifier_variable LBRACKET identifier_variable RBRACKET
          | LPAREN identifier_type RPAREN IDENTIFIER
          | invoke_expr
          | unary_expr
@@ -66,6 +66,8 @@ rvalue ::= identifier_variable DOT LANGLE field_ref RANGLE
          | INTEGER
          | STRING_LITERAL
 
+field_sig ::= LANGLE field_ref RANGLE
+
 field_ref ::= IDENTIFIER COLON identifier_type IDENTIFIER
 
 unary_expr ::= (ADD_OP | SUB_OP | NOT_OP) identifier_variable
@@ -73,9 +75,9 @@ unary_expr ::= (ADD_OP | SUB_OP | NOT_OP) identifier_variable
 binary_expr ::= identifier_variable (LANGLE | RANGLE | CMP_OP | BIT_OP | ADD_OP | SUB_OP | MUL_OP | DIV_OP | MOD_OP) identifier_variable
 
 // invoke method
-invoke_expr ::= INVOKE_KEY (identifier_variable DOT)? LANGLE invoke_method_ref RANGLE LPAREN invoke_argument_list? RPAREN
+invoke_expr ::= INVOKE_KEY (identifier_variable DOT)? invoke_method_ref LPAREN invoke_argument_list? RPAREN
 
-invoke_method_ref ::= identifier_class COLON identifier_type identifier_method LPAREN (identifier_type (COMMA identifier_type)*)? RPAREN
+invoke_method_ref ::= LANGLE identifier_class COLON identifier_type identifier_method LPAREN (identifier_type (COMMA identifier_type)*)? RPAREN RANGLE
 
 invoke_argument_list ::= identifier_variable (COMMA identifier_variable)*
 // ---

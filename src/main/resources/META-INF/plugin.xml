@@ -17,9 +17,14 @@
         <lang.parserDefinition
                 language="tir"
                 implementationClass="pascal.taie.intellij.tir.TirParserDefinition"/>
+        <annotator
+                language="tir"
+                implementationClass="pascal.taie.intellij.tir.syntax.TirAnnotator"/>
         <lang.syntaxHighlighterFactory
                 language="tir"
                 implementationClass="pascal.taie.intellij.tir.highlight.TirSyntaxHighlighterFactory"/>
+        <additionalTextAttributes scheme="Darcula" file="/colorSchemes/tir.xml"/>
+        <additionalTextAttributes scheme="Default" file="/colorSchemes/tir.xml"/>
         <colorSettingsPage
                 implementation="pascal.taie.intellij.tir.highlight.TirColorSettingsPage"/>
     </extensions>
