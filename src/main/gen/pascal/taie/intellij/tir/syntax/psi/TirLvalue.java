@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface TirLvalue extends PsiElement {
 
-  @Nullable
-  TirFieldSig getFieldSig();
+    @Nullable
+    TirFieldSig getFieldSig();
 
     @NotNull
     List<TirIdentifierVariable> getIdentifierVariableList();

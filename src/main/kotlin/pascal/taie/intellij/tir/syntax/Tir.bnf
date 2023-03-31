@@ -11,6 +11,8 @@
   elementTypeHolderClass="pascal.taie.intellij.tir.syntax.TirTypes"
   elementTypeClass="pascal.taie.intellij.tir.syntax.TirElementType"
   tokenTypeClass="pascal.taie.intellij.tir.syntax.TirTokenType"
+
+  psiImplUtilClass="pascal.taie.intellij.tir.syntax.TirPsiUtil"
 }
 
 tir_file ::= MODIFIER* (CLASS | INTERFACE) identifier_class class_extends? class_implements? LBRACE class_member* RBRACE
@@ -89,7 +91,10 @@ identifier_field ::= IDENTIFIER
 
 identifier_method ::= IDENTIFIER | LANGLE IDENTIFIER RANGLE
 
-identifier_variable ::= IDENTIFIER | CONSTANT_IDENTIFIER
+identifier_variable ::= IDENTIFIER | CONSTANT_IDENTIFIER  {
+    mixin="pascal.taie.intellij.tir.syntax.TirNamedElementMixin"
+    implements="pascal.taie.intellij.tir.syntax.TirNamedElement"
+}
 
 identifier_type ::= identifier_class (LBRACKET RBRACKET)? | NULL_TYPE
 
