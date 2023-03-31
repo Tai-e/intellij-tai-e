@@ -67,6 +67,7 @@ public interface TirTypes {
   IElementType MUL_OP = new TirTokenType("MUL_OP");
   IElementType NEW = new TirTokenType("NEW");
   IElementType NEW_ARRAY = new TirTokenType("NEW_ARRAY");
+  IElementType NOP = new TirTokenType("NOP");
   IElementType NOT_OP = new TirTokenType("NOT_OP");
   IElementType NULL_TYPE = new TirTokenType("NULL_TYPE");
   IElementType RANGLE = new TirTokenType("RANGLE");

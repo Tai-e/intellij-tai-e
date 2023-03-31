@@ -28,9 +28,9 @@ public class TirMethodDefImpl extends ASTWrapperPsiElement implements TirMethodD
   }
 
   @Override
-  @NotNull
+  @Nullable
   public TirMethodBody getMethodBody() {
-    return findNotNullChildByClass(TirMethodBody.class);
+    return findChildByClass(TirMethodBody.class);
   }
 
   @Override

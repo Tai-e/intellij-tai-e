@@ -555,6 +555,7 @@ public class TirParser implements PsiParser, LightPsiParser {
   //                    | IF LPAREN (unary_expr | binary_expr | IDENTIFIER) RPAREN GOTO INTEGER
   //                    | GOTO INTEGER
   //                    | RETURN identifier_variable?
+  //                    | NOP
   public static boolean method_body_stmt(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "method_body_stmt")) return false;
     boolean result_;
@@ -568,6 +569,7 @@ public class TirParser implements PsiParser, LightPsiParser {
     if (!result_) result_ = method_body_stmt_6(builder_, level_ + 1);
     if (!result_) result_ = parseTokens(builder_, 0, GOTO, INTEGER);
     if (!result_) result_ = method_body_stmt_8(builder_, level_ + 1);
+    if (!result_) result_ = consumeToken(builder_, NOP);
     exit_section_(builder_, level_, marker_, result_, false, null);
     return result_;
   }
@@ -711,16 +713,37 @@ public class TirParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // method_sig LBRACE method_body RBRACE
+  // method_sig (LBRACE method_body RBRACE | SEMICOLON)
   public static boolean method_def(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "method_def")) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_, level_, _NONE_, METHOD_DEF, "<method def>");
     result_ = method_sig(builder_, level_ + 1);
-    result_ = result_ && consumeToken(builder_, LBRACE);
+    result_ = result_ && method_def_1(builder_, level_ + 1);
+    exit_section_(builder_, level_, marker_, result_, false, null);
+    return result_;
+  }
+
+  // LBRACE method_body RBRACE | SEMICOLON
+  private static boolean method_def_1(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "method_def_1")) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = method_def_1_0(builder_, level_ + 1);
+    if (!result_) result_ = consumeToken(builder_, SEMICOLON);
+    exit_section_(builder_, marker_, null, result_);
+    return result_;
+  }
+
+  // LBRACE method_body RBRACE
+  private static boolean method_def_1_0(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "method_def_1_0")) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = consumeToken(builder_, LBRACE);
     result_ = result_ && method_body(builder_, level_ + 1);
     result_ = result_ && consumeToken(builder_, RBRACE);
-    exit_section_(builder_, level_, marker_, result_, false, null);
+    exit_section_(builder_, marker_, null, result_);
     return result_;
   }
 

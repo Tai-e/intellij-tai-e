@@ -7,7 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public interface TirMethodDef extends PsiElement {
 
-  @NotNull
+  @Nullable
   TirMethodBody getMethodBody();
 
   @NotNull

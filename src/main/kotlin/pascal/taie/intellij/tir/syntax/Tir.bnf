@@ -26,7 +26,7 @@ field_def ::= MODIFIER* identifier_type identifier_field_list SEMICOLON
 // ---
 
 // Method def
-method_def ::= method_sig LBRACE method_body RBRACE
+method_def ::= method_sig (LBRACE method_body RBRACE | SEMICOLON)
 
 method_sig ::= MODIFIER* identifier_type identifier_method LPAREN (identifier_type IDENTIFIER (COMMA identifier_type IDENTIFIER)*)? RPAREN
 
@@ -48,6 +48,7 @@ method_body_stmt ::= lvalue EQUAL rvalue
                    | IF LPAREN (unary_expr | binary_expr | IDENTIFIER) RPAREN GOTO INTEGER
                    | GOTO INTEGER
                    | RETURN identifier_variable?
+                   | NOP
 
 lvalue ::= identifier_variable DOT LANGLE field_ref RANGLE
          | identifier_variable LBRACKET IDENTIFIER RBRACKET

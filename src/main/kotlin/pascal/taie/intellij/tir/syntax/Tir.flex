@@ -28,100 +28,102 @@ IDENTIFIER_CHARACTER=[a-zA-Z$_%][a-zA-Z0-9$_]*
 
 %%
 
-final|abstract|static|public|private|protected|transient|volatile     { yybegin(YYINITIAL); return TirTypes.MODIFIER; }
+final|abstract|static|public|private|protected|transient|volatile       { yybegin(YYINITIAL); return TirTypes.MODIFIER; }
 
-invokespecial|invokestatic|invokedynamic|invokevirtual                { yybegin(YYINITIAL); return TirTypes.INVOKE_KEY; }
+invokespecial|invokestatic|invokedynamic|invokevirtual|invokeinterface  { yybegin(YYINITIAL); return TirTypes.INVOKE_KEY; }
 
-interface                                                             { yybegin(YYINITIAL); return TirTypes.INTERFACE; }
+interface                                                               { yybegin(YYINITIAL); return TirTypes.INTERFACE; }
 
-class                                                                 { yybegin(YYINITIAL); return TirTypes.CLASS; }
+class                                                                   { yybegin(YYINITIAL); return TirTypes.CLASS; }
 
-extends                                                               { yybegin(YYINITIAL); return TirTypes.EXTENDS; }
+extends                                                                 { yybegin(YYINITIAL); return TirTypes.EXTENDS; }
 
-implements                                                            { yybegin(YYINITIAL); return TirTypes.IMPLEMENTS; }
+implements                                                              { yybegin(YYINITIAL); return TirTypes.IMPLEMENTS; }
 
-if                                                                    { yybegin(YYINITIAL); return TirTypes.IF; }
+if                                                                      { yybegin(YYINITIAL); return TirTypes.IF; }
 
-goto                                                                  { yybegin(YYINITIAL); return TirTypes.GOTO; }
+goto                                                                    { yybegin(YYINITIAL); return TirTypes.GOTO; }
 
-new                                                                   { yybegin(YYINITIAL); return TirTypes.NEW; }
+nop                                                                     { yybegin(YYINITIAL); return TirTypes.NOP; }
 
-newarray                                                              { yybegin(YYINITIAL); return TirTypes.NEW_ARRAY; }
+new                                                                     { yybegin(YYINITIAL); return TirTypes.NEW; }
 
-try                                                                   { yybegin(YYINITIAL); return TirTypes.TRY; }
+newarray                                                                { yybegin(YYINITIAL); return TirTypes.NEW_ARRAY; }
 
-throw                                                                 { yybegin(YYINITIAL); return TirTypes.THROW; }
+try                                                                     { yybegin(YYINITIAL); return TirTypes.TRY; }
 
-catch                                                                 { yybegin(YYINITIAL); return TirTypes.CATCH; }
+throw                                                                   { yybegin(YYINITIAL); return TirTypes.THROW; }
 
-at                                                                    { yybegin(YYINITIAL); return TirTypes.AT; }
+catch                                                                   { yybegin(YYINITIAL); return TirTypes.CATCH; }
 
-return                                                                { yybegin(YYINITIAL); return TirTypes.RETURN; }
+at                                                                      { yybegin(YYINITIAL); return TirTypes.AT; }
 
-instanceof                                                            { yybegin(YYINITIAL); return TirTypes.INSTANCEOF; }
+return                                                                  { yybegin(YYINITIAL); return TirTypes.RETURN; }
 
-null-type                                                             { yybegin(YYINITIAL); return TirTypes.NULL_TYPE; }
+instanceof                                                              { yybegin(YYINITIAL); return TirTypes.INSTANCEOF; }
 
-,                                                                     { yybegin(YYINITIAL); return TirTypes.COMMA; }
+null-type                                                               { yybegin(YYINITIAL); return TirTypes.NULL_TYPE; }
 
-:                                                                     { yybegin(YYINITIAL); return TirTypes.COLON; }
+,                                                                       { yybegin(YYINITIAL); return TirTypes.COMMA; }
 
-;                                                                     { yybegin(YYINITIAL); return TirTypes.SEMICOLON; }
+:                                                                       { yybegin(YYINITIAL); return TirTypes.COLON; }
 
-(\+|-)?\d+\.\d*+F                                                     { yybegin(YYINITIAL); return TirTypes.FLOAT; }
+;                                                                       { yybegin(YYINITIAL); return TirTypes.SEMICOLON; }
 
-(\+|-)?\d+                                                            { yybegin(YYINITIAL); return TirTypes.INTEGER; }
+(\+|-)?\d+\.\d*+F                                                       { yybegin(YYINITIAL); return TirTypes.FLOAT; }
 
-\"([^\"\\]|\\.)*\"                                                    { yybegin(YYINITIAL); return TirTypes.STRING_LITERAL; }
+(\+|-)?\d+                                                              { yybegin(YYINITIAL); return TirTypes.INTEGER; }
 
-\+                                                                    { yybegin(YYINITIAL); return TirTypes.ADD_OP; }
+\"([^\"\\]|\\.)*\"                                                      { yybegin(YYINITIAL); return TirTypes.STRING_LITERAL; }
 
-\-                                                                    { yybegin(YYINITIAL); return TirTypes.SUB_OP; }
+\+                                                                      { yybegin(YYINITIAL); return TirTypes.ADD_OP; }
 
-\*                                                                    { yybegin(YYINITIAL); return TirTypes.MUL_OP; }
+\-                                                                      { yybegin(YYINITIAL); return TirTypes.SUB_OP; }
 
-\/                                                                    { yybegin(YYINITIAL); return TirTypes.DIV_OP; }
+\*                                                                      { yybegin(YYINITIAL); return TirTypes.MUL_OP; }
 
-\%                                                                    { yybegin(YYINITIAL); return TirTypes.MOD_OP; }
+\/                                                                      { yybegin(YYINITIAL); return TirTypes.DIV_OP; }
 
-==|\!=|<=|>=|cmpg                                                     { yybegin(YYINITIAL); return TirTypes.CMP_OP; }
+\%                                                                      { yybegin(YYINITIAL); return TirTypes.MOD_OP; }
 
-\<\<|\>\>|\>\>\>|\<\<\<|\||\&|\^|\~                                   { yybegin(YYINITIAL); return TirTypes.BIT_OP; }
+==|\!=|<=|>=|cmpg                                                       { yybegin(YYINITIAL); return TirTypes.CMP_OP; }
 
-\!                                                                    { yybegin(YYINITIAL); return TirTypes.NOT_OP; }
+\<\<|\>\>|\>\>\>|\<\<\<|\||\&|\^|\~                                     { yybegin(YYINITIAL); return TirTypes.BIT_OP; }
 
-=                                                                     { yybegin(YYINITIAL); return TirTypes.EQUAL; }
+\!                                                                      { yybegin(YYINITIAL); return TirTypes.NOT_OP; }
 
-\.                                                                    { yybegin(YYINITIAL); return TirTypes.DOT; }
+=                                                                       { yybegin(YYINITIAL); return TirTypes.EQUAL; }
 
-\(                                                                    { yybegin(YYINITIAL); return TirTypes.LPAREN; }
+\.                                                                      { yybegin(YYINITIAL); return TirTypes.DOT; }
 
-\)                                                                    { yybegin(YYINITIAL); return TirTypes.RPAREN; }
+\(                                                                      { yybegin(YYINITIAL); return TirTypes.LPAREN; }
 
-\[                                                                    { yybegin(YYINITIAL); return TirTypes.LBRACKET; }
+\)                                                                      { yybegin(YYINITIAL); return TirTypes.RPAREN; }
 
-\]                                                                    { yybegin(YYINITIAL); return TirTypes.RBRACKET; }
+\[                                                                      { yybegin(YYINITIAL); return TirTypes.LBRACKET; }
 
-\<                                                                    { yybegin(YYINITIAL); return TirTypes.LANGLE; }
+\]                                                                      { yybegin(YYINITIAL); return TirTypes.RBRACKET; }
 
-\>                                                                    { yybegin(YYINITIAL); return TirTypes.RANGLE; }
+\<                                                                      { yybegin(YYINITIAL); return TirTypes.LANGLE; }
 
-\{                                                                    { yybegin(YYINITIAL); return TirTypes.LBRACE; }
+\>                                                                      { yybegin(YYINITIAL); return TirTypes.RANGLE; }
 
-\}                                                                    { yybegin(YYINITIAL); return TirTypes.RBRACE; }
+\{                                                                      { yybegin(YYINITIAL); return TirTypes.LBRACE; }
 
-\[\d+@L\d*-?\d+\]                                                     { yybegin(YYINITIAL); return TirTypes.LINE_NUMBER; }
+\}                                                                      { yybegin(YYINITIAL); return TirTypes.RBRACE; }
 
-<YYINITIAL> {END_OF_LINE_COMMENT}                                     { yybegin(YYINITIAL); return TirTypes.COMMENT; }
+\[\d+@L\d*-?\d+\]                                                       { yybegin(YYINITIAL); return TirTypes.LINE_NUMBER; }
 
-<YYINITIAL> \%{IDENTIFIER_CHARACTER}                                  { yybegin(YYINITIAL); return TirTypes.CONSTANT_IDENTIFIER; }
+<YYINITIAL> {END_OF_LINE_COMMENT}                                       { yybegin(YYINITIAL); return TirTypes.COMMENT; }
 
-<YYINITIAL> {IDENTIFIER_CHARACTER}(\.{IDENTIFIER_CHARACTER})*         { yybegin(YYINITIAL); return TirTypes.IDENTIFIER; }
+<YYINITIAL> \%{IDENTIFIER_CHARACTER}                                    { yybegin(YYINITIAL); return TirTypes.CONSTANT_IDENTIFIER; }
 
-<WAITING_VALUE> {CRLF}({CRLF}|{WHITE_SPACE})+                         { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+<YYINITIAL> {IDENTIFIER_CHARACTER}(\.{IDENTIFIER_CHARACTER})*           { yybegin(YYINITIAL); return TirTypes.IDENTIFIER; }
 
-<WAITING_VALUE> {WHITE_SPACE}+                                        { yybegin(WAITING_VALUE); return TokenType.WHITE_SPACE; }
+<WAITING_VALUE> {CRLF}({CRLF}|{WHITE_SPACE})+                           { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
 
-({CRLF}|{WHITE_SPACE})+                                               { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+<WAITING_VALUE> {WHITE_SPACE}+                                          { yybegin(WAITING_VALUE); return TokenType.WHITE_SPACE; }
 
-[^]                                                                   { return TokenType.BAD_CHARACTER; }
+({CRLF}|{WHITE_SPACE})+                                                 { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+
+[^]                                                                     { return TokenType.BAD_CHARACTER; }
