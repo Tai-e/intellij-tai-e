@@ -232,16 +232,16 @@ public class TirParser implements PsiParser, LightPsiParser {
     public static boolean identifier_field_list(PsiBuilder builder_, int level_) {
         if (!recursion_guard_(builder_, level_, "identifier_field_list")) return false;
         if (!nextTokenIs(builder_, IDENTIFIER)) return false;
-    boolean result_;
-    Marker marker_ = enter_section_(builder_);
-    result_ = identifier_field(builder_, level_ + 1);
-    result_ = result_ && identifier_field_list_1(builder_, level_ + 1);
-    exit_section_(builder_, marker_, IDENTIFIER_FIELD_LIST, result_);
-    return result_;
-  }
+        boolean result_;
+        Marker marker_ = enter_section_(builder_);
+        result_ = identifier_field(builder_, level_ + 1);
+        result_ = result_ && identifier_field_list_1(builder_, level_ + 1);
+        exit_section_(builder_, marker_, IDENTIFIER_FIELD_LIST, result_);
+        return result_;
+    }
 
-  // (COMMA identifier_field)*
-  private static boolean identifier_field_list_1(PsiBuilder builder_, int level_) {
+    // (COMMA identifier_field)*
+    private static boolean identifier_field_list_1(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "identifier_field_list_1")) return false;
     while (true) {
       int pos_ = current_position_(builder_);
@@ -506,15 +506,15 @@ public class TirParser implements PsiParser, LightPsiParser {
         return result_;
     }
 
-  /* ********************************************************** */
-  // (method_body_var | method_body_line | method_body_catch)+
-  public static boolean method_body(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "method_body")) return false;
-    boolean result_;
-    Marker marker_ = enter_section_(builder_, level_, _NONE_, METHOD_BODY, "<method body>");
-    result_ = method_body_0(builder_, level_ + 1);
-    while (result_) {
-      int pos_ = current_position_(builder_);
+    /* ********************************************************** */
+    // (method_body_var | method_body_line | method_body_catch)+
+    public static boolean method_body(PsiBuilder builder_, int level_) {
+        if (!recursion_guard_(builder_, level_, "method_body")) return false;
+        boolean result_;
+        Marker marker_ = enter_section_(builder_, level_, _NONE_, METHOD_BODY, "<method body>");
+        result_ = method_body_0(builder_, level_ + 1);
+        while (result_) {
+            int pos_ = current_position_(builder_);
       if (!method_body_0(builder_, level_ + 1)) break;
       if (!empty_element_parsed_guard_(builder_, "method_body", pos_)) break;
     }
@@ -875,17 +875,17 @@ public class TirParser implements PsiParser, LightPsiParser {
     }
 
     // identifier_variable LBRACKET identifier_variable RBRACKET
-  private static boolean rvalue_1(PsiBuilder builder_, int level_) {
-      if (!recursion_guard_(builder_, level_, "rvalue_1")) return false;
-      boolean result_;
-      Marker marker_ = enter_section_(builder_);
-      result_ = identifier_variable(builder_, level_ + 1);
-      result_ = result_ && consumeToken(builder_, LBRACKET);
-      result_ = result_ && identifier_variable(builder_, level_ + 1);
-      result_ = result_ && consumeToken(builder_, RBRACKET);
-      exit_section_(builder_, marker_, null, result_);
-      return result_;
-  }
+    private static boolean rvalue_1(PsiBuilder builder_, int level_) {
+        if (!recursion_guard_(builder_, level_, "rvalue_1")) return false;
+        boolean result_;
+        Marker marker_ = enter_section_(builder_);
+        result_ = identifier_variable(builder_, level_ + 1);
+        result_ = result_ && consumeToken(builder_, LBRACKET);
+        result_ = result_ && identifier_variable(builder_, level_ + 1);
+        result_ = result_ && consumeToken(builder_, RBRACKET);
+        exit_section_(builder_, marker_, null, result_);
+        return result_;
+    }
 
   // LPAREN identifier_type RPAREN IDENTIFIER
   private static boolean rvalue_2(PsiBuilder builder_, int level_) {

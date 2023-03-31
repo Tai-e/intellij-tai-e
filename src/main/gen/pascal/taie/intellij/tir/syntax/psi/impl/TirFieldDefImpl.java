@@ -1,19 +1,14 @@
 // This is a generated file. Not intended for manual editing.
 package pascal.taie.intellij.tir.syntax.psi.impl;
 
-import java.util.List;
-
-import org.jetbrains.annotations.*;
-import com.intellij.lang.ASTNode;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiElementVisitor;
-import com.intellij.psi.util.PsiTreeUtil;
-
-import static pascal.taie.intellij.tir.syntax.TirTypes.*;
-
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
-import pascal.taie.intellij.tir.syntax.psi.*;
-import pascal.taie.intellij.tir.syntax.TirPsiUtil;
+import com.intellij.lang.ASTNode;
+import com.intellij.psi.PsiElementVisitor;
+import org.jetbrains.annotations.NotNull;
+import pascal.taie.intellij.tir.syntax.psi.TirFieldDef;
+import pascal.taie.intellij.tir.syntax.psi.TirIdentifierFieldList;
+import pascal.taie.intellij.tir.syntax.psi.TirIdentifierType;
+import pascal.taie.intellij.tir.syntax.psi.TirVisitor;
 
 public class TirFieldDefImpl extends ASTWrapperPsiElement implements TirFieldDef {
 

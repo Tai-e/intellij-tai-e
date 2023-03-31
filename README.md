@@ -1,8 +1,8 @@
 # intellij-tai-e
 
 ![Build](https://github.com/yjl9903/intellij-tai-e/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
+[![Version](https://img.shields.io/jetbrains/plugin/v/21388-tai-e.svg)](https://plugins.jetbrains.com/plugin/21388-tai-e)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/21388-tai-e.svg)](https://plugins.jetbrains.com/plugin/21388-tai-e)
 
 ## Template ToDo list
 
@@ -13,9 +13,9 @@
 - [x] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
 - [x] Review
   the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate)
+- [x] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate)
   for the first time.
-- [ ] Set the `PLUGIN_ID` in the above README badges.
+- [x] Set the `PLUGIN_ID` in the above README badges.
 - [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate)
   related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
 - [ ] Set

@@ -36,14 +36,14 @@ public interface TirTypes {
     IElementType UNARY_EXPR = new TirElementType("UNARY_EXPR");
 
     IElementType ADD_OP = new TirTokenType("ADD_OP");
-  IElementType AT = new TirTokenType("AT");
-  IElementType BIT_OP = new TirTokenType("BIT_OP");
-  IElementType CATCH = new TirTokenType("CATCH");
-  IElementType CLASS = new TirTokenType("CLASS");
-  IElementType CMP_OP = new TirTokenType("CMP_OP");
-  IElementType COLON = new TirTokenType("COLON");
-  IElementType COMMA = new TirTokenType("COMMA");
-  IElementType COMMENT = new TirTokenType("COMMENT");
+    IElementType AT = new TirTokenType("AT");
+    IElementType BIT_OP = new TirTokenType("BIT_OP");
+    IElementType CATCH = new TirTokenType("CATCH");
+    IElementType CLASS = new TirTokenType("CLASS");
+    IElementType CMP_OP = new TirTokenType("CMP_OP");
+    IElementType COLON = new TirTokenType("COLON");
+    IElementType COMMA = new TirTokenType("COMMA");
+    IElementType COMMENT = new TirTokenType("COMMENT");
   IElementType CONSTANT_IDENTIFIER = new TirTokenType("CONSTANT_IDENTIFIER");
   IElementType DIV_OP = new TirTokenType("DIV_OP");
   IElementType DOT = new TirTokenType("DOT");

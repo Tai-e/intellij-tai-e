@@ -26,8 +26,8 @@ public class TirLvalueImpl extends ASTWrapperPsiElement implements TirLvalue {
 
   @Override
   public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof TirVisitor) accept((TirVisitor) visitor);
-    else super.accept(visitor);
+      if (visitor instanceof TirVisitor) accept((TirVisitor) visitor);
+      else super.accept(visitor);
   }
 
   @Override
