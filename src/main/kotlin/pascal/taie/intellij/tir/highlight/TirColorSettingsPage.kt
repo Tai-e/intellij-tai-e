@@ -12,9 +12,15 @@ class TirColorSettingsPage : ColorSettingsPage {
     companion object {
         private val DESCRIPTORS = arrayOf(
             AttributesDescriptor("Key", TirSyntaxHighlighter.KEY),
-            AttributesDescriptor("Field", TirSyntaxHighlighter.FIELD),
+            AttributesDescriptor("Invoke key", TirSyntaxHighlighter.INVOKE_KEY),
+            AttributesDescriptor("Static field", TirSyntaxHighlighter.STATIC_FIELD),
+            AttributesDescriptor("Instance field", TirSyntaxHighlighter.INSTANCE_FIELD),
+            AttributesDescriptor("Static method", TirSyntaxHighlighter.STATIC_METHOD),
+            AttributesDescriptor("Instance method", TirSyntaxHighlighter.INSTANCE_METHOD),
+            AttributesDescriptor("Parameter", TirSyntaxHighlighter.PARAMETER),
             AttributesDescriptor("Line number", TirSyntaxHighlighter.LINE_NUMBER),
-            AttributesDescriptor("Number", TirSyntaxHighlighter.NUMBER)
+            AttributesDescriptor("Number", TirSyntaxHighlighter.NUMBER),
+            AttributesDescriptor("String", TirSyntaxHighlighter.STRING)
         )
     }
 

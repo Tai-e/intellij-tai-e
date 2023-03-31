@@ -15,22 +15,38 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
     companion object {
         val KEY = createTextAttributesKey("TIR_KEY", DefaultLanguageHighlighterColors.KEYWORD)
 
-        val FIELD = createTextAttributesKey("TIR_FIELD", DefaultLanguageHighlighterColors.INSTANCE_FIELD)
+        val INVOKE_KEY = createTextAttributesKey("TIR_INVOKE", DefaultLanguageHighlighterColors.FUNCTION_CALL)
+
+        val STATIC_METHOD = createTextAttributesKey("TIR_STATIC_METHOD", DefaultLanguageHighlighterColors.STATIC_METHOD)
+
+        val INSTANCE_METHOD =
+            createTextAttributesKey("TIR_INSTANCE_METHOD", DefaultLanguageHighlighterColors.INSTANCE_METHOD)
+
+        val STATIC_FIELD = createTextAttributesKey("TIR_STATIC_FIELD", DefaultLanguageHighlighterColors.STATIC_FIELD)
+
+        val INSTANCE_FIELD =
+            createTextAttributesKey("TIR_INSTANCE_FIELD", DefaultLanguageHighlighterColors.INSTANCE_FIELD)
+
+        val PARAMETER = createTextAttributesKey("TIR_PARAMETER", DefaultLanguageHighlighterColors.PARAMETER)
 
         val NUMBER = createTextAttributesKey("TIR_NUMBER", DefaultLanguageHighlighterColors.NUMBER)
+
+        val STRING = createTextAttributesKey("TIR_STRING", DefaultLanguageHighlighterColors.STRING)
 
         val LINE_NUMBER =
             createTextAttributesKey("TIR_LINE_NUMBER", DefaultLanguageHighlighterColors.INLAY_TEXT_WITHOUT_BACKGROUND)
 
         private val KEY_KEYS = arrayOf(KEY)
 
-        private val FIELD_KEYS = arrayOf(FIELD)
+        private val FIELD_KEYS = arrayOf(STATIC_FIELD, INSTANCE_FIELD)
 
-        private val INVOKE_KEYS =
-            arrayOf(createTextAttributesKey("TIR_INVOKE", DefaultLanguageHighlighterColors.FUNCTION_CALL))
+        private val METHOD_KEYS = arrayOf(STATIC_METHOD, INSTANCE_METHOD)
 
-        private val STRING_KEYS =
-            arrayOf(createTextAttributesKey("TIR_STRING", DefaultLanguageHighlighterColors.STRING))
+        private val PARAMETER_KEYS = arrayOf(PARAMETER)
+
+        private val INVOKE_KEYS = arrayOf(INVOKE_KEY)
+
+        private val STRING_KEYS = arrayOf(STRING)
 
         private val NUMBER_KEYS = arrayOf(NUMBER)
 
