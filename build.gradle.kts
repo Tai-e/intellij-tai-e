@@ -85,6 +85,14 @@ tasks {
         pathToPsiRoot.set("pascal/taie/intellij/tir/syntax/psi")
     }
 
+    // No searchable options found.
+    // If plugin is not supposed to provide custom settings exposed in UI,
+    // disable building searchable options to decrease the build time.
+    // See: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin-faq.html#how-to-disable-building-searchable-options
+    buildSearchableOptions {
+        enabled = false
+    }
+
     wrapper {
         gradleVersion = properties("gradleVersion").get()
     }
