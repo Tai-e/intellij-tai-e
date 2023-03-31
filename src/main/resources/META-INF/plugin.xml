@@ -20,5 +20,7 @@
         <lang.syntaxHighlighterFactory
                 language="tir"
                 implementationClass="pascal.taie.intellij.tir.highlight.TirSyntaxHighlighterFactory"/>
+        <colorSettingsPage
+                implementation="pascal.taie.intellij.tir.highlight.TirColorSettingsPage"/>
     </extensions>
 </idea-plugin>

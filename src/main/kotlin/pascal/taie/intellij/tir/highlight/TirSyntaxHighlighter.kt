@@ -13,14 +13,14 @@ import pascal.taie.intellij.tir.syntax.TirTypes
 
 class TirSyntaxHighlighter : SyntaxHighlighterBase() {
     companion object {
-        private val KEY = createTextAttributesKey("TIR_KEY", DefaultLanguageHighlighterColors.KEYWORD)
+        val KEY = createTextAttributesKey("TIR_KEY", DefaultLanguageHighlighterColors.KEYWORD)
 
-        private val FIELD = createTextAttributesKey("TIR_FIELD", DefaultLanguageHighlighterColors.INSTANCE_FIELD)
+        val FIELD = createTextAttributesKey("TIR_FIELD", DefaultLanguageHighlighterColors.INSTANCE_FIELD)
 
-        private val NUMBER = createTextAttributesKey("TIR_NUMBER", DefaultLanguageHighlighterColors.NUMBER)
+        val NUMBER = createTextAttributesKey("TIR_NUMBER", DefaultLanguageHighlighterColors.NUMBER)
 
-        private val LINE_NUMBER =
-            createTextAttributesKey("TIR_LINE_NUMBER", DefaultLanguageHighlighterColors.INLAY_TEXT_WITHOUT_BACKGROUND);
+        val LINE_NUMBER =
+            createTextAttributesKey("TIR_LINE_NUMBER", DefaultLanguageHighlighterColors.INLAY_TEXT_WITHOUT_BACKGROUND)
 
         private val KEY_KEYS = arrayOf(KEY)
 
