@@ -58,7 +58,7 @@ lvalue ::= identifier_variable DOT field_sig
 
 rvalue ::= identifier_variable DOT field_sig
          | identifier_variable LBRACKET identifier_variable RBRACKET
-         | LPAREN identifier_type RPAREN IDENTIFIER
+         | LPAREN identifier_type RPAREN identifier_variable
          | invoke_expr
          | unary_expr
          | binary_expr
