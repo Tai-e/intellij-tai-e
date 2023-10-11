@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>pascal.taie.intellij</id>
     <name>Tai-e</name>
-    <vendor>yjl9903</vendor>
+    <vendor>Tai-e</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
