@@ -1,6 +1,6 @@
 # intellij-tai-e
 
-![Build](https://github.com/yjl9903/intellij-tai-e/workflows/Build/badge.svg)
+![Build](https://github.com/Tai-e/intellij-tai-e/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/21388-tai-e.svg)](https://plugins.jetbrains.com/plugin/21388-tai-e)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/21388-tai-e.svg)](https://plugins.jetbrains.com/plugin/21388-tai-e)
 

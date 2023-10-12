@@ -2,7 +2,10 @@
 <idea-plugin>
     <id>pascal.taie.intellij</id>
     <name>Tai-e</name>
-    <vendor>Tai-e</vendor>
+    <vendor url="https://tai-e.pascal-lab.net"
+            email="tai-e@pascal-lab.net">
+        Tai-e
+    </vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
