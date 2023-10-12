@@ -5,20 +5,13 @@ fun properties(key: String) = providers.gradleProperty(key)
 fun environment(key: String) = providers.environmentVariable(key)
 
 plugins {
-    // Java support
-    id("java")
-    // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.8.10"
-    // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.13.3"
-    // Gradle Changelog Plugin
-    id("org.jetbrains.changelog") version "2.0.0"
-    // Gradle Qodana Plugin
-    id("org.jetbrains.qodana") version "0.1.13"
-    // Gradle Kover Plugin
-    id("org.jetbrains.kotlinx.kover") version "0.6.1"
-    // Plugin for generating lexers and parsers for IntelliJ plugins
-    id("org.jetbrains.grammarkit") version "2022.3.1"
+    id("java") // Java support
+    alias(libs.plugins.kotlin) // Kotlin support
+    alias(libs.plugins.gradleIntelliJPlugin) // Gradle IntelliJ Plugin
+    alias(libs.plugins.changelog) // Gradle Changelog Plugin
+    alias(libs.plugins.qodana) // Gradle Qodana Plugin
+    alias(libs.plugins.kover) // Gradle Kover Plugin
+    alias(libs.plugins.intellijGrammarKit) // Plugin for generating lexers and parsers for IntelliJ plugins
 }
 
 group = properties("pluginGroup").get()
@@ -65,8 +58,12 @@ qodana {
 }
 
 // Configure Gradle Kover Plugin - read more: https://github.com/Kotlin/kotlinx-kover#configuration
-kover.xmlReport {
-    onCheck.set(true)
+koverReport {
+    defaults {
+        xml {
+            onCheck = true
+        }
+    }
 }
 
 // Config generated parser to source
