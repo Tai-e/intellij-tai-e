@@ -22,6 +22,10 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+}
+
 // Set the JVM language level used to build the project. Use Java 11 for 2020.3+, and Java 17 for 2022.2+.
 kotlin {
     jvmToolchain(17)
@@ -72,6 +76,10 @@ sourceSets["main"].java.srcDirs("src/main/gen")
 // Clean old parser
 tasks.register<Delete>("cleanTirParser") {
     delete("src/main/gen/pascal/taie/intellij/tir/syntax")
+}
+
+tasks.getByName<Test>("test") {
+    useJUnitPlatform()
 }
 
 tasks {

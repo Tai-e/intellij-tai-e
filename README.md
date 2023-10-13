@@ -6,7 +6,7 @@
 
 <!-- Plugin description -->
 
-The IntelliJ-Based IDEs Plugin for <a href="https://github.com/pascal-lab/Tai-e">Tai-e</a> (a static analysis framework for Java).
+The Intellij-IDEA Plugin for <a href="https://github.com/pascal-lab/Tai-e">Tai-e</a> (a static analysis framework for Java).
 
 ## Features
 

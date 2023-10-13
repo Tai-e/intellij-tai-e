@@ -30,5 +30,7 @@
         <additionalTextAttributes scheme="Default" file="/colorSchemes/tir.xml"/>
         <colorSettingsPage
                 implementation="pascal.taie.intellij.tir.highlight.TirColorSettingsPage"/>
+        <searchEverywhereContributor
+                implementation="pascal.taie.intellij.TirSearchContributor$Factory"/>
     </extensions>
 </idea-plugin>
