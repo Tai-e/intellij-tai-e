@@ -10,12 +10,9 @@ The Intellij-IDEA Plugin for <a href="https://github.com/pascal-lab/Tai-e">Tai-e
 
 ## Features
 
- * Support for Tai-e IR file (`.tir`), e.g., syntax highlight, find usage (still WIP), and so on.
-
-## TODO
-
- * Search class/method/field in Tai-e IR format in Sea
- * Copy reference in Tai-e IR format from Intellij IDEA
+ * Support for Tai-e IR file (`.tir`), e.g., syntax highlight, find usage (still WIP), and so on
+ * Search class/method/field in Tai-e IR format
+ * Copy reference in Tai-e IR format
 
 <!-- Plugin description end -->
 

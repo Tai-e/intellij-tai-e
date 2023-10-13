@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- Search class/method/field in Tai-e IR format
+- Copy reference in Tai-e IR format
+
 ## [0.0.4] - 2023-10-12
 
 ### Added
