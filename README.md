@@ -14,6 +14,9 @@ The IntelliJ-Based IDEs Plugin for <a href="https://github.com/pascal-lab/Tai-e"
 
 ## TODO
 
+ * Search class/method/field in Tai-e IR format in Sea
+ * Copy reference in Tai-e IR format from Intellij IDEA
+
 <!-- Plugin description end -->
 
 ## Installation

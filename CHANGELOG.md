@@ -3,5 +3,9 @@
 # intellij-tai-e Changelog
 
 ## [Unreleased]
+
+## [0.0.4] - 2023-10-12
+
 ### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+
+- Support for Tai-e IR file (`.tir`), e.g., syntax highlight, find usage (still WIP), and so on.
