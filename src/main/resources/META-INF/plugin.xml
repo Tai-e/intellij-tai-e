@@ -2,14 +2,23 @@
 <idea-plugin>
     <id>pascal.taie.intellij</id>
     <name>Tai-e</name>
-    <vendor url="https://tai-e.pascal-lab.net"
-            email="tai-e@pascal-lab.net">
-        Tai-e
-    </vendor>
+    <vendor>Tai-e</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <resource-bundle>messages.TaieBundle</resource-bundle>
+
+    <actions>
+        <action class="pascal.taie.intellij.TirCopyReferenceAction"
+                description="Copy reference in Tai-e IR format"
+                id="TirCopyReferenceAction"
+                text="Copy in Tai-e IR">
+            <add-to-group anchor="after"
+                          relative-to-action="EditorPasteSimple"
+                          group-id="Copy.Paste.Special"/>
+        </action>
+    </actions>
 
     <extensions defaultExtensionNs="com.intellij">
         <fileType name="Tai-e IR File"
