@@ -37,7 +37,7 @@ class TirColorSettingsPage : ColorSettingsPage {
     }
 
     override fun getIcon(): Icon {
-        return TirIcons.PASCAL
+        return TirIcons.taie
     }
 
     override fun getHighlighter(): SyntaxHighlighter {

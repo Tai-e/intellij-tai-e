@@ -21,6 +21,6 @@ class TirFileType : LanguageFileType(TirLanguage.INSTANCE) {
     }
 
     override fun getIcon(): Icon {
-        return TirIcons.PASCAL
+        return TirIcons.taie
     }
 }
