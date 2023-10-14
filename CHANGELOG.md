@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [0.1.1] - 2023-10-14
+
+### Changed
+
+- Update the logo and icon
+
 ## [0.1.0] - 2023-10-13
 
 ### Added
