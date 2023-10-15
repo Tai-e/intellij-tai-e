@@ -1,5 +1,7 @@
 package pascal.taie.intellij.model
 
+import java.util.regex.Pattern
+
 
 class JMethod(
     val declaringClass: JClass,
@@ -10,7 +12,7 @@ class JMethod(
 
     companion object {
         @JvmStatic
-        val pattern = java.util.regex.Pattern.compile("""<(.+): (.+) (.+)\((.*)\)>""")
+        val pattern: Pattern = Pattern.compile("""<(.+): (.+) (.+)\((.*)\)>""")
 
         @JvmStatic
         fun create(rawString: String): JMethod? {

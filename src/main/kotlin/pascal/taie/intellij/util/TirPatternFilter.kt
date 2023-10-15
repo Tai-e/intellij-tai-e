@@ -6,9 +6,9 @@ object TirPatternFilter {
         // class
         Regex("^<([^:]+)>$"),
         // field
-        Regex("^<([^:]+): ([^\\s]+) ([^()]+)>$"),
+        Regex("^<([^:]+): (\\S+) ([^()]+)>$"),
         // method
-        Regex("^<([^:]+): ([^\\s]+) ([^()]+)\\([^()]*\\)>"),
+        Regex("^<([^:]+): (\\S+) ([^()]+)\\([^()]*\\)>"),
     )
 
     fun applyPatternReBuild(text: String): String {

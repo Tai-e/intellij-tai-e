@@ -5,8 +5,7 @@ import com.intellij.lang.ASTNode
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiNameIdentifierOwner
 
-interface TirNamedElement : PsiNameIdentifierOwner {
-}
+interface TirNamedElement : PsiNameIdentifierOwner
 
 abstract class TirNamedElementMixin(node: ASTNode) : ASTWrapperPsiElement(node), TirNamedElement {
     override fun setName(name: String): PsiElement {

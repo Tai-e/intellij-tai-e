@@ -5,7 +5,7 @@ import javax.swing.Icon
 
 class TirFileType : LanguageFileType(TirLanguage.INSTANCE) {
     companion object {
-        val INSTANCE = TirFileType();
+        val INSTANCE = TirFileType()
     }
 
     override fun getName(): String {
