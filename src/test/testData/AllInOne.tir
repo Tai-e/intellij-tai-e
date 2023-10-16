@@ -1,0 +1,434 @@
+public class AllInOne extends java.lang.Object {
+
+    public static void main(java.lang.String[] args) {
+        java.io.PrintStream temp$0;
+        java.lang.String %stringconst0;
+        [0@L4] temp$0 = <java.lang.System: java.io.PrintStream out>;
+        [1@L4] %stringconst0 = "Hello world";
+        [2@L4] invokevirtual temp$0.<java.io.PrintStream: void println(java.lang.String)>(%stringconst0);
+        [3@L4] return;
+    }
+
+    int arrayAccess(int[][] a) {
+        int[] temp$2;
+        int temp$1, temp$4, temp$3;
+        [0@L7] temp$1 = 0;
+        [1@L7] temp$2 = a[temp$1];
+        [2@L7] temp$3 = 0;
+        [3@L7] temp$4 = temp$2[temp$3];
+        [4@L8] return temp$4;
+    }
+
+    void newArray() {
+        int %intconst0, %intconst1, %intconst2, %intconst3, %intconst4, %intconst5, %intconst6, %intconst7, %intconst8;
+        int[][] a1;
+        int[][][] a2, a3;
+        int[] temp$0, c;
+        boolean[][] temp$1, my_array;
+        boolean[] temp$2, temp$3, temp$4;
+        [0@L12] %intconst0 = 10;
+        [1@L12] a1 = newarray int[][%intconst0];
+        [2@L13] %intconst1 = 5;
+        [3@L13] a2 = newarray int[][][%intconst1];
+        [4@L14] %intconst2 = 6;
+        [5@L14] %intconst3 = 66;
+        [6@L14] a3 = newmultiarray int[%intconst2][%intconst3][];
+        [7@L15] %intconst4 = 2;
+        [8@L15] temp$0 = newarray int[%intconst4];
+        [9@L15] %intconst5 = 0;
+        [10@L15] temp$0[%intconst5] = %intconst4;
+        [11@L15] %intconst6 = 1;
+        [12@L15] %intconst7 = 8;
+        [13@L15] temp$0[%intconst6] = %intconst7;
+        [14@L15] c = temp$0;
+        [15@L17] %intconst8 = 3;
+        [16@L17] temp$1 = newarray boolean[][%intconst8];
+        [17@L17] temp$2 = newarray boolean[%intconst8];
+        [18@L18] temp$2[%intconst5] = %intconst6;
+        [19@L18] temp$2[%intconst6] = %intconst5;
+        [20@L18] temp$2[%intconst4] = %intconst6;
+        [21@L17] temp$1[%intconst5] = temp$2;
+        [22@L17] temp$3 = newarray boolean[%intconst5];
+        [23@L17] temp$1[%intconst6] = temp$3;
+        [24@L17] temp$4 = newarray boolean[%intconst8];
+        [25@L20] temp$4[%intconst5] = %intconst5;
+        [26@L20] temp$4[%intconst6] = %intconst5;
+        [27@L20] temp$4[%intconst4] = %intconst6;
+        [28@L17] temp$1[%intconst4] = temp$4;
+        [29@L17] my_array = temp$1;
+        [30@L17] return;
+    }
+
+    void assign(java.lang.String s) {
+        java.lang.String s2;
+        int x, y;
+        [0@L25] s2 = s;
+        [1@L26] x = 10;
+        [2@L27] y = x;
+        [3@L27] return;
+    }
+
+    void binary(int x, int y, double z) {
+        int a, %intconst0, b, %intconst1, temp$2, temp$3;
+        double d;
+        long l, ll;
+        [0@L31] a = x + y;
+        [1@L32] %intconst0 = 1;
+        [2@L32] b = %intconst0 - x;
+        [3@L33] d = 0.6060606060606061;
+        [4@L34] %intconst1 = 100;
+        [5@L34] temp$2 = %intconst1 >> x;
+        [6@L34] l = (long) temp$2;
+        [7@L35] temp$3 = %intconst1 >>> x;
+        [8@L35] ll = (long) temp$3;
+        [9@L35] return;
+    }
+
+    void binaryMixedType(byte b, short s, boolean bb, char c, int i, float f, long l) {
+        int %intconst0, temp$2, temp$1, temp$3, temp$6, temp$5, temp$7, temp$8, temp$9, temp$12, temp$11, temp$15, temp$16, temp$14, temp$17, temp$18, temp$22, temp$21;
+        int[] a;
+        [0@L40] %intconst0 = 10;
+        [1@L40] a = newarray int[%intconst0];
+        [2@L42] temp$2 = (int) b;
+        [3@L42] temp$1 = 0;
+        [4@L42] temp$3 = temp$2 + i;
+        [5@L42] a[temp$1] = temp$3;
+        [6@L44] temp$6 = (int) b;
+        [7@L44] temp$5 = 0;
+        [8@L44] temp$7 = temp$6 & i;
+        [9@L44] a[temp$5] = temp$7;
+        [10@L48] temp$8 = (int) b;
+        [11@L48] temp$9 = (int) s;
+        [12@L48] if (temp$8 > temp$9) goto 14;
+        [13@L48] goto 18;
+        [14@L48] nop;
+        [15@L49] temp$12 = (int) b;
+        [16@L49] temp$11 = 0;
+        [17@L49] a[temp$11] = temp$12;
+        [18@L49] nop;
+        [19@L52] temp$15 = (int) s;
+        [20@L52] temp$16 = (int) s;
+        [21@L52] temp$14 = 0;
+        [22@L52] temp$17 = temp$15 >> temp$16;
+        [23@L52] a[temp$14] = temp$17;
+        [24@L53] temp$18 = (int) s;
+        [25@L53] l = l >> temp$18;
+        [26@L54] temp$22 = (int) l;
+        [27@L54] temp$21 = 0;
+        [28@L54] a[temp$21] = temp$22;
+        [29@L54] return;
+    }
+
+    void unary(int[] a, int x) {
+        int temp$0, %intconst0, temp$2, temp$3, temp$6, temp$5;
+        [0@L58] temp$0 = a.length;
+        [1@L58] %intconst0 = 1;
+        [2@L58] if (temp$0 != %intconst0) goto 4;
+        [3@L58] goto 8;
+        [4@L58] nop;
+        [5@L59] temp$2 = 1;
+        [6@L59] temp$3 = 10;
+        [7@L59] a[temp$2] = temp$3;
+        [8@L59] nop;
+        [9@L61] temp$6 = -x;
+        [10@L61] temp$5 = 0;
+        [11@L61] a[temp$5] = temp$6;
+        [12@L61] return;
+    }
+
+    void instanceOf(java.lang.Object o) {
+        boolean b;
+        [0@L65] b = o instanceof AllInOne;
+        [1@L65] return;
+    }
+
+    void cast(java.lang.Object o, int i) {
+        AllInOne a;
+        long l;
+        [0@L69] a = (AllInOne) o;
+        [1@L70] l = (long) i;
+        [2@L70] return;
+    }
+
+    int ifStmt(int x) {
+        int y, %intconst0, %intconst1, z, %intconst2, temp$3;
+        [0@L74] y = 10;
+        [1@L76] %intconst0 = 0;
+        [2@L76] if (x > %intconst0) goto 4;
+        [3@L76] goto 8;
+        [4@L76] nop;
+        [5@L77] %intconst1 = 2;
+        [6@L77] z = x + %intconst1;
+        [7@L76] goto 13;
+        [8@L76] nop;
+        [9@L79] %intconst2 = 1;
+        [10@L79] invokevirtual %this.<AllInOne: int foo(int,int,int)>(%intconst0, %intconst2, %intconst1);
+        [11@L80] temp$3 = 10;
+        [12@L80] z = temp$3 + x;
+        [13@L80] nop;
+        [14@L82] return z;
+    }
+
+    int gotoStmt(int x) {
+        int i, temp$0, z, %intconst0, %intconst1, a, b, %intconst2, temp$4;
+        [0@L86] i = 0;
+        [1@L86] nop;
+        [2@L86] if (i < x) goto 4;
+        [3@L86] goto 25;
+        [4@L86] nop;
+        [5@L87] temp$0 = 1;
+        [6@L87] z = temp$0 + x;
+        [7@L88] %intconst0 = 100;
+        [8@L88] if (x < %intconst0) goto 10;
+        [9@L88] goto 12;
+        [10@L88] nop;
+        [11@L89] goto 21;
+        [12@L89] nop;
+        [13@L91] %intconst1 = 10;
+        [14@L91] a = z - %intconst1;
+        [15@L92] if (a == %intconst0) goto 17;
+        [16@L92] goto 19;
+        [17@L92] nop;
+        [18@L93] goto 25;
+        [19@L93] nop;
+        [20@L95] b = a - z;
+        [21@L95] nop;
+        [22@L86] %intconst2 = 1;
+        [23@L86] i = i + %intconst2;
+        [24@L86] goto 1;
+        [25@L86] nop;
+        [26@L86] temp$4 = 0;
+        [27@L97] return temp$4;
+    }
+
+    int switchStmt(int x) {
+        int temp$0, y, %intconst0, temp$2, temp$4, %intconst1, %intconst2, temp$6, y, temp$8, temp$10, temp$11;
+        null-type %nullconst;
+        [0@L101] goto 18;
+        [1@L101] nop;
+        [2@L103] temp$0 = 5;
+        [3@L103] y = temp$0 + x;
+        [4@L104] return y;
+        [5@L104] nop;
+        [6@L106] %intconst0 = 10;
+        [7@L106] invokevirtual %this.<AllInOne: int foo(int)>(%intconst0);
+        [8@L106] temp$2 = 500;
+        [9@L107] return temp$2;
+        [10@L107] nop;
+        [11@L109] invokevirtual %this.<AllInOne: int foo(int)>(x);
+        [12@L109] temp$4 = 1000;
+        [13@L110] return temp$4;
+        [14@L110] nop;
+        [15@L112] %intconst1 = 1;
+        [16@L112] invokestatic <AllInOne: void bar(int,java.lang.Object)>(%intconst1, %nullconst);
+        [17@L101] goto 21;
+        [18@L101] nop;
+        [19@L101] nop;
+        [20@L101] lookupswitch (x) {1->1, 10->5, 100->10, default->14};
+        [21@L101] nop;
+        [22@L114] %intconst2 = 2;
+        [23@L114] x = x * %intconst2;
+        [24@L115] goto 40;
+        [25@L115] nop;
+        [26@L117] temp$6 = 5;
+        [27@L117] y = temp$6 + x;
+        [28@L118] return y;
+        [29@L118] nop;
+        [30@L120] invokevirtual %this.<AllInOne: int foo(int)>(%intconst0);
+        [31@L120] temp$8 = 500;
+        [32@L121] return temp$8;
+        [33@L121] nop;
+        [34@L123] invokevirtual %this.<AllInOne: int foo(int)>(x);
+        [35@L123] temp$10 = 1000;
+        [36@L124] return temp$10;
+        [37@L124] nop;
+        [38@L126] invokestatic <AllInOne: void bar(int,java.lang.Object)>(%intconst1, %nullconst);
+        [39@L115] goto 43;
+        [40@L115] nop;
+        [41@L115] nop;
+        [42@L115] lookupswitch (x) {1->25, 2->29, 5->33, default->37};
+        [43@L115] nop;
+        [44@L115] temp$11 = 0;
+        [45@L128] return temp$11;
+    }
+
+    void invoke(int x, I i) {
+        int temp$0, a, %intconst0;
+        java.lang.Object temp$1, r;
+        AllInOne temp$2, o;
+        null-type %nullconst;
+        [0@L133] temp$0 = invokevirtual %this.<AllInOne: int foo(int)>(x);
+        [1@L133] a = temp$0;
+        [2@L135] temp$1 = invokeinterface i.<I: java.lang.Object goo()>();
+        [3@L135] r = temp$1;
+        [4@L137] temp$2 = new AllInOne;
+        [5@L137] invokespecial temp$2.<AllInOne: void <init>()>();
+        [6@L137] o = temp$2;
+        [7@L138] invokespecial %this.<java.lang.Object: java.lang.String toString()>();
+        [8@L139] invokevirtual %this.<AllInOne: void hidden()>();
+        [9@L141] %intconst0 = 10;
+        [10@L141] invokestatic <AllInOne: void bar(int,java.lang.Object)>(%intconst0, %nullconst);
+        [11@L141] return;
+    }
+
+    int returnInt(int x) {
+        int %intconst0, temp$0;
+        [0@L145] %intconst0 = 0;
+        [1@L145] if (x > %intconst0) goto 3;
+        [2@L145] goto 5;
+        [3@L145] nop;
+        [4@L146] return x;
+        [5@L146] nop;
+        [6@L146] temp$0 = 0;
+        [7@L148] return temp$0;
+    }
+
+    void returnVoid() {
+        int %intconst0;
+        [0@L152] %intconst0 = 100;
+        [1@L152] invokevirtual %this.<AllInOne: int foo(int)>(%intconst0);
+        [2@L153] return;
+        [3@L153] return;
+    }
+
+    int exception(int x) {
+        int %intconst0, %intconst1, %intconst2, %intconst3, %intconst4;
+        java.lang.RuntimeException temp$1, re, e;
+        java.lang.Exception temp$4, e;
+        [0@L156] nop;
+        [1@L158] %intconst0 = 100;
+        [2@L158] if (x > %intconst0) goto 4;
+        [3@L158] goto 28;
+        [4@L158] nop;
+        [5@L159] invokevirtual %this.<AllInOne: void hidden()>();
+        [6@L160] %intconst1 = 10;
+        [7@L160] x = x * %intconst1;
+        [8@L160] nop;
+        [9@L162] %intconst2 = 0;
+        [10@L162] if (x == %intconst2) goto 12;
+        [11@L162] goto 16;
+        [12@L162] nop;
+        [13@L163] temp$1 = new java.lang.RuntimeException;
+        [14@L163] invokespecial temp$1.<java.lang.RuntimeException: void <init>()>();
+        [15@L163] throw temp$1;
+        [16@L163] nop;
+        [17@L161] goto 24;
+        [18@L161] nop;
+        [19@L165] catch re;
+        [20@L166] %intconst3 = 1;
+        [21@L166] x = x + %intconst3;
+        [22@L165] nop;
+        [23@L165] goto 24;
+        [24@L165] nop;
+        [25@L168] temp$4 = new java.lang.Exception;
+        [26@L168] invokespecial temp$4.<java.lang.Exception: void <init>()>();
+        [27@L168] throw temp$4;
+        [28@L168] nop;
+        [29@L170] invokevirtual %this.<AllInOne: int foo(int)>(%intconst1);
+        [30@L157] goto 41;
+        [31@L157] nop;
+        [32@L172] catch e;
+        [33@L173] %intconst4 = 20;
+        [34@L173] invokevirtual %this.<AllInOne: int foo(int)>(%intconst4);
+        [35@L172] nop;
+        [36@L172] goto 41;
+        [37@L172] nop;
+        [38@L174] catch e;
+        [39@L174] nop;
+        [40@L174] goto 41;
+        [41@L174] nop;
+        [42@L176] x = x * %intconst0;
+        [43@L177] return x;
+
+        try [8, 18), catch java.lang.RuntimeException at 19
+        try [0, 31), catch java.lang.RuntimeException at 32
+        try [0, 31), catch java.lang.Exception at 38
+    }
+
+    void emptyExceptionHandler() {
+        java.lang.Exception temp$0, e, e;
+        int %intconst0;
+        [0@L180] nop;
+        [1@L182] temp$0 = new java.lang.Exception;
+        [2@L182] invokespecial temp$0.<java.lang.Exception: void <init>()>();
+        [3@L182] throw temp$0;
+        [4@L182] nop;
+        [5@L183] catch e;
+        [6@L183] nop;
+        [7@L183] goto 8;
+        [8@L183] nop;
+        [9@L185] %intconst0 = 0;
+        [10@L185] invokevirtual %this.<AllInOne: int foo(int)>(%intconst0);
+        [11@L185] nop;
+        [12@L186] goto 17;
+        [13@L186] nop;
+        [14@L187] catch e;
+        [15@L187] nop;
+        [16@L187] goto 17;
+        [17@L187] nop;
+        [18@L187] return;
+
+        try [0, 4), catch java.lang.Exception at 5
+        try [11, 13), catch java.lang.Exception at 14
+    }
+
+    void monitor(java.lang.Object o) {
+        java.lang.Object temp$0;
+        java.lang.Throwable temp$1, temp$4;
+        AllInOne temp$2;
+        int %intconst0;
+        [0@L192] temp$0 = o;
+        [1@L192] monitorenter temp$0;
+        [2@L192] nop;
+        [3@L193] invokevirtual %this.<AllInOne: void hidden()>();
+        [4@L192] monitorexit temp$0;
+        [5@L192] goto 9;
+        [6@L192] nop;
+        [7@L192] catch temp$1;
+        [8@L192] monitorexit temp$0;
+        [9@L192] nop;
+        [10@L192] throw temp$1;
+        [11@L195] temp$2 = %this;
+        [12@L195] monitorenter temp$2;
+        [13@L195] nop;
+        [14@L196] %intconst0 = 0;
+        [15@L196] invokevirtual %this.<AllInOne: int foo(int)>(%intconst0);
+        [16@L195] monitorexit temp$2;
+        [17@L195] goto 21;
+        [18@L195] nop;
+        [19@L195] catch temp$4;
+        [20@L195] monitorexit temp$2;
+        [21@L195] nop;
+        [22@L195] throw temp$4;
+        [23@L195] return;
+
+        try [2, 9), catch java.lang.Throwable at 7
+        try [13, 21), catch java.lang.Throwable at 19
+    }
+
+    static void bar(int x, java.lang.Object o) {
+        [0@L200] return;
+    }
+
+    int foo(int x) {
+        int temp$0;
+        [0@L203] temp$0 = 20;
+        [1@L204] return temp$0;
+    }
+
+    int foo(int x, int y, int z) {
+        int temp$0;
+        [0@L207] temp$0 = 30;
+        [1@L208] return temp$0;
+    }
+
+    private final void hidden() {
+        [0@L211] return;
+    }
+
+    public void <init>() {
+        [0@L1] invokespecial %this.<java.lang.Object: void <init>()>();
+        [1@L1] return;
+    }
+
+}

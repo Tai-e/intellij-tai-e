@@ -50,6 +50,8 @@ new                                                                     { yybegi
 
 newarray                                                                { yybegin(YYINITIAL); return TirTypes.NEW_ARRAY; }
 
+newmultiarray                                                           { yybegin(YYINITIAL); return TirTypes.NEW_MULTI_ARRAY; }
+
 try                                                                     { yybegin(YYINITIAL); return TirTypes.TRY; }
 
 throw                                                                   { yybegin(YYINITIAL); return TirTypes.THROW; }
@@ -57,6 +59,12 @@ throw                                                                   { yybegi
 catch                                                                   { yybegin(YYINITIAL); return TirTypes.CATCH; }
 
 at                                                                      { yybegin(YYINITIAL); return TirTypes.AT; }
+
+lookupswitch                                                            { yybegin(YYINITIAL); return TirTypes.LOOKUP_SWITCH; }
+
+\-\>                                                                    { yybegin(YYINITIAL); return TirTypes.RIGHT_ARROW; }
+
+default                                                                 { yybegin(YYINITIAL); return TirTypes.DEFAULT; }
 
 return                                                                  { yybegin(YYINITIAL); return TirTypes.RETURN; }
 

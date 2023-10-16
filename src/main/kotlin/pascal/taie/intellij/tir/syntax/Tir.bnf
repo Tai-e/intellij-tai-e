@@ -44,13 +44,17 @@ method_body_catch ::= TRY LBRACKET INTEGER COMMA INTEGER RPAREN COMMA CATCH iden
 method_body_stmt ::= lvalue EQUAL rvalue
                    | identifier_variable EQUAL NEW identifier_type
                    | identifier_variable EQUAL NEW_ARRAY identifier_type LBRACKET identifier_variable RBRACKET
+                   | identifier_variable EQUAL NEW_MULTI_ARRAY identifier_type (LBRACKET identifier_variable RBRACKET)+
+                   | invoke_expr
                    | THROW identifier_type
                    | CATCH identifier_variable
-                   | invoke_expr
+                   | LOOKUP_SWITCH LPAREN identifier_variable RPAREN LBRACE switch_branch (COMMA switch_branch)* RBRACE
                    | IF LPAREN (unary_expr | binary_expr | IDENTIFIER) RPAREN GOTO INTEGER
                    | GOTO INTEGER
                    | RETURN identifier_variable?
                    | NOP
+
+switch_branch ::= (INTEGER | STRING_LITERAL | DEFAULT) RIGHT_ARROW INTEGER
 
 lvalue ::= identifier_variable DOT field_sig
          | identifier_variable LBRACKET identifier_variable RBRACKET
@@ -97,6 +101,6 @@ identifier_variable ::= IDENTIFIER | CONSTANT_IDENTIFIER  {
     implements="pascal.taie.intellij.tir.syntax.TirNamedElement"
 }
 
-identifier_type ::= identifier_class (LBRACKET RBRACKET)? | NULL_TYPE
+identifier_type ::= identifier_class (LBRACKET RBRACKET)* | NULL_TYPE
 
 identifier_field_list ::= identifier_field (COMMA identifier_field)*
