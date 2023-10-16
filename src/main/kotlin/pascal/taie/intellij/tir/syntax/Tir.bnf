@@ -56,9 +56,10 @@ lvalue ::= identifier_variable DOT field_sig
          | identifier_variable LBRACKET identifier_variable RBRACKET
          | identifier_variable
 
-rvalue ::= identifier_variable DOT field_sig
-         | identifier_variable LBRACKET identifier_variable RBRACKET
-         | LPAREN identifier_type RPAREN identifier_variable
+rvalue ::= identifier_variable DOT field_sig  // Instance field
+         | identifier_variable LBRACKET identifier_variable RBRACKET  // Array index
+         | field_sig  // Static field
+         | LPAREN identifier_type RPAREN identifier_variable  // Cast
          | invoke_expr
          | unary_expr
          | binary_expr
