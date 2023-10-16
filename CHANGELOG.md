@@ -4,13 +4,11 @@
 
 ## [Unreleased]
 
-## [0.1.2] - 2023-10-14
-
-- Support load static field, newmultiarray, switch-case syntax 
+## [0.1.2] - 2023-10-16
 
 ### Changed
 
-- Update the logo and icon
+- Support load static field, newmultiarray, switch-case syntax 
 
 ## [0.1.1] - 2023-10-14
 
@@ -31,6 +29,8 @@
 
 - Support for Tai-e IR file (`.tir`), e.g., syntax highlight, find usage (still WIP), and so on.
 
+[Unreleased]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/Tai-e/intellij-tai-e/compare/v0.0.4...v0.1.0
-
 [0.0.4]: https://github.com/Tai-e/intellij-tai-e/releases/tag/v0.0.4
