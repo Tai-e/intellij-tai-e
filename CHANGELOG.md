@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+## [0.1.2] - 2023-10-14
+
+- Support load static field, newmultiarray, switch-case syntax 
+
+### Changed
+
+- Update the logo and icon
+
 ## [0.1.1] - 2023-10-14
 
 ### Changed
