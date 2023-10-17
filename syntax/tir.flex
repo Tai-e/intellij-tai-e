@@ -78,7 +78,11 @@ null-type                                                               { yybegi
 
 ;                                                                       { yybegin(YYINITIAL); return TirTypes.SEMICOLON; }
 
-(\+|-)?\d+\.\d*+F                                                       { yybegin(YYINITIAL); return TirTypes.FLOAT; }
+(\+|-)?\d+\.\d*F                                                        { yybegin(YYINITIAL); return TirTypes.FLOAT; }
+
+(\+|-)?\d+\.\d*                                                         { yybegin(YYINITIAL); return TirTypes.DOUBLE; }
+
+(\+|-)?\d+L                                                             { yybegin(YYINITIAL); return TirTypes.LONG; }
 
 (\+|-)?\d+                                                              { yybegin(YYINITIAL); return TirTypes.INTEGER; }
 

@@ -28,11 +28,11 @@ field_def ::= MODIFIER* identifier_type identifier_field_list SEMICOLON
 // ---
 
 // Method def
-method_def ::= method_sig (LBRACE method_body RBRACE | SEMICOLON)
+method_def ::= method_sig (method_body | SEMICOLON)
 
 method_sig ::= MODIFIER* identifier_type identifier_method LPAREN (identifier_type IDENTIFIER (COMMA identifier_type IDENTIFIER)*)? RPAREN
 
-method_body ::= (method_body_var | method_body_line | method_body_catch)+
+method_body ::= LBRACE (method_body_var | method_body_line | method_body_catch)+ RBRACE
 
 method_body_var ::= identifier_type identifier_variable (COMMA identifier_variable)* SEMICOLON
 
@@ -44,7 +44,7 @@ method_body_catch ::= TRY LBRACKET INTEGER COMMA INTEGER RPAREN COMMA CATCH iden
 method_body_stmt ::= lvalue EQUAL rvalue
                    | identifier_variable EQUAL NEW identifier_type
                    | identifier_variable EQUAL NEW_ARRAY identifier_type LBRACKET identifier_variable RBRACKET
-                   | identifier_variable EQUAL NEW_MULTI_ARRAY identifier_type (LBRACKET identifier_variable RBRACKET)+
+                   | identifier_variable EQUAL NEW_MULTI_ARRAY identifier_type (LBRACKET identifier_variable? RBRACKET)+
                    | invoke_expr
                    | THROW identifier_type
                    | CATCH identifier_variable
@@ -54,7 +54,7 @@ method_body_stmt ::= lvalue EQUAL rvalue
                    | RETURN identifier_variable?
                    | NOP
 
-switch_branch ::= (INTEGER | STRING_LITERAL | DEFAULT) RIGHT_ARROW INTEGER
+switch_branch ::= (INTEGER | LONG | STRING_LITERAL | DEFAULT) RIGHT_ARROW INTEGER
 
 lvalue ::= identifier_variable DOT field_sig
          | identifier_variable LBRACKET identifier_variable RBRACKET
@@ -70,7 +70,9 @@ rvalue ::= identifier_variable DOT field_sig  // Instance field
          | identifier_variable INSTANCEOF identifier_type
          | identifier_variable
          | FLOAT
+         | DOUBLE
          | INTEGER
+         | LONG
          | STRING_LITERAL
 
 field_sig ::= LANGLE field_ref RANGLE
@@ -83,11 +85,13 @@ binary_expr ::= identifier_variable (LANGLE | RANGLE | CMP_OP | BIT_OP | ADD_OP 
 
 // invoke method
 invoke_expr ::= INVOKE_KEY (identifier_variable DOT)? invoke_method_ref LPAREN invoke_argument_list? RPAREN
-              | INVOKE_KEY invoke_method_ref STRING_LITERAL invoke_method_type LBRACKET invoke_argument_list? RBRACKET LPAREN invoke_argument_list? RPAREN
+              | INVOKE_KEY invoke_method_ref STRING_LITERAL invoke_method_type LBRACKET invoke_bootstrap_argument_list? RBRACKET LPAREN invoke_argument_list? RPAREN
 
 invoke_method_type ::= LANGLE identifier_class COLON identifier_type LPAREN invoke_argument_type_list? RPAREN RANGLE
 
 invoke_method_ref ::= LANGLE identifier_class COLON identifier_type identifier_method LPAREN invoke_argument_type_list? RPAREN RANGLE
+
+invoke_bootstrap_argument_list ::= literal (COMMA literal)*
 
 invoke_argument_type_list ::= identifier_type (COMMA identifier_type)*
 
@@ -100,6 +104,8 @@ identifier_class ::= IDENTIFIER
 identifier_field ::= IDENTIFIER
 
 identifier_method ::= IDENTIFIER | LANGLE IDENTIFIER RANGLE
+
+literal ::= INTEGER | LONG | FLOAT | DOUBLE | STRING_LITERAL
 
 identifier_variable ::= IDENTIFIER | CONSTANT_IDENTIFIER  {
     mixin="pascal.taie.intellij.tir.syntax.TirNamedElementMixin"
