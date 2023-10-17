@@ -51,6 +51,7 @@ method_body_stmt ::= lvalue EQUAL rvalue
                    | LOOKUP_SWITCH LPAREN identifier_variable RPAREN LBRACE switch_branch (COMMA switch_branch)* RBRACE
                    | IF LPAREN (unary_expr | binary_expr | IDENTIFIER) RPAREN GOTO INTEGER
                    | GOTO INTEGER
+                   | (MONITOR_ENTER | MONITOR_EXIT) identifier_variable
                    | RETURN identifier_variable?
                    | NOP
 

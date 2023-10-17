@@ -7,6 +7,7 @@
 ### Changed
 
 - Support invoke dynamic stmt
+- Support monitor stmts
 
 ## [0.1.2] - 2023-10-16
 

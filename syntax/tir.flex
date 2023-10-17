@@ -68,6 +68,10 @@ default                                                                 { yybegi
 
 return                                                                  { yybegin(YYINITIAL); return TirTypes.RETURN; }
 
+monitorenter                                                            { yybegin(YYINITIAL); return TirTypes.MONITOR_ENTER; }
+
+monitorexit                                                             { yybegin(YYINITIAL); return TirTypes.MONITOR_EXIT; }
+
 instanceof                                                              { yybegin(YYINITIAL); return TirTypes.INSTANCEOF; }
 
 null-type                                                               { yybegin(YYINITIAL); return TirTypes.NULL_TYPE; }
