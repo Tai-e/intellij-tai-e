@@ -8,6 +8,7 @@
 
 - Support invoke dynamic stmt
 - Support monitor stmts
+- Fold method body
 
 ## [0.1.2] - 2023-10-16
 

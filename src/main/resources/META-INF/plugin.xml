@@ -35,6 +35,9 @@
         <lang.syntaxHighlighterFactory
                 language="tir"
                 implementationClass="pascal.taie.intellij.tir.highlight.TirSyntaxHighlighterFactory"/>
+        <lang.foldingBuilder
+                language="tir"
+                implementationClass="pascal.taie.intellij.tir.editing.TirFoldingBuilder"/>
         <additionalTextAttributes scheme="Darcula" file="/colorSchemes/tir.xml"/>
         <additionalTextAttributes scheme="Default" file="/colorSchemes/tir.xml"/>
         <colorSettingsPage
