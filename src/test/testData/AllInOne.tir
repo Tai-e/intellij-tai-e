@@ -1,12 +1,15 @@
 public class AllInOne extends java.lang.Object {
 
     public static void main(java.lang.String[] args) {
-        java.io.PrintStream temp$0;
-        java.lang.String %stringconst0;
-        [0@L4] temp$0 = <java.lang.System: java.io.PrintStream out>;
-        [1@L4] %stringconst0 = "Hello world";
-        [2@L4] invokevirtual temp$0.<java.io.PrintStream: void println(java.lang.String)>(%stringconst0);
-        [3@L4] return;
+        java.io.PrintStream $r1;
+        Foo $r0;
+        java.lang.String $r2;
+        [0@L3] $r1 = <java.lang.System: java.io.PrintStream out>;
+        [1@L3] $r0 = new Foo;
+        [2@L3] invokespecial $r0.<Foo: void <init>()>();
+        [3@L3] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (Foo)>["some print"]($r0);
+        [4@L3] invokevirtual $r1.<java.io.PrintStream: void println(java.lang.String)>($r2);
+        [5@L4] return;
     }
 
     int arrayAccess(int[][] a) {

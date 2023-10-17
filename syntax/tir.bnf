@@ -83,8 +83,13 @@ binary_expr ::= identifier_variable (LANGLE | RANGLE | CMP_OP | BIT_OP | ADD_OP 
 
 // invoke method
 invoke_expr ::= INVOKE_KEY (identifier_variable DOT)? invoke_method_ref LPAREN invoke_argument_list? RPAREN
+              | INVOKE_KEY invoke_method_ref STRING_LITERAL invoke_method_type LBRACKET invoke_argument_list? RBRACKET LPAREN invoke_argument_list? RPAREN
 
-invoke_method_ref ::= LANGLE identifier_class COLON identifier_type identifier_method LPAREN (identifier_type (COMMA identifier_type)*)? RPAREN RANGLE
+invoke_method_type ::= LANGLE identifier_class COLON identifier_type LPAREN invoke_argument_type_list? RPAREN RANGLE
+
+invoke_method_ref ::= LANGLE identifier_class COLON identifier_type identifier_method LPAREN invoke_argument_type_list? RPAREN RANGLE
+
+invoke_argument_type_list ::= identifier_type (COMMA identifier_type)*
 
 invoke_argument_list ::= identifier_variable (COMMA identifier_variable)*
 // ---
