@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Fix store static field
+
 ## [0.1.3] - 2023-10-17
 
 ### Changed

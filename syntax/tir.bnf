@@ -15,11 +15,15 @@
   psiImplUtilClass="pascal.taie.intellij.tir.syntax.TirPsiUtil"
 }
 
-tir_file ::= MODIFIER* (CLASS | INTERFACE) identifier_class class_extends? class_implements? LBRACE class_member* RBRACE
+tir_file ::= class_def
+
+class_def ::= MODIFIER* (CLASS | INTERFACE) identifier_class class_extends? class_implements? class_body
 
 class_extends ::= EXTENDS identifier_class (COMMA identifier_class)*
 
 class_implements ::= IMPLEMENTS identifier_class (COMMA identifier_class)*
+
+class_body ::= LBRACE class_member* RBRACE
 
 class_member ::= field_def | method_def | COMMENT
 
@@ -60,6 +64,7 @@ switch_branch ::= (INTEGER | LONG | STRING_LITERAL | DEFAULT) RIGHT_ARROW INTEGE
 lvalue ::= identifier_variable DOT field_sig
          | identifier_variable LBRACKET identifier_variable RBRACKET
          | identifier_variable
+         | field_sig  // Static field
 
 rvalue ::= identifier_variable DOT field_sig  // Instance field
          | identifier_variable LBRACKET identifier_variable RBRACKET  // Array index
