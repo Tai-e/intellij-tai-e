@@ -7,6 +7,7 @@ import com.intellij.openapi.editor.Document
 import com.intellij.openapi.project.DumbAware
 import com.intellij.psi.PsiElement
 import com.intellij.psi.SyntaxTraverser
+import pascal.taie.intellij.tir.syntax.psi.TirClassBody
 import pascal.taie.intellij.tir.syntax.psi.TirMethodBody
 
 class TirFoldingBuilder : FoldingBuilderEx(), DumbAware {
@@ -14,7 +15,7 @@ class TirFoldingBuilder : FoldingBuilderEx(), DumbAware {
         root: PsiElement, document: Document, quick: Boolean
     ) = SyntaxTraverser
         .psiTraverser(root)
-        .filter { it is TirMethodBody }
+        .filter { it is TirMethodBody || it is TirClassBody }
         .map { TirFoldingDescriptor(it, "{…}") }
         .toList().toTypedArray()
 

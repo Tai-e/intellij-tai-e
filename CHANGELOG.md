@@ -7,6 +7,7 @@
 ### Changed
 
 - Fix store static field
+- Fold class body
 
 ## [0.1.3] - 2023-10-17
 
