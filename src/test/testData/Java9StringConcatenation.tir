@@ -1,0 +1,305 @@
+public class Java9StringConcatenation extends java.lang.Object {
+
+    static boolean b;
+
+    static byte by;
+
+    static short sh;
+
+    static char ch;
+
+    static int i;
+
+    static float fl;
+
+    static long l;
+
+    static double d;
+
+    static java.lang.String s;
+
+    static java.lang.String sNull;
+
+    static java.lang.Object o;
+
+    static java.lang.Object oNull;
+
+    static java.lang.CharSequence cs;
+
+    static Java9StringConcatenation$MyClass myCl;
+
+    static Java9StringConcatenation$MyClassNull myClNull;
+
+    static java.lang.Object myCl2;
+
+    public void <init>() {
+        [0@L1] invokespecial %this.<java.lang.Object: void <init>()>();
+        [1@L1] return;
+    }
+
+    public static void main(java.lang.String[] r0) {
+        [0@L21] invokestatic <Java9StringConcatenation: java.lang.String stringBoolean()>();
+        [1@L22] invokestatic <Java9StringConcatenation: java.lang.String stringByte()>();
+        [2@L23] invokestatic <Java9StringConcatenation: java.lang.String stringShort()>();
+        [3@L24] invokestatic <Java9StringConcatenation: java.lang.String stringChar()>();
+        [4@L25] invokestatic <Java9StringConcatenation: java.lang.String stringInt()>();
+        [5@L26] invokestatic <Java9StringConcatenation: java.lang.String stringLong()>();
+        [6@L27] invokestatic <Java9StringConcatenation: java.lang.String stringFloat()>();
+        [7@L28] invokestatic <Java9StringConcatenation: java.lang.String stringDouble()>();
+        [8@L29] invokestatic <Java9StringConcatenation: java.lang.String stringstring()>();
+        [9@L30] invokestatic <Java9StringConcatenation: java.lang.String stringStringNull()>();
+        [10@L31] invokestatic <Java9StringConcatenation: java.lang.String stringObject()>();
+        [11@L32] invokestatic <Java9StringConcatenation: java.lang.String stringObject2()>();
+        [12@L33] invokestatic <Java9StringConcatenation: java.lang.String stringObject3()>();
+        [13@L34] invokestatic <Java9StringConcatenation: java.lang.String stringObjectNull()>();
+        [14@L35] invokestatic <Java9StringConcatenation: java.lang.String stringObjectNull2()>();
+        [15@L36] invokestatic <Java9StringConcatenation: java.lang.String stringCharSeq()>();
+        [16@L37] invokestatic <Java9StringConcatenation: java.lang.String stringObjectCharSeq()>();
+        [17@L38] invokestatic <Java9StringConcatenation: java.lang.String stringObjectCharSeqInt()>();
+        [18@L39] invokestatic <Java9StringConcatenation: java.lang.String constConst()>();
+        [19@L40] invokestatic <Java9StringConcatenation: java.lang.String constStringConstString()>();
+        [20@L41] invokestatic <Java9StringConcatenation: java.lang.String stringConstStringConst()>();
+        [21@L42] invokestatic <Java9StringConcatenation: java.lang.String mix()>();
+        [22@L43] return;
+    }
+
+    static java.lang.String stringBoolean() {
+        java.lang.String $r0, $r1;
+        boolean $z0;
+        [0@L46] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L46] $z0 = <Java9StringConcatenation: boolean b>;
+        [2@L46] $r1 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,boolean)>[""]($r0, $z0);
+        [3@L46] return $r1;
+    }
+
+    static java.lang.String stringByte() {
+        java.lang.String $r0, $r1;
+        byte $b0;
+        [0@L50] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L50] $b0 = <Java9StringConcatenation: byte by>;
+        [2@L50] $r1 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,byte)>[""]($r0, $b0);
+        [3@L50] return $r1;
+    }
+
+    static java.lang.String stringShort() {
+        java.lang.String $r0, $r1;
+        short $s0;
+        [0@L54] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L54] $s0 = <Java9StringConcatenation: short sh>;
+        [2@L54] $r1 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,short)>[""]($r0, $s0);
+        [3@L54] return $r1;
+    }
+
+    static java.lang.String stringChar() {
+        java.lang.String $r0, $r1;
+        char $c0;
+        [0@L58] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L58] $c0 = <Java9StringConcatenation: char ch>;
+        [2@L58] $r1 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,char)>[""]($r0, $c0);
+        [3@L58] return $r1;
+    }
+
+    static java.lang.String stringInt() {
+        java.lang.String $r0, $r1;
+        int $i0;
+        [0@L62] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L62] $i0 = <Java9StringConcatenation: int i>;
+        [2@L62] $r1 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,int)>[""]($r0, $i0);
+        [3@L62] return $r1;
+    }
+
+    static java.lang.String stringLong() {
+        java.lang.String $r0, $r1;
+        long $l0;
+        [0@L66] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L66] $l0 = <Java9StringConcatenation: long l>;
+        [2@L66] $r1 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,long)>[""]($r0, $l0);
+        [3@L66] return $r1;
+    }
+
+    static java.lang.String stringFloat() {
+        java.lang.String $r0, $r1;
+        float $f0;
+        [0@L70] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L70] $f0 = <Java9StringConcatenation: float fl>;
+        [2@L70] $r1 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,float)>[""]($r0, $f0);
+        [3@L70] return $r1;
+    }
+
+    static java.lang.String stringDouble() {
+        java.lang.String $r0, $r1;
+        double $d0;
+        [0@L74] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L74] $d0 = <Java9StringConcatenation: double d>;
+        [2@L74] $r1 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,double)>[""]($r0, $d0);
+        [3@L74] return $r1;
+    }
+
+    static java.lang.String stringstring() {
+        java.lang.String $r1, $r0, $r2;
+        [0@L78] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L78] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [2@L78] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.String)>[""]($r1, $r0);
+        [3@L78] return $r2;
+    }
+
+    static java.lang.String stringStringNull() {
+        java.lang.String $r1, $r0, $r2;
+        [0@L82] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L82] $r0 = <Java9StringConcatenation: java.lang.String sNull>;
+        [2@L82] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.String)>[""]($r1, $r0);
+        [3@L82] return $r2;
+    }
+
+    static java.lang.String stringObject() {
+        java.lang.String $r1, $r2;
+        java.lang.Object $r0;
+        [0@L86] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L86] $r0 = <Java9StringConcatenation: java.lang.Object o>;
+        [2@L86] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.Object)>[""]($r1, $r0);
+        [3@L86] return $r2;
+    }
+
+    static java.lang.String stringObject2() {
+        java.lang.String $r1, $r2;
+        Java9StringConcatenation$MyClass $r0;
+        [0@L90] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L90] $r0 = <Java9StringConcatenation: Java9StringConcatenation$MyClass myCl>;
+        [2@L90] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,Java9StringConcatenation$MyClass)>[""]($r1, $r0);
+        [3@L90] return $r2;
+    }
+
+    static java.lang.String stringObject3() {
+        java.lang.String $r1, $r2;
+        java.lang.Object $r0;
+        [0@L94] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L94] $r0 = <Java9StringConcatenation: java.lang.Object myCl2>;
+        [2@L94] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.Object)>[""]($r1, $r0);
+        [3@L94] return $r2;
+    }
+
+    static java.lang.String stringObjectNull() {
+        java.lang.String $r1, $r2;
+        java.lang.Object $r0;
+        [0@L98] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L98] $r0 = <Java9StringConcatenation: java.lang.Object oNull>;
+        [2@L98] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.Object)>[""]($r1, $r0);
+        [3@L98] return $r2;
+    }
+
+    static java.lang.String stringObjectNull2() {
+        java.lang.String $r1, $r2;
+        Java9StringConcatenation$MyClassNull $r0;
+        [0@L102] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L102] $r0 = <Java9StringConcatenation: Java9StringConcatenation$MyClassNull myClNull>;
+        [2@L102] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,Java9StringConcatenation$MyClassNull)>[""]($r1, $r0);
+        [3@L102] return $r2;
+    }
+
+    static java.lang.String stringCharSeq() {
+        java.lang.String $r1, $r2;
+        java.lang.CharSequence $r0;
+        [0@L106] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L106] $r0 = <Java9StringConcatenation: java.lang.CharSequence cs>;
+        [2@L106] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.CharSequence)>[""]($r1, $r0);
+        [3@L106] return $r2;
+    }
+
+    static java.lang.String stringObjectCharSeq() {
+        java.lang.String $r2, $r3;
+        java.lang.Object $r1;
+        java.lang.CharSequence $r0;
+        [0@L110] $r2 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L110] $r1 = <Java9StringConcatenation: java.lang.Object o>;
+        [2@L110] $r0 = <Java9StringConcatenation: java.lang.CharSequence cs>;
+        [3@L110] $r3 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.Object,java.lang.CharSequence)>[""]($r2, $r1, $r0);
+        [4@L110] return $r3;
+    }
+
+    static java.lang.String stringObjectCharSeqInt() {
+        java.lang.String $r2, $r3;
+        java.lang.Object $r1;
+        java.lang.CharSequence $r0;
+        int $i0;
+        [0@L114] $r2 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L114] $r1 = <Java9StringConcatenation: java.lang.Object o>;
+        [2@L114] $r0 = <Java9StringConcatenation: java.lang.CharSequence cs>;
+        [3@L114] $i0 = <Java9StringConcatenation: int i>;
+        [4@L114] $r3 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.Object,java.lang.CharSequence,int)>[""]($r2, $r1, $r0, $i0);
+        [5@L114] return $r3;
+    }
+
+    static java.lang.String constConst() {
+        java.lang.String %stringconst0;
+        [0@L118] %stringconst0 = "aaabbb";
+        [1@L118] return %stringconst0;
+    }
+
+    static java.lang.String constStringConstString() {
+        java.lang.String $r1, $r0, $r2;
+        [0@L122] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L122] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [2@L122] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.String)>["aaabbb"]($r1, $r0);
+        [3@L122] return $r2;
+    }
+
+    static java.lang.String stringConstStringConst() {
+        java.lang.String $r1, $r0, $r2;
+        [0@L126] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L126] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [2@L126] $r2 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.String)>["aaabbb"]($r1, $r0);
+        [3@L126] return $r2;
+    }
+
+    static java.lang.String mix() {
+        java.lang.String $r2, $r1, $r0, $r3;
+        [0@L130] $r2 = <Java9StringConcatenation: java.lang.String s>;
+        [1@L130] $r1 = <Java9StringConcatenation: java.lang.String s>;
+        [2@L130] $r0 = <Java9StringConcatenation: java.lang.String s>;
+        [3@L130] $r3 = invokedynamic <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])> "makeConcatWithConstants" <MethodType: java.lang.String (java.lang.String,java.lang.String,java.lang.String)>["aaa66623333.14159bbb"]($r2, $r1, $r0);
+        [4@L130] return $r3;
+    }
+
+    static void <clinit>() {
+        int %intconst0, %intconst1, %intconst2;
+        float %floatconst3;
+        long %longconst4;
+        double %doubleconst5;
+        java.lang.String %stringconst6, %stringconst7;
+        null-type %nullconst;
+        Java9StringConcatenation$MyClass $r0, $r2;
+        Java9StringConcatenation$MyClassNull $r1;
+        [0@L3] %intconst0 = 1;
+        [1@L3] <Java9StringConcatenation: boolean b> = %intconst0;
+        [2@L4] %intconst1 = 6;
+        [3@L4] <Java9StringConcatenation: byte by> = %intconst1;
+        [4@L5] <Java9StringConcatenation: short sh> = %intconst1;
+        [5@L6] %intconst2 = 97;
+        [6@L6] <Java9StringConcatenation: char ch> = %intconst2;
+        [7@L7] <Java9StringConcatenation: int i> = %intconst1;
+        [8@L8] %floatconst3 = 6.0F;
+        [9@L8] <Java9StringConcatenation: float fl> = %floatconst3;
+        [10@L9] %longconst4 = 6L;
+        [11@L9] <Java9StringConcatenation: long l> = %longconst4;
+        [12@L10] %doubleconst5 = 6.0;
+        [13@L10] <Java9StringConcatenation: double d> = %doubleconst5;
+        [14@L11] %stringconst6 = "foo";
+        [15@L11] <Java9StringConcatenation: java.lang.String s> = %stringconst6;
+        [16@L12] <Java9StringConcatenation: java.lang.String sNull> = %nullconst;
+        [17@L13] %stringconst7 = "bar";
+        [18@L13] <Java9StringConcatenation: java.lang.Object o> = %stringconst7;
+        [19@L14] <Java9StringConcatenation: java.lang.Object oNull> = %nullconst;
+        [20@L15] <Java9StringConcatenation: java.lang.CharSequence cs> = %stringconst7;
+        [21@L16] $r0 = new Java9StringConcatenation$MyClass;
+        [22@L16] invokespecial $r0.<Java9StringConcatenation$MyClass: void <init>()>();
+        [23@L16] <Java9StringConcatenation: Java9StringConcatenation$MyClass myCl> = $r0;
+        [24@L17] $r1 = new Java9StringConcatenation$MyClassNull;
+        [25@L17] invokespecial $r1.<Java9StringConcatenation$MyClassNull: void <init>()>();
+        [26@L17] <Java9StringConcatenation: Java9StringConcatenation$MyClassNull myClNull> = $r1;
+        [27@L18] $r2 = new Java9StringConcatenation$MyClass;
+        [28@L18] invokespecial $r2.<Java9StringConcatenation$MyClass: void <init>()>();
+        [29@L18] <Java9StringConcatenation: java.lang.Object myCl2> = $r2;
+        [30@L18] return;
+    }
+
+}

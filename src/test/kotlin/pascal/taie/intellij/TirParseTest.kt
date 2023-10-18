@@ -13,7 +13,7 @@ class TirParseTest : ParsingTestCase("", "tir", TirParserDefinition()) {
 
     override fun includeRanges() = true
 
-    fun testAllInOne() {
-        doTest(true)
-    }
+    fun testAllInOne() = doTest(true)
+
+    fun testJava9StringConcatenation() = doTest(true)
 }
