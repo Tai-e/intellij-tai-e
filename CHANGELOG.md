@@ -6,7 +6,7 @@
 
 ### Changed
 
-- Not specify pluginUntilBuild
+- Support Intellij 2023.3
 
 ## [0.1.4] - 2023-10-18
 
