@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Not specify pluginUntilBuild
+
 ## [0.1.4] - 2023-10-18
 
 ### Changed
