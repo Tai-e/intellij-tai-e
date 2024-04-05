@@ -8,7 +8,7 @@ changelog = "2.2.0"
 gradleIntelliJPlugin = "1.17.2"
 qodana = "2023.3.1"
 kover = "0.7.6"
-intellijGrammarKit = "2022.3.2"
+intellijGrammarKit = "2022.3.2.2"
 
 [libraries]
 annotations = { group = "org.jetbrains", name = "annotations", version.ref = "annotations" }
