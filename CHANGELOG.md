@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Support Intellij 2024.1
+
 ## [0.1.5] - 2023-12-12
 
 ### Changed
