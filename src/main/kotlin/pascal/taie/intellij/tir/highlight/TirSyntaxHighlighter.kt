@@ -69,7 +69,9 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
         return when (tokenType) {
             TirTypes.CLASS,
             TirTypes.INTERFACE,
-            TirTypes.MODIFIER,
+            TirTypes.MODIFIER_CLASS,
+            TirTypes.MODIFIER_FIELD,
+            TirTypes.MODIFIER_METHOD,
             TirTypes.EXTENDS,
             TirTypes.IMPLEMENTS,
             TirTypes.RETURN,

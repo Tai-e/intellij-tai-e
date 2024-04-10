@@ -28,7 +28,33 @@ IDENTIFIER_CHARACTER=[a-zA-Z$_%][a-zA-Z0-9$_]*
 
 %%
 
-final|abstract|static|public|private|protected|transient|volatile       { yybegin(YYINITIAL); return TirTypes.MODIFIER; }
+// --- Modifiers ---
+public       { yybegin(YYINITIAL); return TirTypes.PUBLIC; }
+
+protected    { yybegin(YYINITIAL); return TirTypes.PROTECTED; }
+
+private      { yybegin(YYINITIAL); return TirTypes.PRIVATE; }
+
+abstract     { yybegin(YYINITIAL); return TirTypes.ABSTRACT; }
+
+static       { yybegin(YYINITIAL); return TirTypes.STATIC; }
+
+final        { yybegin(YYINITIAL); return TirTypes.FINAL; }
+
+sealed       { yybegin(YYINITIAL); return TirTypes.SEALED; }
+
+non-sealed   { yybegin(YYINITIAL); return TirTypes.NON_SEALED; }
+
+strictfp     { yybegin(YYINITIAL); return TirTypes.STRICTFP; }
+
+transient    { yybegin(YYINITIAL); return TirTypes.TRANSIENT; }
+
+volatile     { yybegin(YYINITIAL); return TirTypes.VOLATILE; }
+
+synchronized { yybegin(YYINITIAL); return TirTypes.SYNCHRONIZED; }
+
+native       { yybegin(YYINITIAL); return TirTypes.NATIVE; }
+// -----------------
 
 invokespecial|invokestatic|invokedynamic|invokevirtual|invokeinterface  { yybegin(YYINITIAL); return TirTypes.INVOKE_KEY; }
 
