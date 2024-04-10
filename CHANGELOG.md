@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+- Refine modifier syntax definition
+
 ## [0.1.6] - 2024-04-05
 
 ### Changed
