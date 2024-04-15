@@ -16,8 +16,9 @@ class TirFoldingBuilder : FoldingBuilderEx(), DumbAware {
     ) = SyntaxTraverser
         .psiTraverser(root)
         .filter { it is TirMethodBody || it is TirClassBody }
+        .toList()
         .map { TirFoldingDescriptor(it, "{…}") }
-        .toList().toTypedArray()
+        .toTypedArray()
 
     override fun getPlaceholderText(node: ASTNode) = "…"
 
