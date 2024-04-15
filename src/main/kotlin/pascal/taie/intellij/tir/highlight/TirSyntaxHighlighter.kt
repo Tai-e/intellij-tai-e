@@ -91,7 +91,11 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
                 KEY_KEYS
             }
 
-            TirTypes.INVOKE_KEY -> {
+            TirTypes.INVOKE_VIRTUAL,
+            TirTypes.INVOKE_SPECIAL,
+            TirTypes.INVOKE_INTERFACE,
+            TirTypes.INVOKE_STATIC,
+            TirTypes.INVOKE_DYNAMIC -> {
                 INVOKE_KEYS
             }
 
@@ -99,7 +103,8 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
                 NUMBER_KEYS
             }
 
-            TirTypes.STRING_LITERAL -> {
+            TirTypes.STRING_LITERAL,
+            TirTypes.STRING -> {
                 STRING_KEYS
             }
 

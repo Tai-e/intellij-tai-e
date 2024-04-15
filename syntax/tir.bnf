@@ -59,14 +59,16 @@ method_body_stmt ::= lvalue EQUAL rvalue
                    | RETURN identifier_variable?
                    | NOP
 
-switch_branch ::= (INTEGER | LONG | STRING_LITERAL | DEFAULT) RIGHT_ARROW INTEGER
+switch_branch ::= (INTEGER | LONG | STRING | DEFAULT) RIGHT_ARROW INTEGER
 
 lvalue ::= identifier_variable DOT field_sig
          | identifier_variable LBRACKET identifier_variable RBRACKET
          | identifier_variable
          | field_sig  // Static field
 
-rvalue ::= identifier_variable DOT field_sig  // Instance field
+rvalue ::= reference_literal
+         | number_literal
+         | identifier_variable DOT field_sig  // Instance field
          | identifier_variable LBRACKET identifier_variable RBRACKET  // Array index
          | field_sig  // Static field
          | LPAREN identifier_type RPAREN identifier_variable  // Cast
@@ -75,11 +77,6 @@ rvalue ::= identifier_variable DOT field_sig  // Instance field
          | binary_expr
          | identifier_variable INSTANCEOF identifier_type
          | identifier_variable
-         | FLOAT
-         | DOUBLE
-         | INTEGER
-         | LONG
-         | STRING_LITERAL
 
 field_sig ::= LANGLE field_ref RANGLE
 
@@ -89,15 +86,43 @@ unary_expr ::= (ADD_OP | SUB_OP | NOT_OP) identifier_variable
 
 binary_expr ::= identifier_variable (LANGLE | RANGLE | CMP_OP | BIT_OP | ADD_OP | SUB_OP | MUL_OP | DIV_OP | MOD_OP) identifier_variable
 
-// invoke method
-invoke_expr ::= INVOKE_KEY (identifier_variable DOT)? invoke_method_ref LPAREN invoke_argument_list? RPAREN
-              | INVOKE_KEY invoke_method_ref STRING_LITERAL invoke_method_type LBRACKET invoke_bootstrap_argument_list? RBRACKET LPAREN invoke_argument_list? RPAREN
+// literal
+number_literal ::= integer_literal | floating_point_literal
 
-invoke_method_type ::= LANGLE identifier_class COLON identifier_type LPAREN invoke_argument_type_list? RPAREN RANGLE
+integer_literal ::= INTEGER | LONG
+
+floating_point_literal ::= FLOAT | DOUBLE
+
+reference_literal ::= string_literal | class_literal | null_literal | method_type_literal | method_handle_literal
+
+string_literal ::= STRING
+
+null_literal ::= NULL
+
+class_literal ::= identifier_class (LBRACKET RBRACKET)* DOT CLASS
+
+method_type_literal ::= METHOD_TYPE COLON identifier_type LPAREN invoke_argument_type_list? RPAREN
+
+// TODO
+method_handle_literal ::= METHOD_HANDLE LBRACKET identifier_variable RBRACKET COLON (field_ref | invoke_method_ref)
+
+// invoke
+invoke_expr ::= invoke_instance_expr | invoke_static_expr | invoke_dynamic_expr
+
+invoke_instance_key ::= INVOKE_SPECIAL | INVOKE_VIRTUAL | INVOKE_INTERFACE
+
+invoke_instance_expr ::= invoke_instance_key identifier_variable DOT invoke_method_ref LPAREN invoke_argument_list? RPAREN
 
 invoke_method_ref ::= LANGLE identifier_class COLON identifier_type identifier_method LPAREN invoke_argument_type_list? RPAREN RANGLE
 
-invoke_bootstrap_argument_list ::= literal (COMMA literal)*
+invoke_static_expr ::= INVOKE_STATIC invoke_method_ref LPAREN invoke_argument_list? RPAREN
+
+// invoke dynamic
+invoke_dynamic_expr ::= INVOKE_DYNAMIC invoke_method_ref string_literal invoke_method_type LBRACKET invoke_bootstrap_argument_list? RBRACKET LPAREN invoke_argument_list? RPAREN
+
+invoke_method_type ::= LANGLE method_type_literal RANGLE
+
+invoke_bootstrap_argument_list ::= reference_literal (COMMA reference_literal)*
 
 invoke_argument_type_list ::= identifier_type (COMMA identifier_type)*
 
@@ -106,13 +131,13 @@ invoke_argument_list ::= identifier_variable (COMMA identifier_variable)*
 
 // modifiers
 // https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.1.1
-modifier_class ::= PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | FINAL | SEALED | NON_SEALED | STRICTFP
+modifier_class ::= PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | FINAL | SEALED | NON_SEALED | STRICTFP | SYNTHETIC
 
 // https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.3.1
-modifier_field ::= PUBLIC | PROTECTED | PRIVATE | STATIC | FINAL | TRANSIENT | VOLATILE
+modifier_field ::= PUBLIC | PROTECTED | PRIVATE | STATIC | FINAL | TRANSIENT | VOLATILE | SYNTHETIC
 
 // https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.4.3
-modifier_method ::= PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | FINAL | SYNCHRONIZED | NATIVE | STRICTFP
+modifier_method ::= PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | FINAL | SYNCHRONIZED | NATIVE | STRICTFP | SYNTHETIC
 // ---
 
 // helpers
@@ -121,8 +146,6 @@ identifier_class ::= IDENTIFIER
 identifier_field ::= IDENTIFIER
 
 identifier_method ::= IDENTIFIER | LANGLE IDENTIFIER RANGLE
-
-literal ::= INTEGER | LONG | FLOAT | DOUBLE | STRING_LITERAL
 
 identifier_variable ::= IDENTIFIER | CONSTANT_IDENTIFIER  {
     mixin="pascal.taie.intellij.tir.syntax.TirNamedElementMixin"
