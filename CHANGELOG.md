@@ -5,6 +5,7 @@
 ## [Unreleased]
 
 - Refine modifier syntax definition
+- Fix class literal, method type, method handle and invoke dynamic syntax
 
 ## [0.1.6] - 2024-04-05
 
