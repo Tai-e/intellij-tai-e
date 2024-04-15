@@ -69,7 +69,9 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
         return when (tokenType) {
             TirTypes.CLASS,
             TirTypes.INTERFACE,
-            TirTypes.MODIFIER,
+            TirTypes.MODIFIER_CLASS,
+            TirTypes.MODIFIER_FIELD,
+            TirTypes.MODIFIER_METHOD,
             TirTypes.EXTENDS,
             TirTypes.IMPLEMENTS,
             TirTypes.RETURN,
@@ -89,7 +91,11 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
                 KEY_KEYS
             }
 
-            TirTypes.INVOKE_KEY -> {
+            TirTypes.INVOKE_VIRTUAL,
+            TirTypes.INVOKE_SPECIAL,
+            TirTypes.INVOKE_INTERFACE,
+            TirTypes.INVOKE_STATIC,
+            TirTypes.INVOKE_DYNAMIC -> {
                 INVOKE_KEYS
             }
 
@@ -97,7 +103,8 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
                 NUMBER_KEYS
             }
 
-            TirTypes.STRING_LITERAL -> {
+            TirTypes.STRING_LITERAL,
+            TirTypes.STRING -> {
                 STRING_KEYS
             }
 

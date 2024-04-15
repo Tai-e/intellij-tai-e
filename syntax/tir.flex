@@ -28,9 +28,47 @@ IDENTIFIER_CHARACTER=[a-zA-Z$_%][a-zA-Z0-9$_]*
 
 %%
 
-final|abstract|static|public|private|protected|transient|volatile       { yybegin(YYINITIAL); return TirTypes.MODIFIER; }
+// --- Modifiers ---
+public            { yybegin(YYINITIAL); return TirTypes.PUBLIC; }
 
-invokespecial|invokestatic|invokedynamic|invokevirtual|invokeinterface  { yybegin(YYINITIAL); return TirTypes.INVOKE_KEY; }
+protected         { yybegin(YYINITIAL); return TirTypes.PROTECTED; }
+
+private           { yybegin(YYINITIAL); return TirTypes.PRIVATE; }
+
+abstract          { yybegin(YYINITIAL); return TirTypes.ABSTRACT; }
+
+static            { yybegin(YYINITIAL); return TirTypes.STATIC; }
+
+final             { yybegin(YYINITIAL); return TirTypes.FINAL; }
+
+sealed            { yybegin(YYINITIAL); return TirTypes.SEALED; }
+
+non-sealed        { yybegin(YYINITIAL); return TirTypes.NON_SEALED; }
+
+strictfp          { yybegin(YYINITIAL); return TirTypes.STRICTFP; }
+
+transient         { yybegin(YYINITIAL); return TirTypes.TRANSIENT; }
+
+volatile          { yybegin(YYINITIAL); return TirTypes.VOLATILE; }
+
+synchronized      { yybegin(YYINITIAL); return TirTypes.SYNCHRONIZED; }
+
+native            { yybegin(YYINITIAL); return TirTypes.NATIVE; }
+
+synthetic         { yybegin(YYINITIAL); return TirTypes.SYNTHETIC; }
+// -----------------
+
+// --- Invoke ---
+invokespecial     { yybegin(YYINITIAL); return TirTypes.INVOKE_SPECIAL; }
+
+invokestatic      { yybegin(YYINITIAL); return TirTypes.INVOKE_STATIC; }
+
+invokedynamic     { yybegin(YYINITIAL); return TirTypes.INVOKE_DYNAMIC; }
+
+invokevirtual     { yybegin(YYINITIAL); return TirTypes.INVOKE_VIRTUAL; }
+
+invokeinterface   { yybegin(YYINITIAL); return TirTypes.INVOKE_INTERFACE; }
+// --------------
 
 interface                                                               { yybegin(YYINITIAL); return TirTypes.INTERFACE; }
 
@@ -76,6 +114,13 @@ instanceof                                                              { yybegi
 
 null-type                                                               { yybegin(YYINITIAL); return TirTypes.NULL_TYPE; }
 
+null                                                                    { yybegin(YYINITIAL); return TirTypes.NULL; }
+
+// TODO: avoid conflict
+MethodType                                                              { yybegin(YYINITIAL); return TirTypes.METHOD_TYPE; }
+
+MethodHandle                                                            { yybegin(YYINITIAL); return TirTypes.METHOD_HANDLE; }
+
 ,                                                                       { yybegin(YYINITIAL); return TirTypes.COMMA; }
 
 :                                                                       { yybegin(YYINITIAL); return TirTypes.COLON; }
@@ -90,7 +135,7 @@ null-type                                                               { yybegi
 
 (\+|-)?\d+                                                              { yybegin(YYINITIAL); return TirTypes.INTEGER; }
 
-\"([^\"\\]|\\.)*\"                                                      { yybegin(YYINITIAL); return TirTypes.STRING_LITERAL; }
+\"([^\"\\]|\\.)*\"                                                      { yybegin(YYINITIAL); return TirTypes.STRING; }
 
 \+                                                                      { yybegin(YYINITIAL); return TirTypes.ADD_OP; }
 

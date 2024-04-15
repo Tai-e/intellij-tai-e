@@ -10,6 +10,6 @@ class TirFile(viewProvider: FileViewProvider) : PsiFileBase(viewProvider, TirLan
     }
 
     override fun toString(): String {
-        return "Tir File"
+        return "Tir File: " + super.toString()
     }
 }
