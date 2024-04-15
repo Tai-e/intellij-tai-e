@@ -1,0 +1,42 @@
+public class ListToArray extends java.lang.Object {
+
+    public void <init>() {
+        [0@L5] invokespecial %this.<java.lang.Object: void <init>()>();
+        [1@L5] return;
+    }
+
+    public static void foo(java.lang.String[] r0) {
+        [0@L6] return;
+    }
+
+    public static void main(java.lang.String[] r7) {
+        java.lang.Class $r1, %classconst2;
+        int %intconst0, %intconst1;
+        java.lang.Class[] $r0;
+        java.lang.reflect.Method $r2;
+        java.lang.String %stringconst3, %stringconst4;
+        java.util.ArrayList $r3;
+        java.lang.Object[] $r4, $r6;
+        java.lang.String[] $r5;
+        null-type %nullconst;
+        [0@L9] $r1 = ListToArray.class;
+        [1@L9] %intconst0 = 1;
+        [2@L9] $r0 = newarray java.lang.Class[%intconst0];
+        [3@L9] %intconst1 = 0;
+        [4@L9] %classconst2 = java.lang.String[].class;
+        [5@L9] $r0[%intconst1] = %classconst2;
+        [6@L9] %stringconst3 = "foo";
+        [7@L9] $r2 = invokevirtual $r1.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>(%stringconst3, $r0);
+        [8@L10] $r3 = new java.util.ArrayList;
+        [9@L10] invokespecial $r3.<java.util.ArrayList: void <init>()>();
+        [10@L11] %stringconst4 = "hello";
+        [11@L11] invokeinterface $r3.<java.util.List: boolean add(java.lang.Object)>(%stringconst4);
+        [12@L12] $r4 = newarray java.lang.Object[%intconst0];
+        [13@L12] $r5 = newarray java.lang.String[%intconst1];
+        [14@L12] $r6 = invokeinterface $r3.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>($r5);
+        [15@L12] $r4[%intconst1] = $r6;
+        [16@L12] invokevirtual $r2.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(%nullconst, $r4);
+        [17@L13] return;
+    }
+
+}

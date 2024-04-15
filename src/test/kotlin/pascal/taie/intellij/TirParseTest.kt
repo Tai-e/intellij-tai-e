@@ -16,4 +16,6 @@ class TirParseTest : ParsingTestCase("", "tir", TirParserDefinition()) {
     fun testAllInOne() = doTest(true)
 
     fun testJava9StringConcatenation() = doTest(true)
+
+    fun testListToArray() = doTest(true)
 }
