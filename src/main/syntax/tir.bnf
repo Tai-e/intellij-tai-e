@@ -17,7 +17,7 @@
 
 tir_file ::= class_def
 
-class_def ::= modifier_class* (CLASS | INTERFACE) identifier_class class_extends? class_implements? class_body
+class_def ::= annotation_def* modifier_class* (CLASS | INTERFACE) identifier_class class_extends? class_implements? class_body
 
 class_extends ::= EXTENDS identifier_class (COMMA identifier_class)*
 
@@ -27,14 +27,46 @@ class_body ::= LBRACE class_member* RBRACE
 
 class_member ::= field_def | method_def | COMMENT
 
+// Annotation
+annotation_def ::= AT identifier_class (LPAREN (annotation_key_element_list | annotation_element)? RPAREN)?
+
+annotation_key_element_list ::= annotation_key_element (COMMA annotation_key_element)*
+
+annotation_key_element ::= IDENTIFIER EQUAL annotation_element
+
+annotation_element ::= floating_point_annotation_element
+                     | identifier_class
+                     | integer_annotation_element
+                     | boolean_annotation_element
+                     | class_annotation_element
+                     | array_annotation_element
+                     | string_annotation_element
+                     | annotation_def
+
+floating_point_annotation_element ::= FLOAT | DOUBLE
+
+integer_annotation_element ::= INTEGER | LONG
+
+boolean_annotation_element ::= TRUE | FALSE
+
+class_annotation_element ::= identifier_class (LBRACKET RBRACKET)* DOT CLASS
+
+array_annotation_element ::= LBRACE annotation_element_list? RBRACE
+
+annotation_element_list ::= annotation_element (COMMA annotation_element)*
+
+string_annotation_element ::= STRING
+
 // Field def
-field_def ::= modifier_field* identifier_type identifier_field_list SEMICOLON
+field_def ::= annotation_def* modifier_field* identifier_type identifier_field_list SEMICOLON
 // ---
 
 // Method def
-method_def ::= method_sig (method_body | SEMICOLON)
+method_def ::= annotation_def* modifier_method* method_sig (method_body | SEMICOLON)
 
-method_sig ::= modifier_method* identifier_type identifier_method LPAREN (identifier_type IDENTIFIER (COMMA identifier_type IDENTIFIER)*)? RPAREN
+method_sig ::= identifier_type identifier_method LPAREN method_sig_params? RPAREN
+
+method_sig_params ::= annotation_def* identifier_type IDENTIFIER (COMMA annotation_def* identifier_type IDENTIFIER)*
 
 method_body ::= LBRACE (method_body_var | method_body_line | method_body_catch)+ RBRACE
 
@@ -42,7 +74,7 @@ method_body_var ::= identifier_type identifier_variable (COMMA identifier_variab
 
 method_body_line ::= LINE_NUMBER method_body_stmt SEMICOLON
 
-method_body_catch ::= TRY LBRACKET INTEGER COMMA INTEGER RPAREN COMMA CATCH identifier_variable AT INTEGER
+method_body_catch ::= TRY LBRACKET INTEGER COMMA INTEGER RPAREN COMMA CATCH identifier_variable CATCH_AT INTEGER
 
 // copy stmts and more
 method_body_stmt ::= lvalue EQUAL rvalue

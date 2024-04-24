@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+- Annotation related syntax definition
+
 ## [0.1.7] - 2024-04-24
 
 - Refine modifier syntax definition

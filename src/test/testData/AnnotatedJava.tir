@@ -1,0 +1,57 @@
+@Year(2022)
+@Author(@Name(given="Tian",family="Tan"))
+class AnnotatedJava extends java.lang.Object {
+
+    @Anno
+    @Year
+    private java.lang.Object o;
+
+    @Year(1999)
+    private int i;
+
+    @Cards({Mahjong.FENG,Mahjong.TIAO})
+    private java.lang.String s;
+
+    public static java.lang.Class class$java$lang$String;
+
+    java.lang.Object foo(@Anno java.lang.Object p1, int p2, @Copyright("Free") java.lang.String p3) {
+        java.lang.Object r;
+        [0@L16] r = p1;
+        [1@L17] return r;
+    }
+
+    @ClassAnno(java.lang.String.class)
+    @Copyright("2022 PASCAL group")
+    void baz() {
+        [0@L20] return;
+    }
+
+    void notAnnotated() {
+        [0@L25] return;
+    }
+
+    void <init>() {
+        [0@L3] invokespecial %this.<java.lang.Object: void <init>()>();
+        [1@L3] return;
+    }
+
+    public static java.lang.Class class$(java.lang.String name) {
+        java.lang.Class temp$0;
+        java.lang.ClassNotFoundException e;
+        java.lang.NoClassDefFoundError temp$1;
+        java.lang.String temp$2;
+        [0@L3] nop;
+        [1@L3] temp$0 = invokestatic <java.lang.Class: java.lang.Class forName(java.lang.String)>(name);
+        [2@L3] nop;
+        [3@L3] return temp$0;
+        [4@L3] nop;
+        [5@L3] catch e;
+        [6@L3] temp$1 = new java.lang.NoClassDefFoundError;
+        [7@L3] temp$2 = invokevirtual e.<java.lang.ClassNotFoundException: java.lang.String getMessage()>();
+        [8@L3] invokespecial temp$1.<java.lang.NoClassDefFoundError: void <init>(java.lang.String)>(temp$2);
+        [9@L3] throw temp$1;
+
+        try [0, 2), catch java.lang.ClassNotFoundException at 5
+    }
+
+}

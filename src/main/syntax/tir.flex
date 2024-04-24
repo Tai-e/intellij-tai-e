@@ -100,7 +100,7 @@ throw                                                                   { yybegi
 
 catch                                                                   { yybegin(YYINITIAL); return TirTypes.CATCH; }
 
-at                                                                      { yybegin(YYINITIAL); return TirTypes.AT; }
+at                                                                      { yybegin(YYINITIAL); return TirTypes.CATCH_AT; }
 
 lookupswitch                                                            { yybegin(YYINITIAL); return TirTypes.LOOKUP_SWITCH; }
 
@@ -120,10 +120,16 @@ null-type                                                               { yybegi
 
 null                                                                    { yybegin(YYINITIAL); return TirTypes.NULL; }
 
+true                                                                    { yybegin(YYINITIAL); return TirTypes.TRUE; }
+
+false                                                                   { yybegin(YYINITIAL); return TirTypes.FALSE; }
+
 // TODO: avoid conflict
 MethodType                                                              { yybegin(YYINITIAL); return TirTypes.METHOD_TYPE; }
 
 MethodHandle                                                            { yybegin(YYINITIAL); return TirTypes.METHOD_HANDLE; }
+
+@                                                                       { yybegin(YYINITIAL); return TirTypes.AT; }
 
 ,                                                                       { yybegin(YYINITIAL); return TirTypes.COMMA; }
 

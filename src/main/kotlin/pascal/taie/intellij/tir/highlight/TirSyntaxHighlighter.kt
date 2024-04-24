@@ -78,7 +78,7 @@ class TirSyntaxHighlighter : SyntaxHighlighterBase() {
             TirTypes.TRY,
             TirTypes.THROW,
             TirTypes.CATCH,
-            TirTypes.AT,
+            TirTypes.CATCH_AT,
             TirTypes.LOOKUP_SWITCH,
             TirTypes.DEFAULT,
             TirTypes.NEW,
