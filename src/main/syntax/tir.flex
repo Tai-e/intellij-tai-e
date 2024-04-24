@@ -56,6 +56,10 @@ synchronized      { yybegin(YYINITIAL); return TirTypes.SYNCHRONIZED; }
 native            { yybegin(YYINITIAL); return TirTypes.NATIVE; }
 
 synthetic         { yybegin(YYINITIAL); return TirTypes.SYNTHETIC; }
+
+// Used for tai-e
+enum              { yybegin(YYINITIAL); return TirTypes.ENUM; }
+annotation        { yybegin(YYINITIAL); return TirTypes.ANNOTATION; }
 // -----------------
 
 // --- Invoke ---
