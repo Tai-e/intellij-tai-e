@@ -28,7 +28,9 @@ class_body ::= LBRACE class_member* RBRACE
 class_member ::= field_def | method_def | COMMENT
 
 // Annotation
-annotation_def ::= AT identifier_class (LPAREN (annotation_key_element_list | annotation_element)? RPAREN)?
+annotation_def ::= annotation_def_name (LPAREN (annotation_key_element_list | annotation_element)? RPAREN)?
+
+annotation_def_name ::= AT identifier_class
 
 annotation_key_element_list ::= annotation_key_element (COMMA annotation_key_element)*
 

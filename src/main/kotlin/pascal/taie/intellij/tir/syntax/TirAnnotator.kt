@@ -10,6 +10,13 @@ import pascal.taie.intellij.tir.syntax.psi.*
 class TirAnnotator : Annotator {
     override fun annotate(element: PsiElement, holder: AnnotationHolder) {
         when (element) {
+            is TirAnnotationDefName -> {
+                holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
+                    .range(element.textRange)
+                    .textAttributes(TirSyntaxHighlighter.ANNOTATION)
+                    .create()
+            }
+
             is TirIdentifierType -> {
                 if (element.parent !is TirIdentifierField) {
                     holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
