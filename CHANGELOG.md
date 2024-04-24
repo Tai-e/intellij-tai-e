@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.1.8] - 2024-04-24
+
 - Annotation related syntax definition
 - Annotation syntax highlight and annotator
 - Fix modifier syntax highlight
@@ -65,7 +67,8 @@
 
 - Support for Tai-e IR file (`.tir`), e.g., syntax highlight, find usage (still WIP), and so on.
 
-[Unreleased]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.7...HEAD
+[Unreleased]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.8...HEAD
+[0.1.8]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.7...v0.1.8
 [0.1.7]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.4...v0.1.5
