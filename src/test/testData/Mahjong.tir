@@ -1,0 +1,85 @@
+final enum class Mahjong extends java.lang.Enum {
+
+    public static final enum Mahjong TIAO;
+
+    public static final enum Mahjong WAN;
+
+    public static final enum Mahjong TONG;
+
+    public static final enum Mahjong FENG;
+
+    public static final enum Mahjong JIAN;
+
+    private static final synthetic Mahjong[] $VALUES;
+
+    public static Mahjong[] values() {
+        Mahjong[] $r0, $r2;
+        java.lang.Object $r1;
+        [0@L54] $r0 = <Mahjong: Mahjong[] $VALUES>;
+        [1@L54] $r1 = invokevirtual $r0.<java.lang.Object: java.lang.Object clone()>();
+        [2@L54] $r2 = (Mahjong[]) $r1;
+        [3@L54] return $r2;
+    }
+
+    public static Mahjong valueOf(java.lang.String r0) {
+        java.lang.Enum $r1;
+        java.lang.Class %classconst0;
+        Mahjong $r2;
+        [0@L54] %classconst0 = Mahjong.class;
+        [1@L54] $r1 = invokestatic <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(%classconst0, r0);
+        [2@L54] $r2 = (Mahjong) $r1;
+        [3@L54] return $r2;
+    }
+
+    private void <init>(java.lang.String r1, int i0) {
+        [0@L54] invokespecial %this.<java.lang.Enum: void <init>(java.lang.String,int)>(r1, i0);
+        [1@L54] return;
+    }
+
+    static void <clinit>() {
+        Mahjong $r0, $r1, $r2, $r3, $r4, $r6, $r7, $r8, $r9, $r10;
+        java.lang.String %stringconst0, %stringconst2, %stringconst4, %stringconst6, %stringconst8;
+        int %intconst1, %intconst3, %intconst5, %intconst7, %intconst9, %intconst10;
+        Mahjong[] $r5;
+        [0@L55] $r0 = new Mahjong;
+        [1@L55] %stringconst0 = "TIAO";
+        [2@L55] %intconst1 = 0;
+        [3@L55] invokespecial $r0.<Mahjong: void <init>(java.lang.String,int)>(%stringconst0, %intconst1);
+        [4@L55] <Mahjong: Mahjong TIAO> = $r0;
+        [5@L55] $r1 = new Mahjong;
+        [6@L55] %stringconst2 = "WAN";
+        [7@L55] %intconst3 = 1;
+        [8@L55] invokespecial $r1.<Mahjong: void <init>(java.lang.String,int)>(%stringconst2, %intconst3);
+        [9@L55] <Mahjong: Mahjong WAN> = $r1;
+        [10@L55] $r2 = new Mahjong;
+        [11@L55] %stringconst4 = "TONG";
+        [12@L55] %intconst5 = 2;
+        [13@L55] invokespecial $r2.<Mahjong: void <init>(java.lang.String,int)>(%stringconst4, %intconst5);
+        [14@L55] <Mahjong: Mahjong TONG> = $r2;
+        [15@L55] $r3 = new Mahjong;
+        [16@L55] %stringconst6 = "FENG";
+        [17@L55] %intconst7 = 3;
+        [18@L55] invokespecial $r3.<Mahjong: void <init>(java.lang.String,int)>(%stringconst6, %intconst7);
+        [19@L55] <Mahjong: Mahjong FENG> = $r3;
+        [20@L55] $r4 = new Mahjong;
+        [21@L55] %stringconst8 = "JIAN";
+        [22@L55] %intconst9 = 4;
+        [23@L55] invokespecial $r4.<Mahjong: void <init>(java.lang.String,int)>(%stringconst8, %intconst9);
+        [24@L55] <Mahjong: Mahjong JIAN> = $r4;
+        [25@L54] %intconst10 = 5;
+        [26@L54] $r5 = newarray Mahjong[%intconst10];
+        [27@L54] $r6 = <Mahjong: Mahjong TIAO>;
+        [28@L54] $r5[%intconst1] = $r6;
+        [29@L54] $r7 = <Mahjong: Mahjong WAN>;
+        [30@L54] $r5[%intconst3] = $r7;
+        [31@L54] $r8 = <Mahjong: Mahjong TONG>;
+        [32@L54] $r5[%intconst5] = $r8;
+        [33@L54] $r9 = <Mahjong: Mahjong FENG>;
+        [34@L54] $r5[%intconst7] = $r9;
+        [35@L54] $r10 = <Mahjong: Mahjong JIAN>;
+        [36@L54] $r5[%intconst9] = $r10;
+        [37@L54] <Mahjong: Mahjong[] $VALUES> = $r5;
+        [38@L54] return;
+    }
+
+}

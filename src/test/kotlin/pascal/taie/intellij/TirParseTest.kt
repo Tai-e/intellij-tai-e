@@ -18,4 +18,6 @@ class TirParseTest : ParsingTestCase("", "tir", TirParserDefinition()) {
     fun testJava9StringConcatenation() = doTest(true)
 
     fun testListToArray() = doTest(true)
+
+    fun testMahjong() = doTest(true)
 }

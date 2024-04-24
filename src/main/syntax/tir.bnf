@@ -134,7 +134,7 @@ invoke_argument_list ::= identifier_variable (COMMA identifier_variable)*
 modifier_class ::= PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | FINAL | SEALED | NON_SEALED | STRICTFP | SYNTHETIC | ENUM | ANNOTATION
 
 // https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.3.1
-modifier_field ::= PUBLIC | PROTECTED | PRIVATE | STATIC | FINAL | TRANSIENT | VOLATILE | SYNTHETIC
+modifier_field ::= PUBLIC | PROTECTED | PRIVATE | STATIC | FINAL | TRANSIENT | VOLATILE | SYNTHETIC | ENUM
 
 // https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.4.3
 modifier_method ::= PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | FINAL | SYNCHRONIZED | NATIVE | STRICTFP | SYNTHETIC
