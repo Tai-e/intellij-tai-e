@@ -5,6 +5,7 @@
 ## [Unreleased]
 
 - Annotation related syntax definition
+- Annotation syntax highlight
 
 ## [0.1.7] - 2024-04-24
 
