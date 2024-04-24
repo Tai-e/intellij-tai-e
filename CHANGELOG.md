@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+- Support new frontend variable name pattern
+
 ## [0.1.8] - 2024-04-24
 
 - Annotation related syntax definition
