@@ -22,7 +22,7 @@ END_OF_LINE_COMMENT=("//")[^\r\n]*
 //KEY_CHARACTER=[^:=\ \n\t\f\\] | "\\ "
 //FIRST_VALUE_CHARACTER=[^ \n\f\\] | "\\"{CRLF} | "\\".
 //VALUE_CHARACTER=[^\n\f\\] | "\\"{CRLF} | "\\".
-IDENTIFIER_CHARACTER=[a-zA-Z$_%][a-zA-Z0-9$_\-]*
+IDENTIFIER_CHARACTER=([a-zA-Z$_%]|\$-)[a-zA-Z0-9$_]*(#[0-9]+)?
 
 %state WAITING_VALUE
 
