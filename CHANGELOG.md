@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.1.7] - 2024-04-24
+
 - Refine modifier syntax definition
 - Fix class literal, method type, method handle and invoke dynamic syntax
 
@@ -59,7 +61,8 @@
 
 - Support for Tai-e IR file (`.tir`), e.g., syntax highlight, find usage (still WIP), and so on.
 
-[Unreleased]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.6...HEAD
+[Unreleased]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.7...HEAD
+[0.1.7]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.3...v0.1.4
