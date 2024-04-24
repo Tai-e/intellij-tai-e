@@ -5,6 +5,8 @@
 ## [Unreleased]
 
 - Annotation related syntax definition
+- Annotation syntax highlight and annotator
+- Fix modifier syntax highlight
 
 ## [0.1.7] - 2024-04-24
 
