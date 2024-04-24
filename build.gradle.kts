@@ -83,14 +83,14 @@ tasks {
 
     generateLexer {
         dependsOn.add("cleanTirParser")
-        sourceFile.set(File("syntax/tir.flex"))
+        sourceFile.set(File("src/main/syntax/tir.flex"))
         targetDir.set("src/main/gen/pascal/taie/intellij/tir/syntax/")
         targetClass.set("TirLexer")
     }
 
     generateParser {
         dependsOn.add(generateLexer)
-        sourceFile.set(File("syntax/tir.bnf"))
+        sourceFile.set(File("src/main/syntax/tir.bnf"))
         targetRoot.set("src/main/gen/")
         pathToParser.set("pascal/taie/intellij/tir/syntax/TirParser")
         pathToPsiRoot.set("pascal/taie/intellij/tir/syntax/psi")
