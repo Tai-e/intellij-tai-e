@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Support Intellij 2024.2
+
 ## [0.1.9] - 2024-04-24
 
 - Support new frontend variable name pattern
