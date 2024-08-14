@@ -26,7 +26,7 @@ repositories {
 dependencies {
     implementation(libs.annotations)
     testImplementation("junit:junit:4.13.2")
-    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.10.3")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.11.0")
 }
 
 // Set the JVM language level used to build the project.
