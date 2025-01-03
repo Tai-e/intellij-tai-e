@@ -1,5 +1,6 @@
 package pascal.taie.intellij.tir
 
+import com.intellij.icons.AllIcons
 import com.intellij.openapi.fileTypes.LanguageFileType
 import javax.swing.Icon
 
@@ -21,6 +22,6 @@ class TirFileType : LanguageFileType(TirLanguage.INSTANCE) {
     }
 
     override fun getIcon(): Icon {
-        return TirIcons.taie
+        return AllIcons.FileTypes.Text
     }
 }
