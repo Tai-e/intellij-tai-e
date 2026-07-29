@@ -12,18 +12,18 @@ import com.intellij.psi.util.ClassUtil
 object PsiUtils {
 
     fun toTirClassName(clz: PsiClass): String? {
-        val clzName = ClassUtil.getJVMClassName(clz) ?: return null
+        val clzName = ClassUtil.getBinaryClassName(clz) ?: return null
         return "<$clzName>"
     }
 
     fun toTirFieldSignature(field: PsiField): String? {
-        val clzName = ClassUtil.getJVMClassName(field.containingClass!!) ?: return null
+        val clzName = ClassUtil.getBinaryClassName(field.containingClass!!) ?: return null
         val typeName = getGenericFreeType(field.type)
         return "<$clzName: $typeName ${field.name}>"
     }
 
     fun toTirMethodSignature(method: PsiMethod): String? {
-        val clzName = ClassUtil.getJVMClassName(method.containingClass!!) ?: return null
+        val clzName = ClassUtil.getBinaryClassName(method.containingClass!!) ?: return null
         val returnType = getGenericFreeType(method.returnType)
 
         val signature = StringBuilder()
@@ -45,7 +45,7 @@ object PsiUtils {
     }
 
     fun toTirMethodSignature(method: PsiClassInitializer): String? {
-        val clzName = ClassUtil.getJVMClassName(method.containingClass!!) ?: return null
+        val clzName = ClassUtil.getBinaryClassName(method.containingClass!!) ?: return null
         return "<$clzName: void <clinit>()>"
     }
 
