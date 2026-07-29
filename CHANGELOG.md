@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.1.16] - 2026-07-29
+
 - Support Intellij 2026.2
 
 ## [0.1.15] - 2026-04-17
@@ -109,7 +111,8 @@
 
 - Support for Tai-e IR file (`.tir`), e.g., syntax highlight, find usage (still WIP), and so on.
 
-[Unreleased]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.15...HEAD
+[Unreleased]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.16...HEAD
+[0.1.16]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.15...v0.1.16
 [0.1.15]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.14...v0.1.15
 [0.1.14]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.13...v0.1.14
 [0.1.13]: https://github.com/Tai-e/intellij-tai-e/compare/v0.1.12...v0.1.13
