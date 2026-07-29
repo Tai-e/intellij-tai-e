@@ -1,8 +1,10 @@
 .DS_Store
 .gradle
 .idea
+.intellijPlatform
+.kotlin
 .qodana
-bin
 build
+bin
 out
 /**/src/main/gen/
