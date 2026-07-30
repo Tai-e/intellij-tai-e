@@ -35,8 +35,8 @@ dependencies {
 
     implementation(libs.annotations)
     testImplementation("junit:junit:4.13.2")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.10.3")
-    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.10.3")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.1.2")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:6.1.2")
 }
 
 java {
@@ -50,9 +50,8 @@ kotlin {
 }
 
 grammarKit {
-    jflexRelease.set("1.7.0-1")
-    grammarKitRelease.set("2021.1.2")
-    intellijRelease.set("203.7717.81")
+    jflexRelease.set("1.9.2")
+    grammarKitRelease.set("2023.3.4")
 }
 
 changelog {

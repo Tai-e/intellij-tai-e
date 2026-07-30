@@ -1,6 +1,6 @@
 [versions]
 # libraries
-annotations = "24.1.0"
+annotations = "26.1.0"
 
 # plugins
 qodana = "2026.1.3"
