@@ -113,7 +113,7 @@ jobs:
       # Upload the Kover report to Codecov
       - name: Upload Code Coverage Report
         if: ${{ !env.ACT }}
-        uses: codecov/codecov-action@v6
+        uses: codecov/codecov-action@v7
         with:
           files: ${{ github.workspace }}/build/reports/kover/report.xml
 
