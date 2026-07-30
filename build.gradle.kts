@@ -35,6 +35,7 @@ dependencies {
 
     implementation(libs.annotations)
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:6.1.2")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.1.2")
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine:6.1.2")
 }
@@ -64,6 +65,26 @@ kover {
         total {
             xml {
                 onCheck = true
+            }
+        }
+        // Generated code (Grammar-Kit/JFlex output in src/main/gen) is excluded:
+        // it is regenerated on every build and verified by the parsing tests instead.
+        filters {
+            excludes {
+                classes(
+                    "pascal.taie.intellij.tir.syntax.TirLexer",
+                    "pascal.taie.intellij.tir.syntax.TirParser",
+                    "pascal.taie.intellij.tir.syntax.TirTypes",
+                    "pascal.taie.intellij.tir.syntax.psi.*",
+                    "pascal.taie.intellij.tir.syntax.psi.impl.*",
+                )
+            }
+        }
+        verify {
+            rule {
+                bound {
+                    minValue = 60
+                }
             }
         }
     }

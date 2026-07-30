@@ -22,4 +22,6 @@ class TirParseTest : ParsingTestCase("", "tir", TirParserDefinition()) {
     fun testMahjong() = doTest(true)
 
     fun testAnnotatedJava() = doTest(true)
+
+    fun testBroken() = doTest(true)
 }

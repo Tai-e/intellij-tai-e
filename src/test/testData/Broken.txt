@@ -1,0 +1,11 @@
+Tir File: FILE(0,54)
+  PsiElement(TirTokenType.PUBLIC)('public')(0,6)
+  PsiElement(TirTokenType.CLASS)('class')(7,12)
+  PsiElement(TirTokenType.IDENTIFIER)('com.example.Broken')(13,31)
+  PsiElement(TirTokenType.LBRACE)('{')(32,33)
+  PsiElement(TirTokenType.PUBLIC)('public')(38,44)
+  PsiElement(TirTokenType.IDENTIFIER)('void')(45,49)
+  PsiElement(TirTokenType.IDENTIFIER)('bar')(50,53)
+  PsiElement(TirTokenType.LPAREN)('(')(53,54)
+  PsiErrorElement:<method sig params> or TirTokenType.RPAREN expected(54,54)
+    <empty list>

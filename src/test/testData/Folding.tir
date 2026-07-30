@@ -1,0 +1,7 @@
+public class com.example.Foo <fold text='{…}'>{
+    private int value;
+
+    void bar() <fold text='{…}'>{
+        [0@L1] return;
+    }</fold>
+}</fold>
