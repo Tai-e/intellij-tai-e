@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+- Support Intellij 2026.3
+
 ## [0.1.16] - 2026-07-29
 
 - Support Intellij 2026.2
